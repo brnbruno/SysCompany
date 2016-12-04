@@ -52,8 +52,9 @@ namespace SysDeCompany
           		}			
 				clBancoDados clBancoDados = new clBancoDados();			   	
 				clBancoDados.existe();
-			   	frmConfigura frmConfigura = new frmConfigura();
-			   	frmConfigura.ShowDialog();
+				if(pictureBox1.Image != null&&Directory.Exists("Data")){
+			   		frmConfigura frmConfigura = new frmConfigura();
+			   		frmConfigura.ShowDialog();}
 			   	clnConfig clnConfig = new clnConfig();
 			   	
 			if(Directory.Exists("Config")&&Directory.Exists("Data")) 
