@@ -51,7 +51,6 @@ namespace DcompanySys
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.btnBuscaImagem = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
 			this.txtNomedaEmpresa = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.JaneladeCor = new System.Windows.Forms.ColorDialog();
@@ -74,7 +73,6 @@ namespace DcompanySys
 			this.grbPrincipal.Controls.Add(this.btnSalvar);
 			this.grbPrincipal.Controls.Add(this.textBox2);
 			this.grbPrincipal.Controls.Add(this.btnBuscaImagem);
-			this.grbPrincipal.Controls.Add(this.button1);
 			this.grbPrincipal.Controls.Add(this.txtNomedaEmpresa);
 			this.grbPrincipal.Controls.Add(this.label1);
 			this.grbPrincipal.Location = new System.Drawing.Point(12, 12);
@@ -231,17 +229,6 @@ namespace DcompanySys
 			this.btnBuscaImagem.UseVisualStyleBackColor = true;
 			this.btnBuscaImagem.Click += new System.EventHandler(this.BtnBuscaImagemClick);
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(6, 374);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(66, 63);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Visible = false;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
-			// 
 			// txtNomedaEmpresa
 			// 
 			this.txtNomedaEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,9 +271,9 @@ namespace DcompanySys
 		}
 		private System.Windows.Forms.Button btnRestarCor;
 		private System.Windows.Forms.Button btnCorDoFormulario;
-		private System.Windows.Forms.PictureBox pbCordoFormulario;
+		public System.Windows.Forms.PictureBox pbCordoFormulario;
 		private System.Windows.Forms.Button btnCorFonteForm;
-		private System.Windows.Forms.Label lbfontform;
+		public System.Windows.Forms.Label lbfontform;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.GroupBox grbCorFormulario;
@@ -299,7 +286,6 @@ namespace DcompanySys
 		private System.Windows.Forms.ColorDialog JaneladeCor;
 		private System.Windows.Forms.Label label1;
 		public System.Windows.Forms.TextBox txtNomedaEmpresa;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.GroupBox grbPrincipal;
 		
 		

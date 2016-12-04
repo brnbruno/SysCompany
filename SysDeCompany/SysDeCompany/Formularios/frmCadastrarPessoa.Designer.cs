@@ -65,7 +65,7 @@ namespace DcompanySys
 			this.lblCidade = new System.Windows.Forms.Label();
 			this.txtBairro = new System.Windows.Forms.TextBox();
 			this.lblBairro = new System.Windows.Forms.Label();
-			this.mtxtCpe = new System.Windows.Forms.MaskedTextBox();
+			this.mtxtCep = new System.Windows.Forms.MaskedTextBox();
 			this.lblCpe = new System.Windows.Forms.Label();
 			this.txtNumero = new System.Windows.Forms.TextBox();
 			this.lblNumero = new System.Windows.Forms.Label();
@@ -104,7 +104,7 @@ namespace DcompanySys
 			this.grbPrincipal.Controls.Add(this.pbLogoEmpresa);
 			this.grbPrincipal.Location = new System.Drawing.Point(12, 12);
 			this.grbPrincipal.Name = "grbPrincipal";
-			this.grbPrincipal.Size = new System.Drawing.Size(1035, 578);
+			this.grbPrincipal.Size = new System.Drawing.Size(1023, 622);
 			this.grbPrincipal.TabIndex = 0;
 			this.grbPrincipal.TabStop = false;
 			// 
@@ -125,7 +125,7 @@ namespace DcompanySys
 			this.flowLayoutPanel1.Controls.Add(this.btnExcluir);
 			this.flowLayoutPanel1.Controls.Add(this.btnIncluir);
 			this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(574, 463);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(562, 507);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 100);
 			this.flowLayoutPanel1.TabIndex = 6;
@@ -203,7 +203,7 @@ namespace DcompanySys
 			this.grbDocumentoTelefone.Controls.Add(this.lblCpfOuCNPJ);
 			this.grbDocumentoTelefone.Location = new System.Drawing.Point(33, 398);
 			this.grbDocumentoTelefone.Name = "grbDocumentoTelefone";
-			this.grbDocumentoTelefone.Size = new System.Drawing.Size(966, 128);
+			this.grbDocumentoTelefone.Size = new System.Drawing.Size(954, 128);
 			this.grbDocumentoTelefone.TabIndex = 5;
 			this.grbDocumentoTelefone.TabStop = false;
 			// 
@@ -211,8 +211,8 @@ namespace DcompanySys
 			// 
 			this.mtxtCelular.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.mtxtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtCelular.Location = new System.Drawing.Point(168, 82);
-			this.mtxtCelular.Mask = "(99) 0 0000-0000";
+			this.mtxtCelular.Location = new System.Drawing.Point(162, 82);
+			this.mtxtCelular.Mask = "(00) 0 0000-0000";
 			this.mtxtCelular.Name = "mtxtCelular";
 			this.mtxtCelular.Size = new System.Drawing.Size(141, 29);
 			this.mtxtCelular.TabIndex = 23;
@@ -221,7 +221,7 @@ namespace DcompanySys
 			// 
 			this.lblCelular.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCelular.Location = new System.Drawing.Point(52, 84);
+			this.lblCelular.Location = new System.Drawing.Point(46, 84);
 			this.lblCelular.Name = "lblCelular";
 			this.lblCelular.Size = new System.Drawing.Size(127, 35);
 			this.lblCelular.TabIndex = 22;
@@ -231,8 +231,8 @@ namespace DcompanySys
 			// 
 			this.mtxtTelefone2.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.mtxtTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtTelefone2.Location = new System.Drawing.Point(492, 47);
-			this.mtxtTelefone2.Mask = "(99) 0000-0000";
+			this.mtxtTelefone2.Location = new System.Drawing.Point(486, 47);
+			this.mtxtTelefone2.Mask = "(00) 0000-0000";
 			this.mtxtTelefone2.Name = "mtxtTelefone2";
 			this.mtxtTelefone2.Size = new System.Drawing.Size(141, 29);
 			this.mtxtTelefone2.TabIndex = 21;
@@ -241,7 +241,7 @@ namespace DcompanySys
 			// 
 			this.lbltelefone2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lbltelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbltelefone2.Location = new System.Drawing.Point(365, 49);
+			this.lbltelefone2.Location = new System.Drawing.Point(359, 49);
 			this.lbltelefone2.Name = "lbltelefone2";
 			this.lbltelefone2.Size = new System.Drawing.Size(141, 35);
 			this.lbltelefone2.TabIndex = 20;
@@ -251,8 +251,8 @@ namespace DcompanySys
 			// 
 			this.mtxtTelefone.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.mtxtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtTelefone.Location = new System.Drawing.Point(168, 47);
-			this.mtxtTelefone.Mask = "(99) 0000-0000";
+			this.mtxtTelefone.Location = new System.Drawing.Point(162, 47);
+			this.mtxtTelefone.Mask = "(00) 0000-0000";
 			this.mtxtTelefone.Name = "mtxtTelefone";
 			this.mtxtTelefone.Size = new System.Drawing.Size(141, 29);
 			this.mtxtTelefone.TabIndex = 19;
@@ -261,7 +261,7 @@ namespace DcompanySys
 			// 
 			this.mtxtCnpj.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.mtxtCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtCnpj.Location = new System.Drawing.Point(168, 12);
+			this.mtxtCnpj.Location = new System.Drawing.Point(162, 12);
 			this.mtxtCnpj.Mask = "00,000,000/0000-00";
 			this.mtxtCnpj.Name = "mtxtCnpj";
 			this.mtxtCnpj.Size = new System.Drawing.Size(171, 29);
@@ -272,7 +272,7 @@ namespace DcompanySys
 			// 
 			this.lblTelefone.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTelefone.Location = new System.Drawing.Point(52, 49);
+			this.lblTelefone.Location = new System.Drawing.Point(46, 49);
 			this.lblTelefone.Name = "lblTelefone";
 			this.lblTelefone.Size = new System.Drawing.Size(127, 35);
 			this.lblTelefone.TabIndex = 17;
@@ -282,7 +282,8 @@ namespace DcompanySys
 			// 
 			this.txtIE.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txtIE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtIE.Location = new System.Drawing.Point(492, 12);
+			this.txtIE.Location = new System.Drawing.Point(486, 12);
+			this.txtIE.MaxLength = 15;
 			this.txtIE.Name = "txtIE";
 			this.txtIE.Size = new System.Drawing.Size(223, 29);
 			this.txtIE.TabIndex = 15;
@@ -292,7 +293,7 @@ namespace DcompanySys
 			// 
 			this.lblIE.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblIE.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblIE.Location = new System.Drawing.Point(365, 14);
+			this.lblIE.Location = new System.Drawing.Point(359, 14);
 			this.lblIE.Name = "lblIE";
 			this.lblIE.Size = new System.Drawing.Size(100, 35);
 			this.lblIE.TabIndex = 16;
@@ -303,7 +304,7 @@ namespace DcompanySys
 			// 
 			this.mtxtCpf.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.mtxtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtCpf.Location = new System.Drawing.Point(168, 12);
+			this.mtxtCpf.Location = new System.Drawing.Point(162, 12);
 			this.mtxtCpf.Mask = "000,000,000-00";
 			this.mtxtCpf.Name = "mtxtCpf";
 			this.mtxtCpf.Size = new System.Drawing.Size(141, 29);
@@ -313,7 +314,7 @@ namespace DcompanySys
 			// 
 			this.lblCpfOuCNPJ.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCpfOuCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCpfOuCNPJ.Location = new System.Drawing.Point(52, 16);
+			this.lblCpfOuCNPJ.Location = new System.Drawing.Point(46, 16);
 			this.lblCpfOuCNPJ.Name = "lblCpfOuCNPJ";
 			this.lblCpfOuCNPJ.Size = new System.Drawing.Size(100, 35);
 			this.lblCpfOuCNPJ.TabIndex = 15;
@@ -331,7 +332,7 @@ namespace DcompanySys
 			this.grbDadosPessoais.Controls.Add(this.lblCidade);
 			this.grbDadosPessoais.Controls.Add(this.txtBairro);
 			this.grbDadosPessoais.Controls.Add(this.lblBairro);
-			this.grbDadosPessoais.Controls.Add(this.mtxtCpe);
+			this.grbDadosPessoais.Controls.Add(this.mtxtCep);
 			this.grbDadosPessoais.Controls.Add(this.lblCpe);
 			this.grbDadosPessoais.Controls.Add(this.txtNumero);
 			this.grbDadosPessoais.Controls.Add(this.lblNumero);
@@ -343,7 +344,7 @@ namespace DcompanySys
 			this.grbDadosPessoais.Controls.Add(this.lblCodigo);
 			this.grbDadosPessoais.Location = new System.Drawing.Point(33, 240);
 			this.grbDadosPessoais.Name = "grbDadosPessoais";
-			this.grbDadosPessoais.Size = new System.Drawing.Size(966, 152);
+			this.grbDadosPessoais.Size = new System.Drawing.Size(954, 152);
 			this.grbDadosPessoais.TabIndex = 4;
 			this.grbDadosPessoais.TabStop = false;
 			// 
@@ -381,7 +382,7 @@ namespace DcompanySys
 									"SP",
 									"SE",
 									"TO"});
-			this.cbUF.Location = new System.Drawing.Point(844, 74);
+			this.cbUF.Location = new System.Drawing.Point(838, 74);
 			this.cbUF.Name = "cbUF";
 			this.cbUF.Size = new System.Drawing.Size(55, 32);
 			this.cbUF.TabIndex = 17;
@@ -390,7 +391,7 @@ namespace DcompanySys
 			// 
 			this.lblUf.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUf.Location = new System.Drawing.Point(792, 76);
+			this.lblUf.Location = new System.Drawing.Point(786, 76);
 			this.lblUf.Name = "lblUf";
 			this.lblUf.Size = new System.Drawing.Size(55, 32);
 			this.lblUf.TabIndex = 15;
@@ -400,7 +401,8 @@ namespace DcompanySys
 			// 
 			this.txtComplemento.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtComplemento.Location = new System.Drawing.Point(600, 108);
+			this.txtComplemento.Location = new System.Drawing.Point(594, 108);
+			this.txtComplemento.MaxLength = 50;
 			this.txtComplemento.Name = "txtComplemento";
 			this.txtComplemento.Size = new System.Drawing.Size(299, 29);
 			this.txtComplemento.TabIndex = 14;
@@ -409,7 +411,7 @@ namespace DcompanySys
 			// 
 			this.lblComplemento.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblComplemento.Location = new System.Drawing.Point(442, 110);
+			this.lblComplemento.Location = new System.Drawing.Point(436, 110);
 			this.lblComplemento.Name = "lblComplemento";
 			this.lblComplemento.Size = new System.Drawing.Size(175, 32);
 			this.lblComplemento.TabIndex = 13;
@@ -419,7 +421,8 @@ namespace DcompanySys
 			// 
 			this.txtCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCidade.Location = new System.Drawing.Point(168, 108);
+			this.txtCidade.Location = new System.Drawing.Point(162, 108);
+			this.txtCidade.MaxLength = 50;
 			this.txtCidade.Name = "txtCidade";
 			this.txtCidade.Size = new System.Drawing.Size(268, 29);
 			this.txtCidade.TabIndex = 12;
@@ -428,7 +431,7 @@ namespace DcompanySys
 			// 
 			this.lblCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCidade.Location = new System.Drawing.Point(52, 110);
+			this.lblCidade.Location = new System.Drawing.Point(46, 110);
 			this.lblCidade.Name = "lblCidade";
 			this.lblCidade.Size = new System.Drawing.Size(145, 32);
 			this.lblCidade.TabIndex = 9;
@@ -438,7 +441,8 @@ namespace DcompanySys
 			// 
 			this.txtBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtBairro.Location = new System.Drawing.Point(365, 76);
+			this.txtBairro.Location = new System.Drawing.Point(359, 76);
+			this.txtBairro.MaxLength = 50;
 			this.txtBairro.Name = "txtBairro";
 			this.txtBairro.Size = new System.Drawing.Size(433, 29);
 			this.txtBairro.TabIndex = 11;
@@ -447,27 +451,27 @@ namespace DcompanySys
 			// 
 			this.lblBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblBairro.Location = new System.Drawing.Point(279, 78);
+			this.lblBairro.Location = new System.Drawing.Point(273, 78);
 			this.lblBairro.Name = "lblBairro";
 			this.lblBairro.Size = new System.Drawing.Size(100, 23);
 			this.lblBairro.TabIndex = 10;
 			this.lblBairro.Text = "Bairro :";
 			// 
-			// mtxtCpe
+			// mtxtCep
 			// 
-			this.mtxtCpe.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.mtxtCpe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtCpe.Location = new System.Drawing.Point(168, 76);
-			this.mtxtCpe.Mask = "0000-000";
-			this.mtxtCpe.Name = "mtxtCpe";
-			this.mtxtCpe.Size = new System.Drawing.Size(105, 29);
-			this.mtxtCpe.TabIndex = 9;
+			this.mtxtCep.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.mtxtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.mtxtCep.Location = new System.Drawing.Point(162, 76);
+			this.mtxtCep.Mask = "0000-000";
+			this.mtxtCep.Name = "mtxtCep";
+			this.mtxtCep.Size = new System.Drawing.Size(105, 29);
+			this.mtxtCep.TabIndex = 9;
 			// 
 			// lblCpe
 			// 
 			this.lblCpe.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCpe.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCpe.Location = new System.Drawing.Point(52, 78);
+			this.lblCpe.Location = new System.Drawing.Point(46, 78);
 			this.lblCpe.Name = "lblCpe";
 			this.lblCpe.Size = new System.Drawing.Size(85, 32);
 			this.lblCpe.TabIndex = 8;
@@ -477,7 +481,8 @@ namespace DcompanySys
 			// 
 			this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNumero.Location = new System.Drawing.Point(792, 43);
+			this.txtNumero.Location = new System.Drawing.Point(786, 43);
+			this.txtNumero.MaxLength = 5;
 			this.txtNumero.Name = "txtNumero";
 			this.txtNumero.Size = new System.Drawing.Size(107, 29);
 			this.txtNumero.TabIndex = 7;
@@ -486,7 +491,7 @@ namespace DcompanySys
 			// 
 			this.lblNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNumero.Location = new System.Drawing.Point(743, 43);
+			this.lblNumero.Location = new System.Drawing.Point(737, 43);
 			this.lblNumero.Name = "lblNumero";
 			this.lblNumero.Size = new System.Drawing.Size(55, 32);
 			this.lblNumero.TabIndex = 6;
@@ -496,7 +501,8 @@ namespace DcompanySys
 			// 
 			this.txtEndereco.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtEndereco.Location = new System.Drawing.Point(168, 43);
+			this.txtEndereco.Location = new System.Drawing.Point(162, 43);
+			this.txtEndereco.MaxLength = 100;
 			this.txtEndereco.Name = "txtEndereco";
 			this.txtEndereco.Size = new System.Drawing.Size(569, 29);
 			this.txtEndereco.TabIndex = 5;
@@ -505,7 +511,7 @@ namespace DcompanySys
 			// 
 			this.lblEndereco.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblEndereco.Location = new System.Drawing.Point(52, 43);
+			this.lblEndereco.Location = new System.Drawing.Point(46, 43);
 			this.lblEndereco.Name = "lblEndereco";
 			this.lblEndereco.Size = new System.Drawing.Size(145, 32);
 			this.lblEndereco.TabIndex = 4;
@@ -515,7 +521,8 @@ namespace DcompanySys
 			// 
 			this.txtNomeOuRazao.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtNomeOuRazao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNomeOuRazao.Location = new System.Drawing.Point(365, 11);
+			this.txtNomeOuRazao.Location = new System.Drawing.Point(359, 11);
+			this.txtNomeOuRazao.MaxLength = 50;
 			this.txtNomeOuRazao.Name = "txtNomeOuRazao";
 			this.txtNomeOuRazao.Size = new System.Drawing.Size(534, 29);
 			this.txtNomeOuRazao.TabIndex = 3;
@@ -524,7 +531,7 @@ namespace DcompanySys
 			// 
 			this.lblNomeOuRazao.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNomeOuRazao.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomeOuRazao.Location = new System.Drawing.Point(279, 13);
+			this.lblNomeOuRazao.Location = new System.Drawing.Point(273, 13);
 			this.lblNomeOuRazao.Name = "lblNomeOuRazao";
 			this.lblNomeOuRazao.Size = new System.Drawing.Size(100, 23);
 			this.lblNomeOuRazao.TabIndex = 2;
@@ -535,7 +542,7 @@ namespace DcompanySys
 			this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtCodigo.Enabled = false;
 			this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCodigo.Location = new System.Drawing.Point(168, 11);
+			this.txtCodigo.Location = new System.Drawing.Point(162, 11);
 			this.txtCodigo.Name = "txtCodigo";
 			this.txtCodigo.Size = new System.Drawing.Size(105, 29);
 			this.txtCodigo.TabIndex = 1;
@@ -544,7 +551,7 @@ namespace DcompanySys
 			// 
 			this.lblCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCodigo.Location = new System.Drawing.Point(52, 13);
+			this.lblCodigo.Location = new System.Drawing.Point(46, 13);
 			this.lblCodigo.Name = "lblCodigo";
 			this.lblCodigo.Size = new System.Drawing.Size(100, 35);
 			this.lblCodigo.TabIndex = 0;
@@ -559,7 +566,7 @@ namespace DcompanySys
 			this.grbTipoPessoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.grbTipoPessoa.Location = new System.Drawing.Point(33, 154);
 			this.grbTipoPessoa.Name = "grbTipoPessoa";
-			this.grbTipoPessoa.Size = new System.Drawing.Size(966, 80);
+			this.grbTipoPessoa.Size = new System.Drawing.Size(954, 80);
 			this.grbTipoPessoa.TabIndex = 3;
 			this.grbTipoPessoa.TabStop = false;
 			this.grbTipoPessoa.Text = "Tipo de Pessoa";
@@ -568,7 +575,7 @@ namespace DcompanySys
 			// 
 			this.rbPessoaJuridica.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.rbPessoaJuridica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rbPessoaJuridica.Location = new System.Drawing.Point(331, 34);
+			this.rbPessoaJuridica.Location = new System.Drawing.Point(325, 34);
 			this.rbPessoaJuridica.Name = "rbPessoaJuridica";
 			this.rbPessoaJuridica.Size = new System.Drawing.Size(217, 33);
 			this.rbPessoaJuridica.TabIndex = 1;
@@ -581,7 +588,7 @@ namespace DcompanySys
 			// 
 			this.rbPessoaFisica.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.rbPessoaFisica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rbPessoaFisica.Location = new System.Drawing.Point(75, 34);
+			this.rbPessoaFisica.Location = new System.Drawing.Point(69, 34);
 			this.rbPessoaFisica.Name = "rbPessoaFisica";
 			this.rbPessoaFisica.Size = new System.Drawing.Size(229, 33);
 			this.rbPessoaFisica.TabIndex = 0;
@@ -622,7 +629,7 @@ namespace DcompanySys
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnSair;
-			this.ClientSize = new System.Drawing.Size(1071, 602);
+			this.ClientSize = new System.Drawing.Size(1059, 646);
 			this.Controls.Add(this.grbPrincipal);
 			this.Name = "frmCadastrarPessoa";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -664,7 +671,7 @@ namespace DcompanySys
 		private System.Windows.Forms.Label lblCidade;
 		private System.Windows.Forms.TextBox txtBairro;
 		private System.Windows.Forms.Label lblBairro;
-		private System.Windows.Forms.MaskedTextBox mtxtCpe;
+		private System.Windows.Forms.MaskedTextBox mtxtCep;
 		private System.Windows.Forms.Label lblCpe;
 		private System.Windows.Forms.GroupBox grbDocumentoTelefone;
 		private System.Windows.Forms.MaskedTextBox mtxtCpf;

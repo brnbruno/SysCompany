@@ -50,15 +50,13 @@ namespace DcompanySys
 								" [bairro] VARCHAR(50)  NOT NULL,"+
           						" [Cidade] VARCHAR(50)  NOT NULL,"+
           						" [Complemento] VARCHAR(50)  NULL,"+
-								" [CPE] VARCHAR(9)  NOT NULL,"+
+								" [CEP] VARCHAR(9)  NOT NULL,"+
 								" [numero] VARCHAR(5)  NOT NULL,"+
 								" [uf] VARCHAR(2) NOT NULL, "+
 								" [CPF] VARCHAR(14)  NOT NULL,"+
-								" [Telefone] VARCHAR(10)  NULL,"+
-								" [Telefone2] VARCHAR(10)  NULL,"+
-								" [Celular] VARCHAR(11)  NULL,"+
-								" [Email] VARCHAR(50)  NULL,"+
-								" [Site] VARCHAR(50)  NULL,"+
+								" [Telefone] VARCHAR(11)  NULL,"+
+								" [Telefone2] VARCHAR(11)  NULL,"+
+								" [Celular] VARCHAR(12)  NULL,"+
 								" [Cnpj] VARCHAR(18)  NULL,"+
 								" [IncricaoEstadual] VARCHAR(15)  NULL,"+
   								" [Tipo_pessoa] VARCHAR(2)  NOT NULL,"+

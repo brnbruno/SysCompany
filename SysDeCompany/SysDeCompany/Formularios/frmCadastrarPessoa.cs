@@ -73,7 +73,7 @@ namespace DcompanySys
 			objValida.txtBairro(ref txtBairro);
 			objValida.txtCidade(ref txtCidade);
 			objValida.txtNr(ref txtNumero);
-			objValida.maskedCepfvalidacao(ref mtxtCpe);
+			objValida.maskedCepfvalidacao(ref mtxtCep);
 			objValida.maskedTelValidacao(ref mtxtTelefone,mtxtTelefone2,mtxtCelular);			
 			if(cbUF.Text.Length < 2)
 			{
@@ -105,10 +105,10 @@ namespace DcompanySys
                 {
 					objPessoa.Nome = txtNomeOuRazao.Text.ToUpper();
 					objPessoa.Cpf  = cpf.Replace(".","").Replace("-","");
-					objPessoa.Telefone = mtxtTelefone.Text.Replace("(", "").Replace("-", "").Replace(")", ""); 
-                    objPessoa.Telefone2 = mtxtTelefone2.Text.Replace("(", "").Replace("-", "").Replace(")", ""); 
-                    objPessoa.Celular = mtxtCelular.Text.Replace("(", "").Replace("-", "").Replace(")", ""); 
-                    objPessoa.Cpe = mtxtCpe.Text.Replace(".","").Replace("-","");
+					objPessoa.Telefone = mtxtTelefone.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ",""); 
+					objPessoa.Telefone2 = mtxtTelefone2.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ","");
+                    objPessoa.Celular = mtxtCelular.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ",""); 
+                    objPessoa.Cep = mtxtCep.Text.Replace(".","").Replace("-","");
                     objPessoa.Endereco = txtEndereco.Text.ToUpper();
                     objPessoa.Cidade = txtCidade.Text.ToUpper();
                     objPessoa.Bairro = txtBairro.Text.ToUpper();
@@ -164,17 +164,17 @@ namespace DcompanySys
 			}
 			rbPessoaFisica.Checked = true;
 			
-			if (_control==1) {
+			if (_control==2) {
 				btnAlterar.Visible = false;
 				btnExcluir.Visible = false;
 			}
-			
+			txtCodigo.Text = Convert.ToString(1);
 			if (txtCodigo.Text != "")
 			{
 				clBancoDados clBancoDados = new clBancoDados();
 				SQLiteConnection conn = clBancoDados.conectar();
-				//string stm = "SELECT * FROM TB_PESSOA WHERE CODIGO ='"+txtCodigo.Text+"'";
-				string stm = "SELECT * FROM TB_PESSOA WHERE CODIGO ='1'";
+				string stm = "SELECT * FROM TB_PESSOA WHERE CODIGO ='"+txtCodigo.Text+"'";
+				//string stm = "SELECT * FROM TB_PESSOA WHERE CODIGO ='1'";
         		SQLiteCommand cmd = new SQLiteCommand(stm, conn);
         		SQLiteDataReader rdr = cmd.ExecuteReader();
         		while(rdr.Read())
@@ -183,7 +183,7 @@ namespace DcompanySys
         			mtxtTelefone.Text = rdr["Telefone"].ToString();
                     mtxtTelefone2.Text = rdr["Telefone2"].ToString();
                     mtxtCelular.Text = rdr["Celular"].ToString();
-                    mtxtCpe.Text = rdr["CPE"].ToString();
+                    mtxtCep.Text = rdr["CPE"].ToString();
                     txtEndereco.Text = rdr["Endereco"].ToString();
                     txtCidade.Text = rdr["Cidade"].ToString();
                     txtBairro.Text = rdr["bairro"].ToString();

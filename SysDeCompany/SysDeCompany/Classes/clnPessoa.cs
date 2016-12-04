@@ -23,7 +23,7 @@ namespace SysDeCompany.Classes
 		private string _bairro;
 		private string _cidade;
 		private string _complemeto;
-		private string _cpe;
+		private string _cep;
 		private string _cpf;
 		private string _telefone;
 		private string _telefone2;
@@ -42,7 +42,7 @@ namespace SysDeCompany.Classes
 		public string Bairro{get{return _bairro;}set{_bairro = value;}}
 		public string Cidade{get{return _cidade;}set{_cidade= value;}}
 		public string Complemeto{get{return _complemeto;}set{_complemeto = value;}}
-		public string Cpe{get{return _cpe;}set{_cpe = value;}}	
+		public string Cep{get{return _cep;}set{_cep = value;}}	
 		public string Cpf{get{return _cpf;}set{_cpf = value;}}
 		public string Telefone{get{return _telefone;}set{_telefone = value;}}
 		public string Telefone2{get{return _telefone2;}set{_telefone2 = value;}}
@@ -68,7 +68,7 @@ namespace SysDeCompany.Classes
 			strQuery += ("'"+ _bairro +"',");
 			strQuery += ("'"+ _cidade +"',");
 			strQuery += ("'"+ _complemeto +"',");
-			strQuery += ("'"+ _cpe +"',");
+			strQuery += ("'"+ _cep +"',");
 			strQuery += ("'"+ _nr +"',");
 			strQuery += ("'"+ _uf +"',");
 			strQuery += ("'"+ _cpf +"',");
@@ -97,20 +97,18 @@ namespace SysDeCompany.Classes
 			strQuery += (", bairro ='" + _bairro +"'");
 			strQuery += (", Cidade ='"+  _cidade +"'");
 			strQuery += (",	Complemento ='" + _complemeto +"'");
-			strQuery += (", CPE ='"+ _cpe +"'");
+			strQuery += (", CPE ='"+ _cep +"'");
 			strQuery += (", numero ='"+ _nr+"'");
 			strQuery += (", uf ='" + _uf + "'");
-			strQuery += (", CPF ='"+ _cpe +"'");
+			strQuery += (", CPF ='"+ _cpf +"'");
 			strQuery += (", Telefone ='" + _telefone +"'");
 			strQuery += (", Telefone2 ='" + _telefone2 +"'");
 			strQuery += (", Celular ='" + _celular +"'");
-			strQuery += (", Email ='" + _email +"'");
-			strQuery += (", Site ='" + _site +"'");
 			strQuery += (", Cnpj ='" + _cnpj +"'");
 			strQuery += (", IncricaoEstadual ='" +_ie+"'");
 			strQuery += (", Tipo_pessoa ='"+_tipopessoa+"'");
 			strQuery += (", Ativo = '1'");
-			strQuery += (" WHERE  )");
+			strQuery += (" WHERE ");
 			strQuery += ("Codigo = '" + _cod + "' ");
 			
 			clBancoDados clBancoDados = new clBancoDados();
@@ -123,7 +121,7 @@ namespace SysDeCompany.Classes
 		public void ExcluirLogicamente()
         {
             string strQuery;
-            strQuery = (" UPDATE TB_CLIENTE ");
+            strQuery = (" UPDATE TB_PESSOA ");
             strQuery += (" SET ");
             strQuery += (" Ativo = '" + 0 + "' ");
             strQuery += (" WHERE ");

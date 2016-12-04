@@ -173,6 +173,9 @@ namespace SysDeCompany
 		{
 			frmConfigura frmConfigura = new frmConfigura();
 			frmConfigura.Owner = this;
+			frmConfigura.lbfontform.ForeColor = this.ForeColor;
+			frmConfigura.pbCordoFormulario.BackColor = this.BackColor;
+			frmConfigura.lbfontform.BackColor = this.BackColor;
 			frmConfigura.ShowDialog(this);
 		}
 		public void Atualizar()

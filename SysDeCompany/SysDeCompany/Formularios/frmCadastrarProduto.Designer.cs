@@ -201,6 +201,7 @@ namespace DcompanySys
 			this.txtFornecedor.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtFornecedor.Location = new System.Drawing.Point(460, 106);
+			this.txtFornecedor.MaxLength = 20;
 			this.txtFornecedor.Name = "txtFornecedor";
 			this.txtFornecedor.Size = new System.Drawing.Size(246, 26);
 			this.txtFornecedor.TabIndex = 43;
@@ -242,6 +243,7 @@ namespace DcompanySys
 			this.txtValorCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtValorCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtValorCompra.Location = new System.Drawing.Point(237, 170);
+			this.txtValorCompra.MaxLength = 10;
 			this.txtValorCompra.Name = "txtValorCompra";
 			this.txtValorCompra.Size = new System.Drawing.Size(170, 26);
 			this.txtValorCompra.TabIndex = 38;
@@ -253,6 +255,7 @@ namespace DcompanySys
 			this.txtMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtMarca.Location = new System.Drawing.Point(237, 138);
+			this.txtMarca.MaxLength = 20;
 			this.txtMarca.Name = "txtMarca";
 			this.txtMarca.Size = new System.Drawing.Size(211, 26);
 			this.txtMarca.TabIndex = 36;
@@ -262,6 +265,7 @@ namespace DcompanySys
 			this.txtValorVenda.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtValorVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtValorVenda.Location = new System.Drawing.Point(237, 202);
+			this.txtValorVenda.MaxLength = 10;
 			this.txtValorVenda.Name = "txtValorVenda";
 			this.txtValorVenda.Size = new System.Drawing.Size(170, 26);
 			this.txtValorVenda.TabIndex = 35;
@@ -273,6 +277,7 @@ namespace DcompanySys
 			this.txtQuantidade.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtQuantidade.Location = new System.Drawing.Point(237, 106);
+			this.txtQuantidade.MaxLength = 5;
 			this.txtQuantidade.Name = "txtQuantidade";
 			this.txtQuantidade.Size = new System.Drawing.Size(74, 26);
 			this.txtQuantidade.TabIndex = 34;
@@ -332,6 +337,7 @@ namespace DcompanySys
 			this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNome.Location = new System.Drawing.Point(237, 74);
+			this.txtNome.MaxLength = 50;
 			this.txtNome.Name = "txtNome";
 			this.txtNome.Size = new System.Drawing.Size(469, 26);
 			this.txtNome.TabIndex = 26;

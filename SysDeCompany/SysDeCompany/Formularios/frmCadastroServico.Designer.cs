@@ -40,14 +40,14 @@ namespace DcompanySys
 			this.grbPrincipal = new System.Windows.Forms.GroupBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.button2 = new System.Windows.Forms.Button();
+			this.btnExcluirPro = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnAdd = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.textBox14 = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
@@ -83,6 +83,8 @@ namespace DcompanySys
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
 			this.grbPrincipal.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -124,9 +126,9 @@ namespace DcompanySys
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox1.Controls.Add(this.button2);
+			this.groupBox1.Controls.Add(this.btnExcluirPro);
 			this.groupBox1.Controls.Add(this.dataGridView1);
-			this.groupBox1.Controls.Add(this.button1);
+			this.groupBox1.Controls.Add(this.btnAdd);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.textBox14);
 			this.groupBox1.Controls.Add(this.label14);
@@ -136,18 +138,18 @@ namespace DcompanySys
 			this.groupBox1.TabIndex = 47;
 			this.groupBox1.TabStop = false;
 			// 
-			// button2
+			// btnExcluirPro
 			// 
-			this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.Location = new System.Drawing.Point(303, 87);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(82, 96);
-			this.button2.TabIndex = 52;
-			this.button2.Text = "Excluir";
-			this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button2.UseVisualStyleBackColor = true;
+			this.btnExcluirPro.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnExcluirPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExcluirPro.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirPro.Image")));
+			this.btnExcluirPro.Location = new System.Drawing.Point(303, 87);
+			this.btnExcluirPro.Name = "btnExcluirPro";
+			this.btnExcluirPro.Size = new System.Drawing.Size(82, 96);
+			this.btnExcluirPro.TabIndex = 52;
+			this.btnExcluirPro.Text = "Excluir";
+			this.btnExcluirPro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnExcluirPro.UseVisualStyleBackColor = true;
 			// 
 			// dataGridView1
 			// 
@@ -189,18 +191,18 @@ namespace DcompanySys
 			this.Column3.HeaderText = "Valor";
 			this.Column3.Name = "Column3";
 			// 
-			// button1
+			// btnAdd
 			// 
-			this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(215, 87);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(82, 96);
-			this.button1.TabIndex = 50;
-			this.button1.Text = "ADD ";
-			this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.Location = new System.Drawing.Point(215, 87);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(82, 96);
+			this.btnAdd.TabIndex = 50;
+			this.btnAdd.Text = "ADD ";
+			this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnAdd.UseVisualStyleBackColor = true;
 			// 
 			// label4
 			// 
@@ -235,6 +237,8 @@ namespace DcompanySys
 			// 
 			this.grbInfoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.grbInfoProduto.Controls.Add(this.maskedTextBox1);
+			this.grbInfoProduto.Controls.Add(this.label6);
 			this.grbInfoProduto.Controls.Add(this.btnConsultar);
 			this.grbInfoProduto.Controls.Add(this.mtxtCelular);
 			this.grbInfoProduto.Controls.Add(this.mtxtTelefone);
@@ -280,7 +284,7 @@ namespace DcompanySys
 			// 
 			this.mtxtCelular.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.mtxtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtCelular.Location = new System.Drawing.Point(493, 132);
+			this.mtxtCelular.Location = new System.Drawing.Point(804, 132);
 			this.mtxtCelular.Mask = "(99) 0 0000-0000";
 			this.mtxtCelular.Name = "mtxtCelular";
 			this.mtxtCelular.Size = new System.Drawing.Size(141, 29);
@@ -396,7 +400,7 @@ namespace DcompanySys
 			// 
 			this.lblCelular.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCelular.Location = new System.Drawing.Point(388, 134);
+			this.lblCelular.Location = new System.Drawing.Point(703, 134);
 			this.lblCelular.Name = "lblCelular";
 			this.lblCelular.Size = new System.Drawing.Size(127, 35);
 			this.lblCelular.TabIndex = 58;
@@ -586,6 +590,26 @@ namespace DcompanySys
 			this.pbLogoEmpresa.TabIndex = 3;
 			this.pbLogoEmpresa.TabStop = false;
 			// 
+			// label6
+			// 
+			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(410, 134);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(153, 35);
+			this.label6.TabIndex = 70;
+			this.label6.Text = "Telefone2 :*";
+			// 
+			// maskedTextBox1
+			// 
+			this.maskedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.maskedTextBox1.Location = new System.Drawing.Point(544, 132);
+			this.maskedTextBox1.Mask = "(99) 0000-0000";
+			this.maskedTextBox1.Name = "maskedTextBox1";
+			this.maskedTextBox1.Size = new System.Drawing.Size(141, 29);
+			this.maskedTextBox1.TabIndex = 71;
+			// 
 			// frmCadastroServico
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,8 +632,10 @@ namespace DcompanySys
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.MaskedTextBox maskedTextBox1;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnExcluirPro;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -619,7 +645,7 @@ namespace DcompanySys
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.TextBox textBox14;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.MaskedTextBox mtxtTelefone;
 		private System.Windows.Forms.MaskedTextBox mtxtCelular;
