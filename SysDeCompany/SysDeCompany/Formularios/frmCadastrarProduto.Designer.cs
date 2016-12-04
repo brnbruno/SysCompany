@@ -50,9 +50,9 @@ namespace DcompanySys
 			this.btnLimparImagem = new System.Windows.Forms.Button();
 			this.btnBuscaImagem = new System.Windows.Forms.Button();
 			this.pbImagem = new System.Windows.Forms.PictureBox();
-			this.textBox6 = new System.Windows.Forms.TextBox();
+			this.txtValorCompra = new System.Windows.Forms.TextBox();
 			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.txtValorVenda = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -177,9 +177,9 @@ namespace DcompanySys
 			this.grbInfoProduto.Controls.Add(this.btnLimparImagem);
 			this.grbInfoProduto.Controls.Add(this.btnBuscaImagem);
 			this.grbInfoProduto.Controls.Add(this.pbImagem);
-			this.grbInfoProduto.Controls.Add(this.textBox6);
+			this.grbInfoProduto.Controls.Add(this.txtValorCompra);
 			this.grbInfoProduto.Controls.Add(this.textBox4);
-			this.grbInfoProduto.Controls.Add(this.textBox3);
+			this.grbInfoProduto.Controls.Add(this.txtValorVenda);
 			this.grbInfoProduto.Controls.Add(this.textBox2);
 			this.grbInfoProduto.Controls.Add(this.label5);
 			this.grbInfoProduto.Controls.Add(this.label4);
@@ -237,16 +237,16 @@ namespace DcompanySys
 			this.pbImagem.TabIndex = 40;
 			this.pbImagem.TabStop = false;
 			// 
-			// textBox6
+			// txtValorCompra
 			// 
-			this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox6.Location = new System.Drawing.Point(237, 170);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(170, 26);
-			this.textBox6.TabIndex = 38;
-			this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox6KeyPress);
+			this.txtValorCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtValorCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtValorCompra.Location = new System.Drawing.Point(237, 170);
+			this.txtValorCompra.Name = "txtValorCompra";
+			this.txtValorCompra.Size = new System.Drawing.Size(170, 26);
+			this.txtValorCompra.TabIndex = 38;
+			this.txtValorCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.txtValorCompra.TextChanged += new System.EventHandler(this.TxtValorCompraTextChanged);
 			// 
 			// textBox4
 			// 
@@ -257,14 +257,16 @@ namespace DcompanySys
 			this.textBox4.Size = new System.Drawing.Size(211, 26);
 			this.textBox4.TabIndex = 36;
 			// 
-			// textBox3
+			// txtValorVenda
 			// 
-			this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox3.Location = new System.Drawing.Point(237, 202);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(170, 26);
-			this.textBox3.TabIndex = 35;
+			this.txtValorVenda.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtValorVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtValorVenda.Location = new System.Drawing.Point(237, 202);
+			this.txtValorVenda.Name = "txtValorVenda";
+			this.txtValorVenda.Size = new System.Drawing.Size(170, 26);
+			this.txtValorVenda.TabIndex = 35;
+			this.txtValorVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.txtValorVenda.TextChanged += new System.EventHandler(this.TxtValorVendaTextChanged);
 			// 
 			// textBox2
 			// 
@@ -424,9 +426,9 @@ namespace DcompanySys
 		private System.Windows.Forms.GroupBox grbInfoProduto;
 		private System.Windows.Forms.Button btnBuscaImagem;
 		private System.Windows.Forms.PictureBox pbImagem;
-		private System.Windows.Forms.TextBox textBox6;
+		private System.Windows.Forms.TextBox txtValorCompra;
 		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox txtValorVenda;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;

@@ -25,9 +25,9 @@ namespace SysDeCompany.Classes
             {
                 n = txt.Text.Replace(",", "").Replace(".", "");
                 if (n.Equals(""))
-                    n = "000";
-                n = n.PadLeft(2, '0');
-                if (n.Length > 2 & n.Substring(0, 1) == "0")
+                    n = "";
+                n = n.PadLeft(3, '0');
+                if (n.Length > 3 & n.Substring(0, 1) == "0")
                     n = n.Substring(1, n.Length - 1);
                 v = Convert.ToDouble(n) / 100;
                 txt.Text = string.Format("{0:N}", v);
@@ -35,7 +35,7 @@ namespace SysDeCompany.Classes
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message, "TextBoxMoeda");
+                System.Windows.Forms.MessageBox.Show(ex.Message, "Somente numero");
             }
         }
         public void soNumero(ref System.Windows.Forms.TextBox txt, System.Windows.Forms.KeyPressEventArgs e)

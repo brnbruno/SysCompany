@@ -81,19 +81,20 @@ namespace DcompanySys
 			
 		}
 		
-	
-		
 		void BtnLimparImagemClick(object sender, EventArgs e)
 		{
 			pbImagem.Image = null;
-		}
-		
-		
-		
-		void TextBox6KeyPress(object sender, KeyPressEventArgs e)
+		}			
+		void TxtValorVendaTextChanged(object sender, EventArgs e)
 		{
 			clnValida objValida = new clnValida();
-			objValida.moeda(ref textBox6);
+			objValida.moeda(ref txtValorVenda);
+		}
+		
+		void TxtValorCompraTextChanged(object sender, EventArgs e)
+		{
+			clnValida objValida = new clnValida();
+			objValida.moeda(ref txtValorCompra);
 		}
 	}
 }
