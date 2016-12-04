@@ -46,11 +46,12 @@ namespace DcompanySys
 			this.pbCordoFormulario = new System.Windows.Forms.PictureBox();
 			this.btnCorDoFormulario = new System.Windows.Forms.Button();
 			this.grbBotaoQuantidadeCor = new System.Windows.Forms.GroupBox();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.lblCorFonte = new System.Windows.Forms.Label();
 			this.lblCorFontBo = new System.Windows.Forms.Label();
 			this.lblCorFundBoAT = new System.Windows.Forms.Label();
-			this.btnQuatLetraAT = new System.Windows.Forms.Button();
-			this.btnCorQuantAT = new System.Windows.Forms.Button();
+			this.btnCorFonteBotao = new System.Windows.Forms.Button();
+			this.btnCorBotao = new System.Windows.Forms.Button();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
 			this.btnFechar = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
@@ -61,13 +62,12 @@ namespace DcompanySys
 			this.label1 = new System.Windows.Forms.Label();
 			this.colorDialog1 = new System.Windows.Forms.ColorDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.grbPrincipal.SuspendLayout();
 			this.grbCorFormulario.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbCordoFormulario)).BeginInit();
 			this.grbBotaoQuantidadeCor.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// grbPrincipal
@@ -177,8 +177,8 @@ namespace DcompanySys
 			this.grbBotaoQuantidadeCor.Controls.Add(this.lblCorFonte);
 			this.grbBotaoQuantidadeCor.Controls.Add(this.lblCorFontBo);
 			this.grbBotaoQuantidadeCor.Controls.Add(this.lblCorFundBoAT);
-			this.grbBotaoQuantidadeCor.Controls.Add(this.btnQuatLetraAT);
-			this.grbBotaoQuantidadeCor.Controls.Add(this.btnCorQuantAT);
+			this.grbBotaoQuantidadeCor.Controls.Add(this.btnCorFonteBotao);
+			this.grbBotaoQuantidadeCor.Controls.Add(this.btnCorBotao);
 			this.grbBotaoQuantidadeCor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.grbBotaoQuantidadeCor.Location = new System.Drawing.Point(23, 204);
 			this.grbBotaoQuantidadeCor.Name = "grbBotaoQuantidadeCor";
@@ -186,6 +186,16 @@ namespace DcompanySys
 			this.grbBotaoQuantidadeCor.TabIndex = 11;
 			this.grbBotaoQuantidadeCor.TabStop = false;
 			this.grbBotaoQuantidadeCor.Text = "Mudar as Cores Botões ";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox1.Location = new System.Drawing.Point(6, 108);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(21, 21);
+			this.pictureBox1.TabIndex = 9;
+			this.pictureBox1.TabStop = false;
 			// 
 			// lblCorFonte
 			// 
@@ -219,25 +229,25 @@ namespace DcompanySys
 			this.lblCorFundBoAT.TabIndex = 3;
 			this.lblCorFundBoAT.Text = "Cor do Fundo dos Botôes";
 			// 
-			// btnQuatLetraAT
+			// btnCorFonteBotao
 			// 
-			this.btnQuatLetraAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnQuatLetraAT.Location = new System.Drawing.Point(97, 19);
-			this.btnQuatLetraAT.Name = "btnQuatLetraAT";
-			this.btnQuatLetraAT.Size = new System.Drawing.Size(85, 83);
-			this.btnQuatLetraAT.TabIndex = 2;
-			this.btnQuatLetraAT.Text = "Botões Fonte";
-			this.btnQuatLetraAT.UseVisualStyleBackColor = true;
+			this.btnCorFonteBotao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCorFonteBotao.Location = new System.Drawing.Point(97, 19);
+			this.btnCorFonteBotao.Name = "btnCorFonteBotao";
+			this.btnCorFonteBotao.Size = new System.Drawing.Size(85, 83);
+			this.btnCorFonteBotao.TabIndex = 2;
+			this.btnCorFonteBotao.Text = "Botões Fonte";
+			this.btnCorFonteBotao.UseVisualStyleBackColor = true;
 			// 
-			// btnCorQuantAT
+			// btnCorBotao
 			// 
-			this.btnCorQuantAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCorQuantAT.Location = new System.Drawing.Point(6, 19);
-			this.btnCorQuantAT.Name = "btnCorQuantAT";
-			this.btnCorQuantAT.Size = new System.Drawing.Size(85, 83);
-			this.btnCorQuantAT.TabIndex = 0;
-			this.btnCorQuantAT.Text = "Fundo Botões";
-			this.btnCorQuantAT.UseVisualStyleBackColor = true;
+			this.btnCorBotao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCorBotao.Location = new System.Drawing.Point(6, 19);
+			this.btnCorBotao.Name = "btnCorBotao";
+			this.btnCorBotao.Size = new System.Drawing.Size(85, 83);
+			this.btnCorBotao.TabIndex = 0;
+			this.btnCorBotao.Text = "Fundo Botões";
+			this.btnCorBotao.UseVisualStyleBackColor = true;
 			// 
 			// pbLogoEmpresa
 			// 
@@ -328,16 +338,6 @@ namespace DcompanySys
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox1.Location = new System.Drawing.Point(6, 108);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(21, 21);
-			this.pictureBox1.TabIndex = 9;
-			this.pictureBox1.TabStop = false;
-			// 
 			// frmConfigura
 			// 
 			this.AcceptButton = this.btnSalvar;
@@ -360,13 +360,13 @@ namespace DcompanySys
 			((System.ComponentModel.ISupportInitialize)(this.pbCordoFormulario)).EndInit();
 			this.grbBotaoQuantidadeCor.ResumeLayout(false);
 			this.grbBotaoQuantidadeCor.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Button btnCorQuantAT;
-		private System.Windows.Forms.Button btnQuatLetraAT;
+		private System.Windows.Forms.Button btnCorBotao;
+		private System.Windows.Forms.Button btnCorFonteBotao;
 		private System.Windows.Forms.Label lblCorFundBoAT;
 		private System.Windows.Forms.Label lblCorFontBo;
 		private System.Windows.Forms.Label lblCorFonte;

@@ -23,6 +23,7 @@ namespace SysDeCompany.Classes
 	{	
 		private string _nome;
 		private string _img;
+		private int _corfundo;
 		
 		public String Nome{
 			get{return _nome;}
@@ -32,6 +33,10 @@ namespace SysDeCompany.Classes
 			get{return _img;}
 			set{ _img = value;}
 		}
+		public int CorFundo{
+			get{return _corfundo;}
+			set{_corfundo = value;}
+		}
 		
 		public void UpdateBd(){
 			clBancoDados clBancoDados = new clBancoDados();
@@ -39,8 +44,9 @@ namespace SysDeCompany.Classes
 			SQLiteCommand command = new SQLiteCommand(conn);
          	command.CommandText = "UPDATE TB_CONFIG SET NOME_EMPRESA = '"+_nome+"'";
          	if (_img!=(System.Windows.Forms.Application.StartupPath + "\\Config\\")) {
-         	   command.CommandText += ",IMAGEM = '"+_img+"';";
+         	   command.CommandText += ",IMAGEM = '"+_img+"'";
          	}
+         	command.CommandText += ", Cor_Fundo ='"+ _corfundo+"';";
       	 	command.ExecuteNonQuery();
       	 	clBancoDados.desconectar(conn);
         }

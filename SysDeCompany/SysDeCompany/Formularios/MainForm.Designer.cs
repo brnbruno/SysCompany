@@ -130,7 +130,7 @@ namespace SysDeCompany
 			this.grbPrincipal.Controls.Add(this.flowLayoutPanel1);
 			this.grbPrincipal.Location = new System.Drawing.Point(12, 138);
 			this.grbPrincipal.Name = "grbPrincipal";
-			this.grbPrincipal.Size = new System.Drawing.Size(756, 459);
+			this.grbPrincipal.Size = new System.Drawing.Size(756, 767);
 			this.grbPrincipal.TabIndex = 9;
 			this.grbPrincipal.TabStop = false;
 			// 
@@ -321,7 +321,7 @@ namespace SysDeCompany
 			this.groupBox1.Controls.Add(this.dataGridView1);
 			this.groupBox1.Location = new System.Drawing.Point(771, 89);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(501, 508);
+			this.groupBox1.Size = new System.Drawing.Size(501, 816);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			// 
@@ -332,7 +332,7 @@ namespace SysDeCompany
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(3, 16);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(495, 489);
+			this.dataGridView1.Size = new System.Drawing.Size(495, 797);
 			this.dataGridView1.TabIndex = 0;
 			// 
 			// label1
@@ -381,7 +381,7 @@ namespace SysDeCompany
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1284, 602);
+			this.ClientSize = new System.Drawing.Size(1284, 910);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.lblNomeEmpresa);
 			this.Controls.Add(this.pbLogoEmpresa);
@@ -390,6 +390,7 @@ namespace SysDeCompany
 			this.Controls.Add(this.grbPrincipal);
 			this.Name = "MainForm";
 			this.Text = "SysDeCompany";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.pbImageConfig)).EndInit();
 			this.grbPrincipal.ResumeLayout(false);

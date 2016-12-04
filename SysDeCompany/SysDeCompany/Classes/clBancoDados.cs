@@ -39,7 +39,11 @@ namespace DcompanySys
           conn.Open();
           command.CommandText = "CREATE TABLE [TB_CONFIG] " +
           						"([NOME_EMPRESA] VARCHAR(20) NOT NULL," +
-          						" [IMAGEM] VARCHAR(100) NULL);" +
+          						" [IMAGEM] VARCHAR(100) NULL," +
+          						" [Cor_Fundo] INTEGER NULL," +
+          						" [Cor_Fonte] INTEGER NULL," +
+          						" [Cor_B_Fundo] INTEGER NULL," +
+          						" [Cor_B_Fonte] INTEGER NULL);" +
           	                    "CREATE TABLE [TB_Pessoa] " +
           						"([Codigo] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,"+
 								" [Nome] VARCHAR(50)  NOT NULL,"+

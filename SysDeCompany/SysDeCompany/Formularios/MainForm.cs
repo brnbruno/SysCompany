@@ -184,7 +184,7 @@ namespace SysDeCompany
 		{
 			frmConfigura frmConfigura = new frmConfigura();
 			frmConfigura.Owner = this;
-			frmConfigura.ShowDialog();
+			frmConfigura.ShowDialog(this);
 		}
 		public void Atualizar()
 		{
@@ -193,6 +193,7 @@ namespace SysDeCompany
 			pbLogoEmpresa.BackgroundImageLayout = ImageLayout.Stretch;
 			lblNomeEmpresa.UseMnemonic = false;
 			lblNomeEmpresa.Text = objConfig.BuscaNomeEmpresa();
+			this.BackColor = Color.FromArgb(objConfig.BuscaCorFundo());
 		}		
 		
 		
