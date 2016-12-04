@@ -37,8 +37,10 @@ namespace SysDeCompany.Classes
 			clBancoDados clBancoDados = new clBancoDados();
 		 	SQLiteConnection conn = clBancoDados.conectar();
 			SQLiteCommand command = new SQLiteCommand(conn);
-         	command.CommandText = "UPDATE TB_CONFIG SET NOME_EMPRESA = '"+_nome+"'," +
-         					   "IMAGEM = '"+_img+"';";
+         	command.CommandText = "UPDATE TB_CONFIG SET NOME_EMPRESA = '"+_nome+"'";
+         	if (_img!=(System.Windows.Forms.Application.StartupPath + "\\Config\\")) {
+         	   command.CommandText += ",IMAGEM = '"+_img+"';";
+         	}
       	 	command.ExecuteNonQuery();
       	 	clBancoDados.desconectar(conn);
         }

@@ -92,6 +92,7 @@ namespace DcompanySys
 				cln.Img = Application.StartupPath + @"\Config\" +nomeDoArquivo;
 				cln.UpdateBd();
 				MessageBox.Show("Salvado com sucesso");
+				((SysDeCompany.MainForm)this.Owner).Atualizar();
 				this.Close();
 			}
 				

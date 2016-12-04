@@ -42,9 +42,11 @@ namespace SysDeCompany
 			this.button2 = new System.Windows.Forms.Button();
 			this.pbImageConfig = new System.Windows.Forms.PictureBox();
 			this.grbPrincipal = new System.Windows.Forms.GroupBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.lblConsulta = new System.Windows.Forms.Label();
 			this.lblCadastro = new System.Windows.Forms.Label();
 			this.lblCadastroti = new System.Windows.Forms.Label();
+			this.pbConfiguracao = new System.Windows.Forms.PictureBox();
 			this.lblConsultarti = new System.Windows.Forms.Label();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
 			this.pbConsultarPessoa = new System.Windows.Forms.PictureBox();
@@ -55,7 +57,6 @@ namespace SysDeCompany
 			this.pbCadastrarPessoa = new System.Windows.Forms.PictureBox();
 			this.pbCadastrarProduto = new System.Windows.Forms.PictureBox();
 			this.pbCadastrarSevico = new System.Windows.Forms.PictureBox();
-			this.pbConfiguracao = new System.Windows.Forms.PictureBox();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -63,9 +64,10 @@ namespace SysDeCompany
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
-			this.label2 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pbImageConfig)).BeginInit();
 			this.grbPrincipal.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pbConfiguracao)).BeginInit();
 			this.flowLayoutPanel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbConsultarPessoa)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbConsultarProduto)).BeginInit();
@@ -75,7 +77,6 @@ namespace SysDeCompany
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarPessoa)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarProduto)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarSevico)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pbConfiguracao)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -129,9 +130,18 @@ namespace SysDeCompany
 			this.grbPrincipal.Controls.Add(this.flowLayoutPanel1);
 			this.grbPrincipal.Location = new System.Drawing.Point(12, 138);
 			this.grbPrincipal.Name = "grbPrincipal";
-			this.grbPrincipal.Size = new System.Drawing.Size(756, 794);
+			this.grbPrincipal.Size = new System.Drawing.Size(756, 459);
 			this.grbPrincipal.TabIndex = 9;
 			this.grbPrincipal.TabStop = false;
+			// 
+			// label2
+			// 
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(19, 562);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(715, 35);
+			this.label2.TabIndex = 11;
+			this.label2.Text = "Configuração :";
 			// 
 			// lblConsulta
 			// 
@@ -159,6 +169,19 @@ namespace SysDeCompany
 			this.lblCadastroti.Size = new System.Drawing.Size(718, 60);
 			this.lblCadastroti.TabIndex = 8;
 			this.lblCadastroti.Text = "Cadastrar :";
+			// 
+			// pbConfiguracao
+			// 
+			this.pbConfiguracao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbConfiguracao.BackgroundImage")));
+			this.pbConfiguracao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.pbConfiguracao.Location = new System.Drawing.Point(19, 600);
+			this.pbConfiguracao.Name = "pbConfiguracao";
+			this.pbConfiguracao.Size = new System.Drawing.Size(150, 150);
+			this.pbConfiguracao.TabIndex = 3;
+			this.pbConfiguracao.TabStop = false;
+			this.pbConfiguracao.Click += new System.EventHandler(this.PbConfiguracaoClick);
+			this.pbConfiguracao.MouseLeave += new System.EventHandler(this.PbConfiguracaoMouseLeave);
+			this.pbConfiguracao.MouseHover += new System.EventHandler(this.PbConfiguracaoMouseHover);
 			// 
 			// lblConsultarti
 			// 
@@ -281,19 +304,6 @@ namespace SysDeCompany
 			this.pbCadastrarSevico.MouseLeave += new System.EventHandler(this.PbCadastrarSevicoMouseLeave);
 			this.pbCadastrarSevico.MouseHover += new System.EventHandler(this.PbCadastrarSevicoMouseHover);
 			// 
-			// pbConfiguracao
-			// 
-			this.pbConfiguracao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbConfiguracao.BackgroundImage")));
-			this.pbConfiguracao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.pbConfiguracao.Location = new System.Drawing.Point(19, 600);
-			this.pbConfiguracao.Name = "pbConfiguracao";
-			this.pbConfiguracao.Size = new System.Drawing.Size(150, 150);
-			this.pbConfiguracao.TabIndex = 3;
-			this.pbConfiguracao.TabStop = false;
-			this.pbConfiguracao.Click += new System.EventHandler(this.PbConfiguracaoClick);
-			this.pbConfiguracao.MouseLeave += new System.EventHandler(this.PbConfiguracaoMouseLeave);
-			this.pbConfiguracao.MouseHover += new System.EventHandler(this.PbConfiguracaoMouseHover);
-			// 
 			// pictureBox4
 			// 
 			this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -311,7 +321,7 @@ namespace SysDeCompany
 			this.groupBox1.Controls.Add(this.dataGridView1);
 			this.groupBox1.Location = new System.Drawing.Point(771, 89);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(501, 843);
+			this.groupBox1.Size = new System.Drawing.Size(501, 508);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			// 
@@ -322,7 +332,7 @@ namespace SysDeCompany
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(3, 16);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(495, 824);
+			this.dataGridView1.Size = new System.Drawing.Size(495, 489);
 			this.dataGridView1.TabIndex = 0;
 			// 
 			// label1
@@ -357,20 +367,22 @@ namespace SysDeCompany
 			this.pbLogoEmpresa.TabIndex = 12;
 			this.pbLogoEmpresa.TabStop = false;
 			// 
-			// label2
+			// button3
 			// 
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(19, 562);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(715, 35);
-			this.label2.TabIndex = 11;
-			this.label2.Text = "Configuração :";
+			this.button3.Location = new System.Drawing.Point(417, 1);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(75, 23);
+			this.button3.TabIndex = 14;
+			this.button3.Text = "button3";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.Button3Click);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1284, 937);
+			this.ClientSize = new System.Drawing.Size(1284, 602);
+			this.Controls.Add(this.button3);
 			this.Controls.Add(this.lblNomeEmpresa);
 			this.Controls.Add(this.pbLogoEmpresa);
 			this.Controls.Add(this.label1);
@@ -381,6 +393,7 @@ namespace SysDeCompany
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			((System.ComponentModel.ISupportInitialize)(this.pbImageConfig)).EndInit();
 			this.grbPrincipal.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pbConfiguracao)).EndInit();
 			this.flowLayoutPanel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pbConsultarPessoa)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbConsultarProduto)).EndInit();
@@ -390,13 +403,13 @@ namespace SysDeCompany
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarPessoa)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarProduto)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarSevico)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pbConfiguracao)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblCadastro;
 		private System.Windows.Forms.Label lblConsultarti;

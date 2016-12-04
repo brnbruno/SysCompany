@@ -186,8 +186,13 @@ namespace SysDeCompany
 			frmConfigura.Owner = this;
 			frmConfigura.ShowDialog();
 		}
-		void AtualizarForme(object sender, EventArgs e){
-			
+		public void Atualizar()
+		{
+			clnConfig objConfig = new clnConfig();
+			pbLogoEmpresa.BackgroundImage = objConfig.BuscaImage();
+			pbLogoEmpresa.BackgroundImageLayout = ImageLayout.Stretch;
+			lblNomeEmpresa.UseMnemonic = false;
+			lblNomeEmpresa.Text = objConfig.BuscaNomeEmpresa();
 		}		
 		
 		
@@ -222,5 +227,12 @@ namespace SysDeCompany
 		}
 		
 		
+		
+		void Button3Click(object sender, EventArgs e)
+		{
+			frmConfigura c = new frmConfigura();
+			c.Owner = this;
+			c.ShowDialog(this);
+		}
 	}
 }
