@@ -96,5 +96,62 @@ namespace DcompanySys
 			clnValida objValida = new clnValida();
 			objValida.moeda(ref txtValorCompra);
 		}
+		
+		void BtnIncluirClick(object sender, EventArgs e)
+		{
+			clnValida objValida = new clnValida();
+			clnPessoa objPessoa = new clnPessoa();
+			objValida.txtNomeValidacao(ref txtNomeOuRazao);
+		
+			
+			
+			if (objValida.aux < 1)
+                {
+					objPessoa.Nome = txtNomeOuRazao.Text.ToUpper();
+					objPessoa.Cpf  = cpf.Replace(".","").Replace("-","");
+					objPessoa.Telefone = mtxtTelefone.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ",""); 
+					objPessoa.Telefone2 = mtxtTelefone2.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ","");
+                    objPessoa.Celular = mtxtCelular.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ",""); 
+                    objPessoa.Cep = mtxtCep.Text.Replace(".","").Replace("-","");
+                    objPessoa.Endereco = txtEndereco.Text.ToUpper();
+                    objPessoa.Cidade = txtCidade.Text.ToUpper();
+                    objPessoa.Bairro = txtBairro.Text.ToUpper();
+                    objPessoa.Nr = txtNumero.Text;
+                    objPessoa.Uf = cbUF.Text;
+                    objPessoa.Tipopessoa = tipopessoa;
+                    objPessoa.Ie = txtIE.Text;
+                    objPessoa.Cnpj = mtxtCnpj.Text.Replace(".","").Replace("/","").Replace("-","");
+                    objPessoa.Complemeto = txtComplemento.Text.ToUpper();
+                    
+                  
+                   	if (controle == 1) 
+                   	{
+                   		objPessoa.Gravar();
+                   		MessageBox.Show("Salvado com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   		
+                   	} 
+                   	else if(controle == 2)
+                   	{
+                   		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
+                   		objPessoa.Alterar();
+                   		MessageBox.Show("Alterado com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   	} else{
+                   		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
+                   		objPessoa.ExcluirLogicamente();
+                   		MessageBox.Show("Excluido com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   	}
+                    foreach (TextBox txt in grbDadosPessoais.Controls.OfType<TextBox>())
+                    {
+                     	txt.Clear();
+                    }
+                    foreach (MaskedTextBox mtxt in grbDadosPessoais.Controls.OfType<MaskedTextBox>())
+                    {
+                     	mtxt.Clear();
+                    }	
+			}else
+			{
+				MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+			}
+		}
 	}
 }

@@ -50,6 +50,8 @@ namespace DcompanySys
 			dgv.BackgroundColor = this.BackColor;
 			dgv.GridColor = this.BackColor;
 			dgv.DefaultCellStyle.BackColor = this.BackColor;
+			dgv.DefaultCellStyle.SelectionForeColor = this.BackColor;
+   			dgv.DefaultCellStyle.SelectionBackColor = this.ForeColor;
 			clnPesquisa objPesquisa = new clnPesquisa();
 			dgv.DataSource = objPesquisa.carregar("TB_PESSOA").Tables[0];
 			dgv.Columns[0].HeaderText ="Código";
