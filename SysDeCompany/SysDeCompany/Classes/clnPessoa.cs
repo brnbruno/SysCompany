@@ -60,7 +60,7 @@ namespace SysDeCompany.Classes
         {	
 			string strQuery = "INSERT INTO TB_PESSOA(";
 			strQuery += ("Nome, Endereco,bairro, Cidade, Complemento, CPE, numero, uf, CPF,");
-			strQuery += ("Telefone,Telefone2, Celular, Email, Site, Cnpj, IncricaoEstadual,");
+			strQuery += ("Telefone,Telefone2, Celular, Cnpj, IncricaoEstadual,");
 			strQuery += ("Tipo_pessoa, Ativo)");
 			strQuery += (" VALUES(");
 			strQuery += ("'"+ _nome +"',");
@@ -75,8 +75,6 @@ namespace SysDeCompany.Classes
 			strQuery += ("'"+ _telefone +"',");
 			strQuery += ("'"+ _telefone2 +"',");
 			strQuery += ("'"+ _celular +"',");
-			strQuery += ("'"+ _email +"',");
-			strQuery += ("'"+_site +"',");
 			strQuery += ("'"+ _cnpj +"',");
 			strQuery += ("'"+ _ie +"',");
 			strQuery += ("'"+ _tipopessoa+"',");

@@ -99,13 +99,13 @@ namespace DcompanySys
       public  DataSet carregar(String tabela)  
       {  
         if (string.IsNullOrEmpty(tabela)) throw new Exception("Não foi informado a tabela a ser consultada.");  
-       DataSet dtset = new DataSet();  
-        SQLiteConnection conn = conectar();  
-        SQLiteCommand command = conn.CreateCommand();  
-        command.CommandText = "SELECT * FROM ["+tabela+"]";  
-        SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, conn);  
-       DB.Fill(dtset);  
-        conn.Close();  
+       		DataSet dtset = new DataSet();  
+        	SQLiteConnection conn = conectar();  
+        	SQLiteCommand command = conn.CreateCommand();  
+        	command.CommandText = "SELECT * FROM ["+tabela+"]";  
+        	SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, conn);  
+      		DB.Fill(dtset);  
+        	conn.Close();  
         return dtset;  
       }  
       public  static void Inserir(){

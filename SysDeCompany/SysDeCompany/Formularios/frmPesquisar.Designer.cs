@@ -212,7 +212,7 @@ namespace DcompanySys
 			this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.dgv.BackgroundColor = System.Drawing.Color.White;
+			this.dgv.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgv.GridColor = System.Drawing.Color.Black;
@@ -233,6 +233,7 @@ namespace DcompanySys
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frmPesquisar";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.FrmPesquisarLoad);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -245,7 +246,7 @@ namespace DcompanySys
         private System.Windows.Forms.Label lbDescricao;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblFiltros;
-        private System.Windows.Forms.DataGridView dgv;
+		public System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btnPesquiInativo;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnConsultar;

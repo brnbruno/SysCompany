@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Classes\clBancoDados.cs" />
     <Compile Include="Classes\clnConfig.cs" />
+    <Compile Include="Classes\clnPesquisa.cs" />
     <Compile Include="Classes\clnPessoa.cs" />
     <Compile Include="Classes\clnUpInsetDelet.cs" />
     <Compile Include="Classes\clnValida.cs" />

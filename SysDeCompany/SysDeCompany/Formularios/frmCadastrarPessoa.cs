@@ -28,17 +28,14 @@ namespace DcompanySys
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			this.btnSair.Click += new System.EventHandler(this.BtnSairClick);
-			this.btnIncluir.Click += new System.EventHandler (this.BtnIncluirClick);
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
 		private int _control;
-		public int Control{
-			get{return _control;}
-			set{_control = value;}
-		}
+		
+		public int Control{get{return _control;}set{_control = value;}}
+		
 		void RbPessoaJuridicaClick(object sender, EventArgs e)
 		{
 			lblNomeOuRazao.Text = "Razão:";
@@ -64,7 +61,8 @@ namespace DcompanySys
 		{
 			Validacao(1);
 		}
-		void Validacao(int controle)
+		
+		private void Validacao(int controle)
 		{
 			clnValida objValida = new clnValida();
 			clnPessoa objPessoa = new clnPessoa();
@@ -101,7 +99,7 @@ namespace DcompanySys
 					objValida.aux++;					
 				} 
 			}			
-			if (objValida.aux == 0)
+			if (objValida.aux < 1)
                 {
 					objPessoa.Nome = txtNomeOuRazao.Text.ToUpper();
 					objPessoa.Cpf  = cpf.Replace(".","").Replace("-","");
@@ -144,11 +142,11 @@ namespace DcompanySys
                     {
                      	mtxt.Clear();
                     }	
-			}
-			else
+			}else
 			{
 				MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
+			
 		}
 		
 		
@@ -164,11 +162,10 @@ namespace DcompanySys
 			}
 			rbPessoaFisica.Checked = true;
 			
-			if (_control==2) {
+			if (_control==1) {
 				btnAlterar.Visible = false;
 				btnExcluir.Visible = false;
 			}
-			txtCodigo.Text = Convert.ToString(1);
 			if (txtCodigo.Text != "")
 			{
 				clBancoDados clBancoDados = new clBancoDados();

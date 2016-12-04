@@ -143,6 +143,7 @@ namespace DcompanySys
 			this.btnSair.Text = "Sair";
 			this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnSair.UseVisualStyleBackColor = true;
+			this.btnSair.Click += new System.EventHandler(this.BtnSairClick);
 			// 
 			// btnAlterar
 			// 

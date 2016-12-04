@@ -9,6 +9,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SysDeCompany.Classes;
 
 namespace DcompanySys
 {
@@ -28,6 +29,9 @@ namespace DcompanySys
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+		private int _control;
+		
+		public int Control{get{return _control;}set{_control = value;}}
 		
 		void BtnNovoClick(object sender, EventArgs e)
 		{
@@ -38,6 +42,27 @@ namespace DcompanySys
 		
 		void BtnConsultarClick(object sender, EventArgs e)
 		{
+			
+		}
+		
+		void FrmPesquisarLoad(object sender, EventArgs e)
+		{
+			dgv.BackgroundColor = this.BackColor;
+			dgv.GridColor = this.BackColor;
+			dgv.DefaultCellStyle.BackColor = this.BackColor;
+			clnPesquisa objPesquisa = new clnPesquisa();
+			dgv.DataSource = objPesquisa.carregar("TB_PESSOA").Tables[0];
+			dgv.Columns[0].HeaderText ="Código";
+			dgv.Columns[1].HeaderText ="Nome";
+			dgv.Columns[2].HeaderText ="Endereço";
+			dgv.Columns[3].HeaderText ="Bairro";
+			dgv.Columns[4].HeaderText ="Cidade";
+			dgv.Columns[7].HeaderText ="Número";
+			dgv.Columns[8].HeaderText ="Endereço";
+			dgv.Columns[14].HeaderText = "Inscrição Estadual";
+			dgv.Columns[15].HeaderText = "Tipo de Pessoa";
+			
+			
 			
 		}
 	}
