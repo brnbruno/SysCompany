@@ -24,19 +24,13 @@ namespace SysDeCompany.Classes
 		private string _nome;
 		private string _img;
 		private int _corfundo;
+		private int _corfonte;
 		
-		public String Nome{
-			get{return _nome;}
-			set{_nome = value;}
-		}
-		public string Img{
-			get{return _img;}
-			set{ _img = value;}
-		}
-		public int CorFundo{
-			get{return _corfundo;}
-			set{_corfundo = value;}
-		}
+		public string Nome{get{return _nome;}set{_nome = value;}}
+		public string Img{get{return _img;}set{ _img = value;}}
+		public int CorFundo{get{return _corfundo;}set{_corfundo = value;}}
+		public int CorFonte{get{return _corfonte;}set{_corfonte = value;}}
+			
 		
 		public void UpdateBd(){
 			clBancoDados clBancoDados = new clBancoDados();
@@ -46,7 +40,8 @@ namespace SysDeCompany.Classes
          	if (_img!=(System.Windows.Forms.Application.StartupPath + "\\Config\\")) {
          	   command.CommandText += ",IMAGEM = '"+_img+"'";
          	}
-         	command.CommandText += ", Cor_Fundo ='"+ _corfundo+"';";
+         	command.CommandText += ", Cor_Fundo ='"+ _corfundo+"'";
+         	command.CommandText += ", Cor_Fonte ='" +_corfonte+"';";
       	 	command.ExecuteNonQuery();
       	 	clBancoDados.desconectar(conn);
         }

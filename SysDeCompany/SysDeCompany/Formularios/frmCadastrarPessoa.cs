@@ -100,9 +100,7 @@ namespace DcompanySys
 					objValida.msn += "CNPJ Inválido\n";
 					objValida.aux++;					
 				} 
-			}
-			MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
-			
+			}			
 			if (objValida.aux == 0)
                 {
 					objPessoa.Nome = txtNomeOuRazao.Text.ToUpper();
@@ -146,6 +144,10 @@ namespace DcompanySys
                     {
                      	mtxt.Clear();
                     }	
+			}
+			else
+			{
+				MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
 		}
 		

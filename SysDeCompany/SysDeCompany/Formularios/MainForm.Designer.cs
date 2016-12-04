@@ -38,8 +38,6 @@ namespace SysDeCompany
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
 			this.pbImageConfig = new System.Windows.Forms.PictureBox();
 			this.grbPrincipal = new System.Windows.Forms.GroupBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -60,7 +58,7 @@ namespace SysDeCompany
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblHora = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
@@ -82,28 +80,6 @@ namespace SysDeCompany
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(3, 209);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Visible = false;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(84, 209);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Visible = false;
-			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
 			// pbImageConfig
 			// 
@@ -258,8 +234,6 @@ namespace SysDeCompany
 			this.flowLayoutPanel1.Controls.Add(this.pbCadastrarSevico);
 			this.flowLayoutPanel1.Controls.Add(this.pictureBox4);
 			this.flowLayoutPanel1.Controls.Add(this.pbImageConfig);
-			this.flowLayoutPanel1.Controls.Add(this.button1);
-			this.flowLayoutPanel1.Controls.Add(this.button2);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 79);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(576, 206);
@@ -335,14 +309,14 @@ namespace SysDeCompany
 			this.dataGridView1.Size = new System.Drawing.Size(495, 797);
 			this.dataGridView1.TabIndex = 0;
 			// 
-			// label1
+			// lblHora
 			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(771, 44);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(501, 42);
-			this.label1.TabIndex = 11;
-			this.label1.Text = "...";
+			this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblHora.Location = new System.Drawing.Point(771, 44);
+			this.lblHora.Name = "lblHora";
+			this.lblHora.Size = new System.Drawing.Size(501, 42);
+			this.lblHora.TabIndex = 11;
+			this.lblHora.Text = "...";
 			// 
 			// timer1
 			// 
@@ -385,7 +359,7 @@ namespace SysDeCompany
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.lblNomeEmpresa);
 			this.Controls.Add(this.pbLogoEmpresa);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblHora);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.grbPrincipal);
 			this.Name = "MainForm";
@@ -421,7 +395,7 @@ namespace SysDeCompany
 		private System.Windows.Forms.Label lblNomeEmpresa;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Timer timer1;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblHora;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.GroupBox grbPrincipal;
 		private System.Windows.Forms.PictureBox pbImageConfig;
@@ -435,7 +409,5 @@ namespace SysDeCompany
 		private System.Windows.Forms.PictureBox pbCadastrarPessoa;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Label lblConsulta;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button1;
 	}
 }

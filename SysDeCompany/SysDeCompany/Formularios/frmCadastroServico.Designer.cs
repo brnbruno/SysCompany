@@ -206,7 +206,7 @@ namespace DcompanySys
 			// 
 			this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(125, 37);
+			this.label4.Location = new System.Drawing.Point(125, 49);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(346, 26);
 			this.label4.TabIndex = 49;
@@ -215,9 +215,8 @@ namespace DcompanySys
 			// textBox14
 			// 
 			this.textBox14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.textBox14.Enabled = false;
 			this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox14.Location = new System.Drawing.Point(244, 8);
+			this.textBox14.Location = new System.Drawing.Point(244, 19);
 			this.textBox14.Name = "textBox14";
 			this.textBox14.Size = new System.Drawing.Size(105, 26);
 			this.textBox14.TabIndex = 24;
@@ -226,7 +225,7 @@ namespace DcompanySys
 			// 
 			this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.Location = new System.Drawing.Point(125, 9);
+			this.label14.Location = new System.Drawing.Point(125, 18);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(100, 26);
 			this.label14.TabIndex = 23;

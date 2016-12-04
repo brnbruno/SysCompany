@@ -33,21 +33,9 @@ namespace SysDeCompany
 			//
 		}
 		
-		void Button1Click(object sender, EventArgs e)
-		{
-			frmConfigura frm = new frmConfigura();
-			frm.ShowDialog();
-		}
-		
-		void Button2Click(object sender, EventArgs e)
-		{
-			frmCadastrarPessoa frmCadastro = new frmCadastrarPessoa();
-			
-			frmCadastro.ShowDialog();
-		}
 		void MainFormLoad(object sender, EventArgs e)
 		{
-				if(!Directory.Exists("Config")) {  
+			if(!Directory.Exists("Config")) {  
           			Directory.CreateDirectory("Config");  
           		}			
 				clBancoDados clBancoDados = new clBancoDados();			   	
@@ -59,10 +47,7 @@ namespace SysDeCompany
 			   	
 			if(Directory.Exists("Config")&&Directory.Exists("Data")) 
 			{
-				pbLogoEmpresa.BackgroundImage = clnConfig.BuscaImage();
-				pbLogoEmpresa.BackgroundImageLayout = ImageLayout.Stretch;
-				lblNomeEmpresa.UseMnemonic = false;
-				lblNomeEmpresa.Text = clnConfig.BuscaNomeEmpresa();
+				Atualizar();
 			}
 			
 			
@@ -71,12 +56,16 @@ namespace SysDeCompany
 		{
 			frmCadastrarPessoa frmPessoa = new frmCadastrarPessoa();
 			frmPessoa.Control = 1;
+			frmPessoa.BackColor = this.BackColor;
+			frmPessoa.ForeColor = this.ForeColor;
 			frmPessoa.ShowDialog();			
 		}
 		void PbCadastrarProdutoClick(object sender, EventArgs e)
 		{
 			frmCadastrarProduto frmProduto = new frmCadastrarProduto();
 			frmProduto.Control =1;
+			frmProduto.BackColor = this.BackColor;
+			frmProduto.ForeColor = this.ForeColor;
 			frmProduto.ShowDialog();
 		}		
 		
@@ -194,36 +183,45 @@ namespace SysDeCompany
 			lblNomeEmpresa.UseMnemonic = false;
 			lblNomeEmpresa.Text = objConfig.BuscaNomeEmpresa();
 			this.BackColor = Color.FromArgb(objConfig.BuscaCorFundo());
+			this.ForeColor = Color.FromArgb(objConfig.BuscaCorFonte());
 		}		
 		
 		
 		void PbConsultarPessoaClick(object sender, EventArgs e)
 		{
 			frmPesquisar objPesquisar = new frmPesquisar();
+			objPesquisar.BackColor = this.BackColor;
+			objPesquisar.ForeColor = this.ForeColor;
 			objPesquisar.ShowDialog();
 		}
 		
 		void PbConsultarProdutoClick(object sender, EventArgs e)
 		{
 			frmPesquisar objPesquisar = new frmPesquisar();
+			objPesquisar.BackColor = this.BackColor;
+			objPesquisar.ForeColor = this.ForeColor;
 			objPesquisar.ShowDialog();
 		}
 		
 		void PbConsultarServicoClick(object sender, EventArgs e)
 		{
 			frmPesquisar objPesquisar = new frmPesquisar();
+			objPesquisar.BackColor = this.BackColor;
+			objPesquisar.ForeColor = this.ForeColor;
 			objPesquisar.ShowDialog();
 		}
 		
 		void Timer1Tick(object sender, EventArgs e)
 		{
-			label1.Text = String.Format("Data: {0:dd/MM/yyyy} Hora: {1:HH:mm:ss}", DateTime.Now, DateTime.Now);
+			lblHora.Text = String.Format("Data: {0:dd/MM/yyyy} Hora: {1:HH:mm:ss}", DateTime.Now, DateTime.Now);
 		}
 		
 		void PbCadastrarSevicoClick(object sender, EventArgs e)
 		{
 			frmCadastroServico frmServico = new frmCadastroServico();
 			frmServico.Control = 1;
+			frmServico.BackColor = this.BackColor;
+			frmServico.ForeColor = this.ForeColor;
 			frmServico.ShowDialog();
 		}
 		

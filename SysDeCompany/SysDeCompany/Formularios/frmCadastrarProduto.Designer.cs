@@ -46,20 +46,20 @@ namespace DcompanySys
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnIncluir = new System.Windows.Forms.Button();
 			this.grbInfoProduto = new System.Windows.Forms.GroupBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtFornecedor = new System.Windows.Forms.TextBox();
 			this.btnLimparImagem = new System.Windows.Forms.Button();
 			this.btnBuscaImagem = new System.Windows.Forms.Button();
 			this.pbImagem = new System.Windows.Forms.PictureBox();
 			this.txtValorCompra = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.txtMarca = new System.Windows.Forms.TextBox();
 			this.txtValorVenda = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtQuantidade = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtNomeOuRazao = new System.Windows.Forms.TextBox();
+			this.txtNome = new System.Windows.Forms.TextBox();
 			this.lblNomeOuRazao = new System.Windows.Forms.Label();
 			this.txtCodigo = new System.Windows.Forms.TextBox();
 			this.lblCodigo = new System.Windows.Forms.Label();
@@ -173,20 +173,20 @@ namespace DcompanySys
 			// 
 			this.grbInfoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.grbInfoProduto.Controls.Add(this.textBox1);
+			this.grbInfoProduto.Controls.Add(this.txtFornecedor);
 			this.grbInfoProduto.Controls.Add(this.btnLimparImagem);
 			this.grbInfoProduto.Controls.Add(this.btnBuscaImagem);
 			this.grbInfoProduto.Controls.Add(this.pbImagem);
 			this.grbInfoProduto.Controls.Add(this.txtValorCompra);
-			this.grbInfoProduto.Controls.Add(this.textBox4);
+			this.grbInfoProduto.Controls.Add(this.txtMarca);
 			this.grbInfoProduto.Controls.Add(this.txtValorVenda);
-			this.grbInfoProduto.Controls.Add(this.textBox2);
+			this.grbInfoProduto.Controls.Add(this.txtQuantidade);
 			this.grbInfoProduto.Controls.Add(this.label5);
 			this.grbInfoProduto.Controls.Add(this.label4);
 			this.grbInfoProduto.Controls.Add(this.label3);
 			this.grbInfoProduto.Controls.Add(this.label2);
 			this.grbInfoProduto.Controls.Add(this.label1);
-			this.grbInfoProduto.Controls.Add(this.txtNomeOuRazao);
+			this.grbInfoProduto.Controls.Add(this.txtNome);
 			this.grbInfoProduto.Controls.Add(this.lblNomeOuRazao);
 			this.grbInfoProduto.Controls.Add(this.txtCodigo);
 			this.grbInfoProduto.Controls.Add(this.lblCodigo);
@@ -196,14 +196,14 @@ namespace DcompanySys
 			this.grbInfoProduto.TabIndex = 7;
 			this.grbInfoProduto.TabStop = false;
 			// 
-			// textBox1
+			// txtFornecedor
 			// 
-			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(460, 106);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(246, 26);
-			this.textBox1.TabIndex = 43;
+			this.txtFornecedor.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtFornecedor.Location = new System.Drawing.Point(460, 106);
+			this.txtFornecedor.Name = "txtFornecedor";
+			this.txtFornecedor.Size = new System.Drawing.Size(246, 26);
+			this.txtFornecedor.TabIndex = 43;
 			// 
 			// btnLimparImagem
 			// 
@@ -248,14 +248,14 @@ namespace DcompanySys
 			this.txtValorCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.txtValorCompra.TextChanged += new System.EventHandler(this.TxtValorCompraTextChanged);
 			// 
-			// textBox4
+			// txtMarca
 			// 
-			this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox4.Location = new System.Drawing.Point(237, 138);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(211, 26);
-			this.textBox4.TabIndex = 36;
+			this.txtMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMarca.Location = new System.Drawing.Point(237, 138);
+			this.txtMarca.Name = "txtMarca";
+			this.txtMarca.Size = new System.Drawing.Size(211, 26);
+			this.txtMarca.TabIndex = 36;
 			// 
 			// txtValorVenda
 			// 
@@ -268,14 +268,14 @@ namespace DcompanySys
 			this.txtValorVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.txtValorVenda.TextChanged += new System.EventHandler(this.TxtValorVendaTextChanged);
 			// 
-			// textBox2
+			// txtQuantidade
 			// 
-			this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(237, 106);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(74, 26);
-			this.textBox2.TabIndex = 34;
+			this.txtQuantidade.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtQuantidade.Location = new System.Drawing.Point(237, 106);
+			this.txtQuantidade.Name = "txtQuantidade";
+			this.txtQuantidade.Size = new System.Drawing.Size(74, 26);
+			this.txtQuantidade.TabIndex = 34;
 			// 
 			// label5
 			// 
@@ -327,14 +327,14 @@ namespace DcompanySys
 			this.label1.TabIndex = 27;
 			this.label1.Text = "Valor de Compra :";
 			// 
-			// txtNomeOuRazao
+			// txtNome
 			// 
-			this.txtNomeOuRazao.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtNomeOuRazao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNomeOuRazao.Location = new System.Drawing.Point(237, 74);
-			this.txtNomeOuRazao.Name = "txtNomeOuRazao";
-			this.txtNomeOuRazao.Size = new System.Drawing.Size(469, 26);
-			this.txtNomeOuRazao.TabIndex = 26;
+			this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNome.Location = new System.Drawing.Point(237, 74);
+			this.txtNome.Name = "txtNome";
+			this.txtNome.Size = new System.Drawing.Size(469, 26);
+			this.txtNome.TabIndex = 26;
 			// 
 			// lblNomeOuRazao
 			// 
@@ -412,7 +412,7 @@ namespace DcompanySys
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.Label lblAviso;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtFornecedor;
 		private System.Windows.Forms.OpenFileDialog buscaArquivo;
 		private System.Windows.Forms.PictureBox pbLogoEmpresa;
 		private System.Windows.Forms.Label lblNomeEmpresa;
@@ -427,15 +427,15 @@ namespace DcompanySys
 		private System.Windows.Forms.Button btnBuscaImagem;
 		private System.Windows.Forms.PictureBox pbImagem;
 		private System.Windows.Forms.TextBox txtValorCompra;
-		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.TextBox txtMarca;
 		private System.Windows.Forms.TextBox txtValorVenda;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtQuantidade;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtNomeOuRazao;
+		private System.Windows.Forms.TextBox txtNome;
 		private System.Windows.Forms.Label lblNomeOuRazao;
 		private System.Windows.Forms.TextBox txtCodigo;
 		private System.Windows.Forms.Label lblCodigo;

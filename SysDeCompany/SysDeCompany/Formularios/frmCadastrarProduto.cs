@@ -54,14 +54,14 @@ namespace DcompanySys
 			
 		}
 		
-		void BtnBuscarManualClick(object sender, EventArgs e)
+		/*void BtnBuscarManualClick(object sender, EventArgs e)
 		{
 			buscaArquivo.Title = "Procurar Manual...";
 			buscaArquivo.CheckFileExists = true;
 			buscaArquivo.CheckPathExists = true;
 			buscaArquivo.Filter = "Manual (*.PDF;*.DOC;*.DOCX)|*.PDF;*.DOC;*.DOCX|" + "All files (*.*)|*.*";
 			buscaArquivo.ShowDialog();
-		}
+		}*/
 		
 		void FrmCadastrarProdutoLoad(object sender, EventArgs e)
 		{

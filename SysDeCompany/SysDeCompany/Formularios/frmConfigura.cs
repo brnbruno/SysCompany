@@ -35,12 +35,13 @@ namespace DcompanySys
 			//
 		}
 		
-		void Button1Click(object sender, EventArgs e)
+		/*void Button1Click(object sender, EventArgs e)
 		{
-			colorDialog1.ShowDialog();
-			textBox2.Text = colorDialog1.Color.ToArgb().ToString();
+			JaneladeCor.ShowDialog();
+			textBox2.Text = JaneladeCor.Color.ToArgb().ToString();
 			this.BackColor = Color.FromArgb(Convert.ToInt32(textBox2.Text));
 		}
+		*/
 		
 		string nomeDoArquivo = string.Empty;
 	
@@ -71,15 +72,19 @@ namespace DcompanySys
 		
 		void BtnBuscaImagemClick(object sender, EventArgs e)
 		{
-			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			buscaArquivo.Title = "Procurar Imagem...";
+			buscaArquivo.CheckFileExists = true;
+			buscaArquivo.CheckPathExists = true;
+			buscaArquivo.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+			if (buscaArquivo.ShowDialog() == DialogResult.OK)
     		{  
-				pbLogoEmpresa.BackgroundImage = Image.FromFile(openFileDialog1.FileName);
+				pbLogoEmpresa.BackgroundImage = Image.FromFile(buscaArquivo.FileName);
 				pbLogoEmpresa.BackgroundImageLayout = ImageLayout.Stretch;
 				Image image = pbLogoEmpresa.BackgroundImage;
-				string Arquivo = openFileDialog1.FileName;
+				string Arquivo = buscaArquivo.FileName;
 			 	nomeDoArquivo= Arquivo.Split(new char[] { '\\' })[Arquivo.Split(new char[] { '\\' }).Length - 1];
 
-   				CopyFileTo(openFileDialog1.FileName,Application.StartupPath+@"\Config\"+nomeDoArquivo);
+   				CopyFileTo(buscaArquivo.FileName,Application.StartupPath+@"\Config\"+nomeDoArquivo);
     		}
 		}
 		
@@ -91,6 +96,7 @@ namespace DcompanySys
 				cln.Nome = txtNomedaEmpresa.Text;
 				cln.Img = Application.StartupPath + @"\Config\" +nomeDoArquivo;
 				cln.CorFundo = pbCordoFormulario.BackColor.ToArgb();
+				cln.CorFonte = lbfontform.ForeColor.ToArgb();
 				cln.UpdateBd();
 				MessageBox.Show("Salvado com sucesso");
 				((SysDeCompany.MainForm)this.Owner).Atualizar();
@@ -109,15 +115,22 @@ namespace DcompanySys
 		
 		void BtnCorDoFormularioClick(object sender, EventArgs e)
 		{
-			colorDialog1.ShowDialog();
-			pbCordoFormulario.BackColor = colorDialog1.Color;
-			lbfontform.BackColor = colorDialog1.Color;
+			JaneladeCor.ShowDialog();
+			pbCordoFormulario.BackColor = JaneladeCor.Color;
+			lbfontform.BackColor = JaneladeCor.Color;
 		}
 		
 		void BtnCorFonteFormClick(object sender, EventArgs e)
 		{
-			colorDialog1.ShowDialog();
-			lbfontform.ForeColor = colorDialog1.Color;
+			JaneladeCor.ShowDialog();
+			lbfontform.ForeColor = JaneladeCor.Color;
+		}
+		
+		void BtnRestarCorClick(object sender, EventArgs e)
+		{
+			pbCordoFormulario.BackColor= Color.FromArgb(-2830136);
+			lbfontform.BackColor = pbCordoFormulario.BackColor;
+			lbfontform.ForeColor = Color.FromArgb(-16777216);
 		}
 	}
 }      

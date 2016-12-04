@@ -59,6 +59,7 @@ namespace SysDeCompany.Classes
         	clBancoDados.desconectar(conn);
         	return nome;   		
 		}
+		
 		public int BuscaCorFundo()
 		{
 			clBancoDados clBancoDados = new clBancoDados();
@@ -69,6 +70,21 @@ namespace SysDeCompany.Classes
         	SQLiteDataReader rdr = cmd.ExecuteReader();
         	while(rdr.Read()){
         		cor  = Convert.ToInt32(rdr["Cor_Fundo"]);
+        	}
+        	clBancoDados.desconectar(conn);
+        	return cor;   		
+		}
+		
+		public int BuscaCorFonte()
+		{
+			clBancoDados clBancoDados = new clBancoDados();
+		 	SQLiteConnection conn = clBancoDados.conectar();
+			int cor = 0;
+			string stm = "SELECT * FROM TB_CONFIG";
+			SQLiteCommand cmd = new SQLiteCommand(stm, conn);
+        	SQLiteDataReader rdr = cmd.ExecuteReader();
+        	while(rdr.Read()){
+        		cor  = Convert.ToInt32(rdr["Cor_Fonte"]);
         	}
         	clBancoDados.desconectar(conn);
         	return cor;   		
