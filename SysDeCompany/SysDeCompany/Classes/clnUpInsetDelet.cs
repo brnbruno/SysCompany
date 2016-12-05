@@ -37,7 +37,7 @@ namespace SysDeCompany.Classes
 		 	SQLiteConnection conn = clBancoDados.conectar();
 			SQLiteCommand command = new SQLiteCommand(conn);
          	command.CommandText = "UPDATE TB_CONFIG SET NOME_EMPRESA = '"+_nome+"'";
-         	if (_img!=(System.Windows.Forms.Application.StartupPath + "\\Config\\")) {
+         	if (_img!=string.Empty) {
          	   command.CommandText += ",IMAGEM = '"+_img+"'";
          	}
          	command.CommandText += ", Cor_Fundo ='"+ _corfundo+"'";

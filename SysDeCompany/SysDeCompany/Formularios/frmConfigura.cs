@@ -94,7 +94,7 @@ namespace DcompanySys
 			{
 				clnUpInsetDelet cln = new clnUpInsetDelet();
 				cln.Nome = txtNomedaEmpresa.Text;
-				cln.Img = Application.StartupPath + @"\Config\" +nomeDoArquivo;
+				cln.Img = nomeDoArquivo;
 				cln.CorFundo = pbCordoFormulario.BackColor.ToArgb();
 				cln.CorFonte = lbfontform.ForeColor.ToArgb();
 				cln.UpdateBd();

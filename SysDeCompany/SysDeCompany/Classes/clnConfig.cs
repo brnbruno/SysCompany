@@ -29,9 +29,9 @@ namespace SysDeCompany.Classes
         		SQLiteDataReader rdr = cmd.ExecuteReader();
         		while(rdr.Read())
         		{
-        			if (rdr["IMAGEM"].ToString()!=System.Windows.Forms.Application.StartupPath+"\\Config\\") {
-        				img  = System.Drawing.Image.FromFile(rdr["IMAGEM"].ToString());
-        			}
+        			
+        				img  = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath+"\\Config\\" + rdr["IMAGEM"].ToString());
+        			
         		
         		}
         		clBancoDados.desconectar(conn);
