@@ -7,6 +7,9 @@
  * Para alterar este modelo use Ferramentas | Opções | Codificação | Editar Cabeçalhos Padrão.
  */
 using System;
+using DcompanySys;
+using System.Data;
+using System.Data.SQLite;
 
 namespace SysDeCompany.Classes
 {
@@ -35,10 +38,8 @@ namespace SysDeCompany.Classes
 		
 		public void Gravar()
         {	
-			string strQuery = "INSERT INTO TB_PESSOA(";
-			strQuery += ("Nome, Endereco,bairro, Cidade, Complemento, CPE, numero, uf, CPF,");
-			strQuery += ("Telefone,Telefone2, Celular, Cnpj, IncricaoEstadual,");
-			strQuery += ("Tipo_pessoa, Ativo)");
+			string strQuery = "INSERT INTO TB_PRODUTO(";
+			strQuery += ("NOME, QTD, FORNECEDOR, MARCA, VALOR_COMPRA, VALOR_VENDA, IMAGEM, ATIVO)");
 			strQuery += (" VALUES(");
 			strQuery += ("'"+ _nome +"',");
 			strQuery += ("'"+ _qtd +"',");
@@ -46,8 +47,8 @@ namespace SysDeCompany.Classes
 			strQuery += ("'"+ _marca +"',");
 			strQuery += ("'"+ _valor_compra +"',");
 			strQuery += ("'"+ _valor_venda +"',");
-			strQuery += ("'"+ _img +"'");
-			strQuery += (" )");
+			strQuery += ("'"+ _img +"',");
+			strQuery += ("'1' )");
 			clBancoDados clBancoDados = new clBancoDados();
 		 	SQLiteConnection conn = clBancoDados.conectar();
 			SQLiteCommand command = new SQLiteCommand(conn);
@@ -58,23 +59,15 @@ namespace SysDeCompany.Classes
         }
 		public void Alterar()
 		{
-			string strQuery = "UPDATE TB_PESSOA SET ";
-			strQuery += ("nome = '" +    _nome + "' ");
-			strQuery += (", Endereco ='"+_endereco +"'");
-			strQuery += (", bairro ='" + _bairro +"'");
-			strQuery += (", Cidade ='"+  _cidade +"'");
-			strQuery += (",	Complemento ='" + _complemeto +"'");
-			strQuery += (", CPE ='"+ _cep +"'");
-			strQuery += (", numero ='"+ _nr+"'");
-			strQuery += (", uf ='" + _uf + "'");
-			strQuery += (", CPF ='"+ _cpf +"'");
-			strQuery += (", Telefone ='" + _telefone +"'");
-			strQuery += (", Telefone2 ='" + _telefone2 +"'");
-			strQuery += (", Celular ='" + _celular +"'");
-			strQuery += (", Cnpj ='" + _cnpj +"'");
-			strQuery += (", IncricaoEstadual ='" +_ie+"'");
-			strQuery += (", Tipo_pessoa ='"+_tipopessoa+"'");
-			strQuery += (", Ativo = '1'");
+			string strQuery = "UPDATE TB_PRODUTO SET ";
+			strQuery += ("  NOME = '" +    _nome + "' ");
+			strQuery += (", QTD ='"+_qtd +"'");
+			strQuery += (", FORNECEDOR ='" + _fornecedor +"'");
+			strQuery += (", MARCA ='"+  _marca +"'");
+			strQuery += (",	VALOR_COMPRA ='" + _valor_compra +"'");
+			strQuery += (", VALOR_VENDA ='"+ _valor_venda +"'");
+			strQuery += (", IMAGEM ='"+ _img+"'");
+			strQuery += (", ATIVO = '1'");
 			strQuery += (" WHERE ");
 			strQuery += ("Codigo = '" + _cod + "' ");
 			
@@ -88,7 +81,7 @@ namespace SysDeCompany.Classes
 		public void ExcluirLogicamente()
         {
             string strQuery;
-            strQuery = (" UPDATE TB_PESSOA ");
+            strQuery = (" UPDATE TB_PRODUTO ");
             strQuery += (" SET ");
             strQuery += (" Ativo = '" + 0 + "' ");
             strQuery += (" WHERE ");

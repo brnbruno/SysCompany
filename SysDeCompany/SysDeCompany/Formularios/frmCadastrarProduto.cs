@@ -8,9 +8,11 @@
  */
 using System;
 using System.Drawing;
-using System.Windows.Forms;
-using SysDeCompany.Classes;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
+
+using SysDeCompany.Classes;
 
 namespace DcompanySys
 {
@@ -31,9 +33,9 @@ namespace DcompanySys
 			//
 		}
 		
-		private int _control;
+		private int _controle;
 		
-		public int Control{get{return _control;}set{_control = value;}}
+		public int Controle{get{return _controle;}set{_controle = value;}}
 		
 		void BtnSairClick(object sender, EventArgs e)
 		{
@@ -65,6 +67,8 @@ namespace DcompanySys
 		
 		void FrmCadastrarProdutoLoad(object sender, EventArgs e)
 		{
+			txtValorVenda.Text = "0";
+			txtValorCompra.Text ="0";
 			clnConfig clnConfig = new clnConfig();
 			if(Directory.Exists("Config")&&Directory.Exists("Data")) 
 			{
@@ -73,7 +77,7 @@ namespace DcompanySys
 				lblNomeEmpresa.UseMnemonic = false;
 				lblNomeEmpresa.Text = clnConfig.BuscaNomeEmpresa();
 			}
-			if (_control==1) {
+			if (_controle==1) {
 				btnAlterar.Visible = false;
 				btnExcluir.Visible = false;
 			}
@@ -99,58 +103,55 @@ namespace DcompanySys
 		
 		void BtnIncluirClick(object sender, EventArgs e)
 		{
+			int aux = 0;
+			string msn = string.Empty;
 			clnValida objValida = new clnValida();
-			clnPessoa objPessoa = new clnPessoa();
-			objValida.txtNomeValidacao(ref txtNomeOuRazao);
-		
+			clnProduto objProduto = new clnProduto();
+			if (txtNome.Text.Length < 3) {aux++; msn = "Nome Preechido incorretamente\n";}
+			if (txtMarca.Text.Length < 2){aux++; msn += "Marca Preechido incorretamente\n";}
+			if (txtFornecedor.Text.Length <2){aux++; msn += "Fornecedor Preechido incorretamente\n";}
+			if (txtQuantidade.Text.Length <1){aux++; msn += "Quatidade não Preechido\n";}
+			if (0>=Convert.ToSingle(txtValorCompra.Text)){aux++; msn +="Valor de compra não pode ser zero\n";}
+			if (0>=Convert.ToSingle(txtValorVenda.Text)){aux++; msn +="Valor de venda não pode ser zero";}
 			
-			
-			if (objValida.aux < 1)
+			if (aux == 0)
                 {
-					objPessoa.Nome = txtNomeOuRazao.Text.ToUpper();
-					objPessoa.Cpf  = cpf.Replace(".","").Replace("-","");
-					objPessoa.Telefone = mtxtTelefone.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ",""); 
-					objPessoa.Telefone2 = mtxtTelefone2.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ","");
-                    objPessoa.Celular = mtxtCelular.Text.Replace("(", "").Replace("-", "").Replace(")", "").Replace(" ",""); 
-                    objPessoa.Cep = mtxtCep.Text.Replace(".","").Replace("-","");
-                    objPessoa.Endereco = txtEndereco.Text.ToUpper();
-                    objPessoa.Cidade = txtCidade.Text.ToUpper();
-                    objPessoa.Bairro = txtBairro.Text.ToUpper();
-                    objPessoa.Nr = txtNumero.Text;
-                    objPessoa.Uf = cbUF.Text;
-                    objPessoa.Tipopessoa = tipopessoa;
-                    objPessoa.Ie = txtIE.Text;
-                    objPessoa.Cnpj = mtxtCnpj.Text.Replace(".","").Replace("/","").Replace("-","");
-                    objPessoa.Complemeto = txtComplemento.Text.ToUpper();
+					objProduto.Nome  = txtNome.Text.ToUpper();
+					objProduto.QTD   = Convert.ToInt32(txtQuantidade.Text);
+					objProduto.Marca = txtMarca.Text.ToUpper();
+					objProduto.Fornecedor = txtFornecedor.Text.ToUpper();
+					objProduto.Valor_Compra = Convert.ToSingle(txtValorCompra.Text);
+					objProduto.Valor_Venda = Convert.ToSingle(txtValorVenda.Text);
+                   // objProduto.Img = ;
+                    
                     
                   
-                   	if (controle == 1) 
+                   	if (_controle == 1) 
                    	{
-                   		objPessoa.Gravar();
-                   		MessageBox.Show("Salvado com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   		objProduto.Gravar();
+                   		MessageBox.Show("Salvado com Sucesso","Salvado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    		
                    	} 
-                   	else if(controle == 2)
+                   	else if(_controle == 2)
                    	{
-                   		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
-                   		objPessoa.Alterar();
-                   		MessageBox.Show("Alterado com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                   	} else{
-                   		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
-                   		objPessoa.ExcluirLogicamente();
-                   		MessageBox.Show("Excluido com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   		objProduto.Cod = Convert.ToInt16(txtCodigo.Text);
+                   		objProduto.Alterar();
+                   		MessageBox.Show("Alterado com Sucesso","Alterado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   	} 
+                   	else
+                   	{
+                   		objProduto.Cod =Convert.ToInt16(txtCodigo.Text);
+                   		objProduto.ExcluirLogicamente();
+                   		MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	}
-                    foreach (TextBox txt in grbDadosPessoais.Controls.OfType<TextBox>())
+                    foreach (TextBox txt in grbInfoProduto.Controls.OfType<TextBox>())
                     {
                      	txt.Clear();
                     }
-                    foreach (MaskedTextBox mtxt in grbDadosPessoais.Controls.OfType<MaskedTextBox>())
-                    {
-                     	mtxt.Clear();
-                    }	
+                    
 			}else
 			{
-				MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				MessageBox.Show (msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
 		}
 	}

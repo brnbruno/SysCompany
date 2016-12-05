@@ -106,7 +106,7 @@ namespace SysDeCompany
 			this.grbPrincipal.Controls.Add(this.flowLayoutPanel1);
 			this.grbPrincipal.Location = new System.Drawing.Point(12, 138);
 			this.grbPrincipal.Name = "grbPrincipal";
-			this.grbPrincipal.Size = new System.Drawing.Size(756, 767);
+			this.grbPrincipal.Size = new System.Drawing.Size(753, 767);
 			this.grbPrincipal.TabIndex = 9;
 			this.grbPrincipal.TabStop = false;
 			// 
@@ -337,7 +337,7 @@ namespace SysDeCompany
 			this.pbLogoEmpresa.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.pbLogoEmpresa.Location = new System.Drawing.Point(12, 12);
 			this.pbLogoEmpresa.Name = "pbLogoEmpresa";
-			this.pbLogoEmpresa.Size = new System.Drawing.Size(133, 120);
+			this.pbLogoEmpresa.Size = new System.Drawing.Size(137, 127);
 			this.pbLogoEmpresa.TabIndex = 12;
 			this.pbLogoEmpresa.TabStop = false;
 			// 

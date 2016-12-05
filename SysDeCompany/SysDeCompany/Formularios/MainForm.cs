@@ -63,7 +63,7 @@ namespace SysDeCompany
 		void PbCadastrarProdutoClick(object sender, EventArgs e)
 		{
 			frmCadastrarProduto frmProduto = new frmCadastrarProduto();
-			frmProduto.Control =1;
+			frmProduto.Controle = 1;
 			frmProduto.BackColor = this.BackColor;
 			frmProduto.ForeColor = this.ForeColor;
 			frmProduto.ShowDialog();

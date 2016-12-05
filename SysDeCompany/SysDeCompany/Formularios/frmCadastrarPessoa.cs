@@ -121,18 +121,18 @@ namespace DcompanySys
                    	if (controle == 1) 
                    	{
                    		objPessoa.Gravar();
-                   		MessageBox.Show("Salvado com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   		MessageBox.Show("Salvado com Sucesso","Salvado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    		
                    	} 
                    	else if(controle == 2)
                    	{
                    		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
                    		objPessoa.Alterar();
-                   		MessageBox.Show("Alterado com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   		MessageBox.Show("Alterado com Sucesso","Alterado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	} else{
                    		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
                    		objPessoa.ExcluirLogicamente();
-                   		MessageBox.Show("Excluido com Sucesso","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                   		MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	}
                     foreach (TextBox txt in grbDadosPessoais.Controls.OfType<TextBox>())
                     {
