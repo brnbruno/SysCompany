@@ -40,37 +40,36 @@ namespace DcompanySys
 			this.grbPrincipal = new System.Windows.Forms.GroupBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.mtxtdate = new System.Windows.Forms.MaskedTextBox();
+			this.lblValorResult = new System.Windows.Forms.Label();
+			this.lblValor = new System.Windows.Forms.Label();
 			this.btnExcluirPro = new System.Windows.Forms.Button();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgvServico = new System.Windows.Forms.DataGridView();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
-			this.textBox14 = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.grbInfoProduto = new System.Windows.Forms.GroupBox();
-			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+			this.txtUF = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.mtxtTelefone2 = new System.Windows.Forms.MaskedTextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.btnConsultar = new System.Windows.Forms.Button();
 			this.mtxtCelular = new System.Windows.Forms.MaskedTextBox();
 			this.mtxtTelefone = new System.Windows.Forms.MaskedTextBox();
-			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
-			this.mtxtCpe = new System.Windows.Forms.MaskedTextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.txtComplemento = new System.Windows.Forms.TextBox();
+			this.txtCidade = new System.Windows.Forms.TextBox();
+			this.mtxtCep = new System.Windows.Forms.MaskedTextBox();
+			this.txtNumero = new System.Windows.Forms.TextBox();
+			this.txtCodigoCliente = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtBairro = new System.Windows.Forms.TextBox();
+			this.txtEndereco = new System.Windows.Forms.TextBox();
 			this.lblComplemento = new System.Windows.Forms.Label();
 			this.lblTelefone = new System.Windows.Forms.Label();
 			this.lblCelular = new System.Windows.Forms.Label();
 			this.lblCidade = new System.Windows.Forms.Label();
 			this.lblBairro = new System.Windows.Forms.Label();
-			this.lblCpe = new System.Windows.Forms.Label();
+			this.lblCep = new System.Windows.Forms.Label();
 			this.lblNumero = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtNomeOuRazao = new System.Windows.Forms.TextBox();
@@ -85,11 +84,12 @@ namespace DcompanySys
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
-			this.lblValor = new System.Windows.Forms.Label();
-			this.lblValorResult = new System.Windows.Forms.Label();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.grbPrincipal.SuspendLayout();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
 			this.grbInfoProduto.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).BeginInit();
@@ -128,19 +128,50 @@ namespace DcompanySys
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.mtxtdate);
 			this.groupBox1.Controls.Add(this.lblValorResult);
 			this.groupBox1.Controls.Add(this.lblValor);
 			this.groupBox1.Controls.Add(this.btnExcluirPro);
-			this.groupBox1.Controls.Add(this.dataGridView1);
+			this.groupBox1.Controls.Add(this.dgvServico);
 			this.groupBox1.Controls.Add(this.btnAdd);
 			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.textBox14);
 			this.groupBox1.Controls.Add(this.label14);
 			this.groupBox1.Location = new System.Drawing.Point(60, 330);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(1075, 332);
 			this.groupBox1.TabIndex = 47;
 			this.groupBox1.TabStop = false;
+			// 
+			// mtxtdate
+			// 
+			this.mtxtdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.mtxtdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.mtxtdate.Location = new System.Drawing.Point(244, 16);
+			this.mtxtdate.Mask = "00/00/0000";
+			this.mtxtdate.Name = "mtxtdate";
+			this.mtxtdate.Size = new System.Drawing.Size(96, 29);
+			this.mtxtdate.TabIndex = 74;
+			this.mtxtdate.ValidatingType = typeof(System.DateTime);
+			// 
+			// lblValorResult
+			// 
+			this.lblValorResult.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.lblValorResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValorResult.Location = new System.Drawing.Point(653, 279);
+			this.lblValorResult.Name = "lblValorResult";
+			this.lblValorResult.Size = new System.Drawing.Size(307, 50);
+			this.lblValorResult.TabIndex = 54;
+			this.lblValorResult.Text = "...";
+			// 
+			// lblValor
+			// 
+			this.lblValor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValor.Location = new System.Drawing.Point(397, 279);
+			this.lblValor.Name = "lblValor";
+			this.lblValor.Size = new System.Drawing.Size(346, 50);
+			this.lblValor.TabIndex = 53;
+			this.lblValor.Text = "Valor Total:";
 			// 
 			// btnExcluirPro
 			// 
@@ -154,46 +185,20 @@ namespace DcompanySys
 			this.btnExcluirPro.Text = "Excluir";
 			this.btnExcluirPro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluirPro.UseVisualStyleBackColor = true;
+			this.btnExcluirPro.Click += new System.EventHandler(this.BtnExcluirProClick);
 			// 
-			// dataGridView1
+			// dgvServico
 			// 
-			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.Column1,
-									this.Column2,
+			this.dgvServico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvServico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.Column5,
 									this.Column4,
 									this.Column3});
-			this.dataGridView1.Location = new System.Drawing.Point(397, 9);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(554, 267);
-			this.dataGridView1.TabIndex = 51;
-			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "Código";
-			this.Column1.Name = "Column1";
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "Tipo";
-			this.Column2.Name = "Column2";
-			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "Descrição";
-			this.Column5.Name = "Column5";
-			// 
-			// Column4
-			// 
-			this.Column4.HeaderText = "Quantidade";
-			this.Column4.Name = "Column4";
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "Valor";
-			this.Column3.Name = "Column3";
+			this.dgvServico.Location = new System.Drawing.Point(397, 9);
+			this.dgvServico.Name = "dgvServico";
+			this.dgvServico.Size = new System.Drawing.Size(554, 267);
+			this.dgvServico.TabIndex = 51;
 			// 
 			// btnAdd
 			// 
@@ -207,6 +212,7 @@ namespace DcompanySys
 			this.btnAdd.Text = "ADD ";
 			this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAdd.UseVisualStyleBackColor = true;
+			this.btnAdd.Click += new System.EventHandler(this.BtnAddClick);
 			// 
 			// label4
 			// 
@@ -217,15 +223,6 @@ namespace DcompanySys
 			this.label4.Size = new System.Drawing.Size(346, 26);
 			this.label4.TabIndex = 49;
 			this.label4.Text = "Adicionar Produto/Serviço :";
-			// 
-			// textBox14
-			// 
-			this.textBox14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox14.Location = new System.Drawing.Point(244, 19);
-			this.textBox14.Name = "textBox14";
-			this.textBox14.Size = new System.Drawing.Size(105, 26);
-			this.textBox14.TabIndex = 24;
 			// 
 			// label14
 			// 
@@ -241,25 +238,27 @@ namespace DcompanySys
 			// 
 			this.grbInfoProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.grbInfoProduto.Controls.Add(this.maskedTextBox1);
+			this.grbInfoProduto.Controls.Add(this.txtUF);
+			this.grbInfoProduto.Controls.Add(this.label7);
+			this.grbInfoProduto.Controls.Add(this.mtxtTelefone2);
 			this.grbInfoProduto.Controls.Add(this.label6);
 			this.grbInfoProduto.Controls.Add(this.btnConsultar);
 			this.grbInfoProduto.Controls.Add(this.mtxtCelular);
 			this.grbInfoProduto.Controls.Add(this.mtxtTelefone);
-			this.grbInfoProduto.Controls.Add(this.textBox6);
-			this.grbInfoProduto.Controls.Add(this.textBox5);
-			this.grbInfoProduto.Controls.Add(this.mtxtCpe);
-			this.grbInfoProduto.Controls.Add(this.textBox4);
-			this.grbInfoProduto.Controls.Add(this.textBox3);
+			this.grbInfoProduto.Controls.Add(this.txtComplemento);
+			this.grbInfoProduto.Controls.Add(this.txtCidade);
+			this.grbInfoProduto.Controls.Add(this.mtxtCep);
+			this.grbInfoProduto.Controls.Add(this.txtNumero);
+			this.grbInfoProduto.Controls.Add(this.txtCodigoCliente);
 			this.grbInfoProduto.Controls.Add(this.label3);
-			this.grbInfoProduto.Controls.Add(this.textBox2);
-			this.grbInfoProduto.Controls.Add(this.textBox1);
+			this.grbInfoProduto.Controls.Add(this.txtBairro);
+			this.grbInfoProduto.Controls.Add(this.txtEndereco);
 			this.grbInfoProduto.Controls.Add(this.lblComplemento);
 			this.grbInfoProduto.Controls.Add(this.lblTelefone);
 			this.grbInfoProduto.Controls.Add(this.lblCelular);
 			this.grbInfoProduto.Controls.Add(this.lblCidade);
 			this.grbInfoProduto.Controls.Add(this.lblBairro);
-			this.grbInfoProduto.Controls.Add(this.lblCpe);
+			this.grbInfoProduto.Controls.Add(this.lblCep);
 			this.grbInfoProduto.Controls.Add(this.lblNumero);
 			this.grbInfoProduto.Controls.Add(this.label2);
 			this.grbInfoProduto.Controls.Add(this.txtNomeOuRazao);
@@ -272,15 +271,34 @@ namespace DcompanySys
 			this.grbInfoProduto.TabIndex = 8;
 			this.grbInfoProduto.TabStop = false;
 			// 
-			// maskedTextBox1
+			// txtUF
 			// 
-			this.maskedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox1.Location = new System.Drawing.Point(544, 132);
-			this.maskedTextBox1.Mask = "(99) 0000-0000";
-			this.maskedTextBox1.Name = "maskedTextBox1";
-			this.maskedTextBox1.Size = new System.Drawing.Size(141, 29);
-			this.maskedTextBox1.TabIndex = 71;
+			this.txtUF.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtUF.Location = new System.Drawing.Point(880, 101);
+			this.txtUF.Name = "txtUF";
+			this.txtUF.Size = new System.Drawing.Size(67, 26);
+			this.txtUF.TabIndex = 73;
+			// 
+			// label7
+			// 
+			this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(836, 101);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(109, 26);
+			this.label7.TabIndex = 72;
+			this.label7.Text = "UF:";
+			// 
+			// mtxtTelefone2
+			// 
+			this.mtxtTelefone2.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.mtxtTelefone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.mtxtTelefone2.Location = new System.Drawing.Point(544, 132);
+			this.mtxtTelefone2.Mask = "(99) 0000-0000";
+			this.mtxtTelefone2.Name = "mtxtTelefone2";
+			this.mtxtTelefone2.Size = new System.Drawing.Size(141, 29);
+			this.mtxtTelefone2.TabIndex = 71;
 			// 
 			// label6
 			// 
@@ -308,7 +326,7 @@ namespace DcompanySys
 			// 
 			this.mtxtCelular.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.mtxtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtCelular.Location = new System.Drawing.Point(804, 132);
+			this.mtxtCelular.Location = new System.Drawing.Point(806, 132);
 			this.mtxtCelular.Mask = "(99) 0 0000-0000";
 			this.mtxtCelular.Name = "mtxtCelular";
 			this.mtxtCelular.Size = new System.Drawing.Size(141, 29);
@@ -324,53 +342,52 @@ namespace DcompanySys
 			this.mtxtTelefone.Size = new System.Drawing.Size(141, 29);
 			this.mtxtTelefone.TabIndex = 67;
 			// 
-			// textBox6
+			// txtComplemento
 			// 
-			this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox6.Location = new System.Drawing.Point(696, 102);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(252, 26);
-			this.textBox6.TabIndex = 66;
+			this.txtComplemento.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtComplemento.Location = new System.Drawing.Point(696, 102);
+			this.txtComplemento.Name = "txtComplemento";
+			this.txtComplemento.Size = new System.Drawing.Size(134, 26);
+			this.txtComplemento.TabIndex = 66;
 			// 
-			// textBox5
+			// txtCidade
 			// 
-			this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox5.Location = new System.Drawing.Point(242, 103);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(284, 26);
-			this.textBox5.TabIndex = 65;
+			this.txtCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCidade.Location = new System.Drawing.Point(242, 103);
+			this.txtCidade.Name = "txtCidade";
+			this.txtCidade.Size = new System.Drawing.Size(284, 26);
+			this.txtCidade.TabIndex = 65;
 			// 
-			// mtxtCpe
+			// mtxtCep
 			// 
-			this.mtxtCpe.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.mtxtCpe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.mtxtCpe.Location = new System.Drawing.Point(696, 39);
-			this.mtxtCpe.Mask = "0000-000";
-			this.mtxtCpe.Name = "mtxtCpe";
-			this.mtxtCpe.Size = new System.Drawing.Size(105, 29);
-			this.mtxtCpe.TabIndex = 64;
+			this.mtxtCep.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.mtxtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.mtxtCep.Location = new System.Drawing.Point(696, 39);
+			this.mtxtCep.Mask = "00000-000";
+			this.mtxtCep.Name = "mtxtCep";
+			this.mtxtCep.Size = new System.Drawing.Size(105, 29);
+			this.mtxtCep.TabIndex = 64;
 			// 
-			// textBox4
+			// txtNumero
 			// 
-			this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox4.Enabled = false;
-			this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox4.Location = new System.Drawing.Point(865, 42);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(83, 26);
-			this.textBox4.TabIndex = 63;
+			this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNumero.Location = new System.Drawing.Point(865, 42);
+			this.txtNumero.Name = "txtNumero";
+			this.txtNumero.Size = new System.Drawing.Size(83, 26);
+			this.txtNumero.TabIndex = 63;
 			// 
-			// textBox3
+			// txtCodigoCliente
 			// 
-			this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox3.Enabled = false;
-			this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox3.Location = new System.Drawing.Point(511, 10);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(105, 26);
-			this.textBox3.TabIndex = 62;
+			this.txtCodigoCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCodigoCliente.Location = new System.Drawing.Point(511, 10);
+			this.txtCodigoCliente.Name = "txtCodigoCliente";
+			this.txtCodigoCliente.Size = new System.Drawing.Size(105, 26);
+			this.txtCodigoCliente.TabIndex = 62;
+			this.txtCodigoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoClienteKeyPress);
 			// 
 			// label3
 			// 
@@ -382,23 +399,23 @@ namespace DcompanySys
 			this.label3.TabIndex = 61;
 			this.label3.Text = "Código Cliente :";
 			// 
-			// textBox2
+			// txtBairro
 			// 
-			this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(696, 73);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(252, 26);
-			this.textBox2.TabIndex = 60;
+			this.txtBairro.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtBairro.Location = new System.Drawing.Point(696, 73);
+			this.txtBairro.Name = "txtBairro";
+			this.txtBairro.Size = new System.Drawing.Size(252, 26);
+			this.txtBairro.TabIndex = 60;
 			// 
-			// textBox1
+			// txtEndereco
 			// 
-			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(241, 73);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(375, 26);
-			this.textBox1.TabIndex = 59;
+			this.txtEndereco.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtEndereco.Location = new System.Drawing.Point(241, 73);
+			this.txtEndereco.Name = "txtEndereco";
+			this.txtEndereco.Size = new System.Drawing.Size(375, 26);
+			this.txtEndereco.TabIndex = 59;
 			// 
 			// lblComplemento
 			// 
@@ -450,15 +467,15 @@ namespace DcompanySys
 			this.lblBairro.TabIndex = 55;
 			this.lblBairro.Text = "Bairro :";
 			// 
-			// lblCpe
+			// lblCep
 			// 
-			this.lblCpe.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.lblCpe.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCpe.Location = new System.Drawing.Point(622, 41);
-			this.lblCpe.Name = "lblCpe";
-			this.lblCpe.Size = new System.Drawing.Size(84, 22);
-			this.lblCpe.TabIndex = 53;
-			this.lblCpe.Text = "CPE :";
+			this.lblCep.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.lblCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblCep.Location = new System.Drawing.Point(622, 41);
+			this.lblCep.Name = "lblCep";
+			this.lblCep.Size = new System.Drawing.Size(84, 22);
+			this.lblCep.TabIndex = 53;
+			this.lblCep.Text = "CEP :";
 			// 
 			// lblNumero
 			// 
@@ -614,25 +631,20 @@ namespace DcompanySys
 			this.pbLogoEmpresa.TabIndex = 3;
 			this.pbLogoEmpresa.TabStop = false;
 			// 
-			// lblValor
+			// Column5
 			// 
-			this.lblValor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblValor.Location = new System.Drawing.Point(397, 279);
-			this.lblValor.Name = "lblValor";
-			this.lblValor.Size = new System.Drawing.Size(346, 50);
-			this.lblValor.TabIndex = 53;
-			this.lblValor.Text = "Valor Total:";
+			this.Column5.HeaderText = "Descrição";
+			this.Column5.Name = "Column5";
 			// 
-			// lblValorResult
+			// Column4
 			// 
-			this.lblValorResult.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.lblValorResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblValorResult.Location = new System.Drawing.Point(653, 279);
-			this.lblValorResult.Name = "lblValorResult";
-			this.lblValorResult.Size = new System.Drawing.Size(307, 50);
-			this.lblValorResult.TabIndex = 54;
-			this.lblValorResult.Text = "...";
+			this.Column4.HeaderText = "Quantidade";
+			this.Column4.Name = "Column4";
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "Valor";
+			this.Column3.Name = "Column3";
 			// 
 			// frmCadastroServico
 			// 
@@ -649,48 +661,48 @@ namespace DcompanySys
 			this.grbPrincipal.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
 			this.grbInfoProduto.ResumeLayout(false);
 			this.grbInfoProduto.PerformLayout();
 			this.flowLayoutPanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.MaskedTextBox mtxtdate;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.TextBox txtUF;
 		private System.Windows.Forms.Label lblValor;
 		private System.Windows.Forms.Label lblValorResult;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+		private System.Windows.Forms.MaskedTextBox mtxtTelefone2;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button btnExcluirPro;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		public System.Windows.Forms.DataGridView dgvServico;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.TextBox textBox14;
 		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.MaskedTextBox mtxtTelefone;
 		private System.Windows.Forms.MaskedTextBox mtxtCelular;
-		private System.Windows.Forms.Button btnConsultar;
-		private System.Windows.Forms.MaskedTextBox mtxtCpe;
-		private System.Windows.Forms.TextBox textBox5;
-		private System.Windows.Forms.TextBox textBox6;
-		private System.Windows.Forms.TextBox textBox4;
+		public System.Windows.Forms.Button btnConsultar;
+		private System.Windows.Forms.MaskedTextBox mtxtCep;
+		private System.Windows.Forms.TextBox txtCidade;
+		private System.Windows.Forms.TextBox txtComplemento;
+		private System.Windows.Forms.TextBox txtNumero;
 		private System.Windows.Forms.Label lblNumero;
-		private System.Windows.Forms.Label lblCpe;
+		private System.Windows.Forms.Label lblCep;
 		private System.Windows.Forms.Label lblBairro;
 		private System.Windows.Forms.Label lblCidade;
 		private System.Windows.Forms.Label lblCelular;
 		private System.Windows.Forms.Label lblTelefone;
 		private System.Windows.Forms.Label lblComplemento;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtEndereco;
+		private System.Windows.Forms.TextBox txtBairro;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox3;
+		public System.Windows.Forms.TextBox txtCodigoCliente;
 		private System.Windows.Forms.Label lblCodigo;
 		private System.Windows.Forms.TextBox txtCodigo;
 		private System.Windows.Forms.Label lblNomeOuRazao;

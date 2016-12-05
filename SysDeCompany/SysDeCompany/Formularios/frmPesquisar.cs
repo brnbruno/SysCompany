@@ -10,6 +10,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SysDeCompany.Classes;
+using SysDeCompany.Formularios;
 
 namespace DcompanySys
 {
@@ -30,8 +31,11 @@ namespace DcompanySys
 			//
 		}
 		private byte _control;
+		private int _quantidade;
+		
 		
 		public byte Control{get{return _control;}set{_control = value;}}
+		public int Quantidade{get{return _quantidade;}set{_quantidade = value;}}
 		
 		void BtnNovoClick(object sender, EventArgs e)
 		{
@@ -214,6 +218,43 @@ namespace DcompanySys
 				clnProduto objProduto = new clnProduto();
 				dgv.DataSource = objProduto.BuscarProduto(txtDescricao.Text.ToUpper()).Tables[0];
 			}
+		}
+		
+		Image imgbtnadd = null;
+		void BtnAddServicoMouseHover(object sender, EventArgs e)
+		{
+			btnAddServico.Text = "Adicionar Serviço";
+			imgbtnadd = btnAddServico.BackgroundImage;
+			btnAddServico.BackgroundImage = null;
+		}
+		
+		void BtnAddServicoMouseLeave(object sender, EventArgs e)
+		{
+			btnAddServico.Text = "";
+			btnAddServico.BackgroundImage = imgbtnadd;
+		}
+		
+		void BtnAddServicoClick(object sender, EventArgs e)
+		{
+			if (_control == 1) 
+			{
+				((frmCadastroServico)this.Owner).txtCodigoCliente.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+			    ((frmCadastroServico)this.Owner).Control = 1;
+			    this.Close();
+			}
+			else if (_control == 2)
+			{
+				frmQuantidade objQtd = new frmQuantidade();
+				objQtd.Owner = this;
+				objQtd.ShowDialog(this);
+				int index = dgv.CurrentRow.Index;
+				((frmCadastroServico)this.Owner).dgvServico.Rows.Add(dgv.CurrentRow.Cells[index].Value,_quantidade,"1");
+			}
+		}
+		
+		void BtnPesquiInativoClick(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

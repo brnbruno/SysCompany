@@ -85,6 +85,10 @@
     <Compile Include="Formularios\frmPesquisar.Designer.cs">
       <DependentUpon>frmPesquisar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmQuantidade.cs" />
+    <Compile Include="Formularios\frmQuantidade.Designer.cs">
+      <DependentUpon>frmQuantidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\MainForm.cs" />
     <Compile Include="Formularios\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -118,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPesquisar.resx">
       <DependentUpon>frmPesquisar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmQuantidade.resx">
+      <DependentUpon>frmQuantidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

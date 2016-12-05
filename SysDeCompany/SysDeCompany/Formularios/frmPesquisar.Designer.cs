@@ -40,6 +40,7 @@ namespace DcompanySys
 			this.btnSair = new System.Windows.Forms.Button();
 			this.btnPequisar = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.btnAddServico = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnConsultar = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@ namespace DcompanySys
 			this.txtDescricao = new System.Windows.Forms.TextBox();
 			this.lbDescricao = new System.Windows.Forms.Label();
 			this.dgv = new System.Windows.Forms.DataGridView();
+			this.txtInvisivel = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
 			this.SuspendLayout();
@@ -88,6 +90,8 @@ namespace DcompanySys
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.txtInvisivel);
+			this.groupBox1.Controls.Add(this.btnAddServico);
 			this.groupBox1.Controls.Add(this.btnExcluir);
 			this.groupBox1.Controls.Add(this.btnPequisar);
 			this.groupBox1.Controls.Add(this.btnAlterar);
@@ -104,6 +108,21 @@ namespace DcompanySys
 			this.groupBox1.Size = new System.Drawing.Size(1030, 530);
 			this.groupBox1.TabIndex = 8;
 			this.groupBox1.TabStop = false;
+			// 
+			// btnAddServico
+			// 
+			this.btnAddServico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnAddServico.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddServico.BackgroundImage")));
+			this.btnAddServico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnAddServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAddServico.Location = new System.Drawing.Point(716, 415);
+			this.btnAddServico.Name = "btnAddServico";
+			this.btnAddServico.Size = new System.Drawing.Size(90, 101);
+			this.btnAddServico.TabIndex = 21;
+			this.btnAddServico.UseVisualStyleBackColor = true;
+			this.btnAddServico.Click += new System.EventHandler(this.BtnAddServicoClick);
+			this.btnAddServico.MouseLeave += new System.EventHandler(this.BtnAddServicoMouseLeave);
+			this.btnAddServico.MouseHover += new System.EventHandler(this.BtnAddServicoMouseHover);
 			// 
 			// btnExcluir
 			// 
@@ -175,8 +194,8 @@ namespace DcompanySys
 			this.btnPesquiInativo.Size = new System.Drawing.Size(90, 101);
 			this.btnPesquiInativo.TabIndex = 17;
 			this.btnPesquiInativo.Text = "Pesquisar Excluido";
-			this.btnPesquiInativo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnPesquiInativo.UseVisualStyleBackColor = true;
+			this.btnPesquiInativo.Click += new System.EventHandler(this.BtnPesquiInativoClick);
 			// 
 			// lblFiltros
 			// 
@@ -226,6 +245,17 @@ namespace DcompanySys
 			this.dgv.TabIndex = 19;
 			this.dgv.DoubleClick += new System.EventHandler(this.DgvDoubleClick);
 			// 
+			// txtInvisivel
+			// 
+			this.txtInvisivel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtInvisivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtInvisivel.Location = new System.Drawing.Point(455, 477);
+			this.txtInvisivel.Name = "txtInvisivel";
+			this.txtInvisivel.Size = new System.Drawing.Size(22, 38);
+			this.txtInvisivel.TabIndex = 22;
+			this.txtInvisivel.Visible = false;
+			// 
 			// frmPesquisar
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +273,8 @@ namespace DcompanySys
 			((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
 			this.ResumeLayout(false);
         }
+		public System.Windows.Forms.TextBox txtInvisivel;
+		public System.Windows.Forms.Button btnAddServico;
 		private System.Windows.Forms.GroupBox groupBox1;
 
 
@@ -251,11 +283,11 @@ namespace DcompanySys
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblFiltros;
 		public System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.Button btnPesquiInativo;
-        private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnExcluir;
+		public System.Windows.Forms.Button btnPesquiInativo;
+		public System.Windows.Forms.Button btnNovo;
+		public System.Windows.Forms.Button btnConsultar;
+		public System.Windows.Forms.Button btnAlterar;
+		public System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnPequisar;
 	}
