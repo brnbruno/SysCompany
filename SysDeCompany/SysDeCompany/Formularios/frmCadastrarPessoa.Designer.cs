@@ -463,7 +463,7 @@ namespace DcompanySys
 			this.mtxtCep.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.mtxtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.mtxtCep.Location = new System.Drawing.Point(162, 76);
-			this.mtxtCep.Mask = "0000-000";
+			this.mtxtCep.Mask = "00000-000";
 			this.mtxtCep.Name = "mtxtCep";
 			this.mtxtCep.Size = new System.Drawing.Size(105, 29);
 			this.mtxtCep.TabIndex = 9;

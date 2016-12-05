@@ -66,7 +66,9 @@ namespace SysDeCompany.Classes
 			strQuery += (", MARCA ='"+  _marca +"'");
 			strQuery += (",	VALOR_COMPRA ='" + _valor_compra +"'");
 			strQuery += (", VALOR_VENDA ='"+ _valor_venda +"'");
-			strQuery += (", IMAGEM ='"+ _img+"'");
+			if (_img != string.Empty) {
+				strQuery += (", IMAGEM ='"+ _img+"'");
+			}
 			strQuery += (", ATIVO = '1'");
 			strQuery += (" WHERE ");
 			strQuery += ("Codigo = '" + _cod + "' ");
@@ -94,6 +96,20 @@ namespace SysDeCompany.Classes
       	 	command.ExecuteNonQuery();
       	 	clBancoDados.desconectar(conn);
         }
+		
+		public DataSet BuscarProduto(string strDescricao)
+        {
+			clBancoDados clBancoDados = new clBancoDados();
+			if (string.IsNullOrEmpty(strDescricao)) throw new Exception("Não foi informado a Descrição a ser consultada.");
+			DataSet dtset = new DataSet();  
+        	SQLiteConnection conn = clBancoDados.conectar();  
+        	SQLiteCommand command = conn.CreateCommand();  
+            command.CommandText = "SELECT * FROM TB_PRODUTO Where ativo = 1 and NOME like '%" + strDescricao+ "%' order by CODIGO";
+          	SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, conn);  
+      		DB.Fill(dtset);  
+        	conn.Close();  
+        	return dtset;  
+		}
 	
 	}
 }

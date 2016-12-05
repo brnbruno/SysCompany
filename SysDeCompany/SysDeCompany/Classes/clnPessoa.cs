@@ -59,7 +59,7 @@ namespace SysDeCompany.Classes
 		public void Gravar()
         {	
 			string strQuery = "INSERT INTO TB_PESSOA(";
-			strQuery += ("Nome, Endereco,bairro, Cidade, Complemento, CPE, numero, uf, CPF,");
+			strQuery += ("Nome, Endereco,bairro, Cidade, Complemento, CEP, numero, uf, CPF,");
 			strQuery += ("Telefone,Telefone2, Celular, Cnpj, IncricaoEstadual,");
 			strQuery += ("Tipo_pessoa, Ativo)");
 			strQuery += (" VALUES(");
@@ -95,7 +95,7 @@ namespace SysDeCompany.Classes
 			strQuery += (", bairro ='" + _bairro +"'");
 			strQuery += (", Cidade ='"+  _cidade +"'");
 			strQuery += (",	Complemento ='" + _complemeto +"'");
-			strQuery += (", CPE ='"+ _cep +"'");
+			strQuery += (", CEP ='"+ _cep +"'");
 			strQuery += (", numero ='"+ _nr+"'");
 			strQuery += (", uf ='" + _uf + "'");
 			strQuery += (", CPF ='"+ _cpf +"'");
@@ -132,6 +132,18 @@ namespace SysDeCompany.Classes
       	 	command.ExecuteNonQuery();
       	 	clBancoDados.desconectar(conn);
         }
-	
+		public DataSet BuscarPessoa(string strDescricao)
+        {
+			clBancoDados clBancoDados = new clBancoDados();
+			if (string.IsNullOrEmpty(strDescricao)) throw new Exception("Não foi informado a Descrição a ser consultada.");
+			DataSet dtset = new DataSet();  
+        	SQLiteConnection conn = clBancoDados.conectar();  
+        	SQLiteCommand command = conn.CreateCommand();  
+            command.CommandText = "SELECT * FROM TB_Pessoa Where  Ativo = 1 and NOME like '%" + strDescricao+ "%' order by CODIGO";
+          	SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, conn);  
+      		DB.Fill(dtset);  
+        	conn.Close();  
+        	return dtset;  
+		}
 	}
 }

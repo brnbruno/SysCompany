@@ -430,11 +430,11 @@ namespace DcompanySys
 		private System.Windows.Forms.GroupBox grbPrincipal;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Button btnSair;
-		private System.Windows.Forms.Button btnAlterar;
+		public System.Windows.Forms.Button btnAlterar;
 		private System.Windows.Forms.Button btnExcluir;
-		private System.Windows.Forms.Button btnIncluir;
+		public System.Windows.Forms.Button btnIncluir;
 		private System.Windows.Forms.GroupBox grbInfoProduto;
-		private System.Windows.Forms.Button btnBuscaImagem;
+		public System.Windows.Forms.Button btnBuscaImagem;
 		private System.Windows.Forms.PictureBox pbImagem;
 		public System.Windows.Forms.TextBox txtValorCompra;
 		public System.Windows.Forms.TextBox txtMarca;
@@ -449,6 +449,6 @@ namespace DcompanySys
 		private System.Windows.Forms.Label lblNomeOuRazao;
 		public System.Windows.Forms.TextBox txtCodigo;
 		private System.Windows.Forms.Label lblCodigo;
-		private System.Windows.Forms.Button btnLimparImagem;
+		public System.Windows.Forms.Button btnLimparImagem;
 	}
 }

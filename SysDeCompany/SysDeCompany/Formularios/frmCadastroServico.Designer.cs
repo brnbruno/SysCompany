@@ -52,6 +52,8 @@ namespace DcompanySys
 			this.textBox14 = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.grbInfoProduto = new System.Windows.Forms.GroupBox();
+			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.btnConsultar = new System.Windows.Forms.Button();
 			this.mtxtCelular = new System.Windows.Forms.MaskedTextBox();
 			this.mtxtTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -83,8 +85,8 @@ namespace DcompanySys
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+			this.lblValor = new System.Windows.Forms.Label();
+			this.lblValorResult = new System.Windows.Forms.Label();
 			this.grbPrincipal.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -126,6 +128,8 @@ namespace DcompanySys
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.lblValorResult);
+			this.groupBox1.Controls.Add(this.lblValor);
 			this.groupBox1.Controls.Add(this.btnExcluirPro);
 			this.groupBox1.Controls.Add(this.dataGridView1);
 			this.groupBox1.Controls.Add(this.btnAdd);
@@ -163,7 +167,7 @@ namespace DcompanySys
 									this.Column3});
 			this.dataGridView1.Location = new System.Drawing.Point(397, 9);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(554, 314);
+			this.dataGridView1.Size = new System.Drawing.Size(554, 267);
 			this.dataGridView1.TabIndex = 51;
 			// 
 			// Column1
@@ -267,6 +271,26 @@ namespace DcompanySys
 			this.grbInfoProduto.Size = new System.Drawing.Size(1075, 179);
 			this.grbInfoProduto.TabIndex = 8;
 			this.grbInfoProduto.TabStop = false;
+			// 
+			// maskedTextBox1
+			// 
+			this.maskedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.maskedTextBox1.Location = new System.Drawing.Point(544, 132);
+			this.maskedTextBox1.Mask = "(99) 0000-0000";
+			this.maskedTextBox1.Name = "maskedTextBox1";
+			this.maskedTextBox1.Size = new System.Drawing.Size(141, 29);
+			this.maskedTextBox1.TabIndex = 71;
+			// 
+			// label6
+			// 
+			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(410, 134);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(153, 35);
+			this.label6.TabIndex = 70;
+			this.label6.Text = "Telefone2 :*";
 			// 
 			// btnConsultar
 			// 
@@ -590,25 +614,25 @@ namespace DcompanySys
 			this.pbLogoEmpresa.TabIndex = 3;
 			this.pbLogoEmpresa.TabStop = false;
 			// 
-			// label6
+			// lblValor
 			// 
-			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(410, 134);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(153, 35);
-			this.label6.TabIndex = 70;
-			this.label6.Text = "Telefone2 :*";
+			this.lblValor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValor.Location = new System.Drawing.Point(397, 279);
+			this.lblValor.Name = "lblValor";
+			this.lblValor.Size = new System.Drawing.Size(346, 50);
+			this.lblValor.TabIndex = 53;
+			this.lblValor.Text = "Valor Total:";
 			// 
-			// maskedTextBox1
+			// lblValorResult
 			// 
-			this.maskedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox1.Location = new System.Drawing.Point(544, 132);
-			this.maskedTextBox1.Mask = "(99) 0000-0000";
-			this.maskedTextBox1.Name = "maskedTextBox1";
-			this.maskedTextBox1.Size = new System.Drawing.Size(141, 29);
-			this.maskedTextBox1.TabIndex = 71;
+			this.lblValorResult.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.lblValorResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblValorResult.Location = new System.Drawing.Point(653, 279);
+			this.lblValorResult.Name = "lblValorResult";
+			this.lblValorResult.Size = new System.Drawing.Size(307, 50);
+			this.lblValorResult.TabIndex = 54;
+			this.lblValorResult.Text = "...";
 			// 
 			// frmCadastroServico
 			// 
@@ -632,6 +656,8 @@ namespace DcompanySys
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Label lblValor;
+		private System.Windows.Forms.Label lblValorResult;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.MaskedTextBox maskedTextBox1;
 		private System.Windows.Forms.Label label5;

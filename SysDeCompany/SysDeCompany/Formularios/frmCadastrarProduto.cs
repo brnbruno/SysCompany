@@ -35,10 +35,10 @@ namespace DcompanySys
 			//
 		}
 		
-		private int _controle;
+		private byte _controle;
 		string nomeDoArquivo = string.Empty;
 		
-		public int Controle{get{return _controle;}set{_controle = value;}}
+		public byte Controle{get{return _controle;}set{_controle = value;}}
 		
 		void BtnSairClick(object sender, EventArgs e)
 		{
@@ -196,7 +196,7 @@ namespace DcompanySys
                    	} 
                    	else
                    	{
-                   		objProduto.Cod =Convert.ToInt16(txtCodigo.Text);
+                   		objProduto.Cod = Convert.ToInt16(txtCodigo.Text);
                    		objProduto.ExcluirLogicamente();
                    		MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	}
@@ -204,12 +204,12 @@ namespace DcompanySys
                     {
                      	txt.Clear();
                     }
+                    this.Close();
                     
 			}else
 			{
 				MessageBox.Show (msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
-			this.Close();
 		}
 		
 		void BtnAlterarClick(object sender, EventArgs e)

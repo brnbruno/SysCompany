@@ -50,7 +50,7 @@ namespace DcompanySys
 								" [bairro] VARCHAR(50)  NOT NULL,"+
           						" [Cidade] VARCHAR(50)  NOT NULL,"+
           						" [Complemento] VARCHAR(50)  NULL,"+
-								" [CEP] VARCHAR(9)  NOT NULL,"+
+								" [CEP] VARCHAR(10)  NOT NULL,"+
 								" [numero] VARCHAR(5)  NOT NULL,"+
 								" [uf] VARCHAR(2) NOT NULL, "+
 								" [CPF] VARCHAR(14)  NOT NULL,"+
@@ -60,7 +60,18 @@ namespace DcompanySys
 								" [Cnpj] VARCHAR(18)  NULL,"+
 								" [IncricaoEstadual] VARCHAR(15)  NULL,"+
   								" [Tipo_pessoa] VARCHAR(2)  NOT NULL,"+
-								" [Ativo] INTEGER  NOT NULL);";
+								" [Ativo] INTEGER  NOT NULL);" +
+          	
+          						"CREATE TABLE [TB_PRODUTO]" + 
+          						"([CODIGO] INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL,"+
+								" [NOME] VARCHAR(50)  NOT NULL," +
+								" [QTD] INTEGER  NOT NULL," +
+								" [FORNECEDOR] VARCHAR(20)  NOT NULL," +
+								" [MARCA] VARCHAR(20)  NOT NULL," +
+          						" [VALOR_COMPRA] VARCHAR(10)  NOT NULL,"+
+								" [VALOR_VENDA] VARCHAR(10)  NOT NULL,"+
+								" [IMAGEM] VARCHAR(50)  NULL," +
+								" [ATIVO] INTEGER  NULL);";
           command.ExecuteNonQuery(); 
           conn.Close();
           Inserir();

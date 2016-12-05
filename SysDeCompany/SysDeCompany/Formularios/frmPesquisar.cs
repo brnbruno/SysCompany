@@ -29,15 +29,16 @@ namespace DcompanySys
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		private int _control;
+		private byte _control;
 		
-		public int Control{get{return _control;}set{_control = value;}}
+		public byte Control{get{return _control;}set{_control = value;}}
 		
 		void BtnNovoClick(object sender, EventArgs e)
 		{
 			if (_control==1) {
    				frmCadastrarPessoa frmCadastro = new frmCadastrarPessoa();
 				frmCadastro.Control = 1;
+				frmCadastro.TipoPessoa = "PF";
 				frmCadastro.ShowDialog();
 				CarregaDataGridPessoa();
    			}
@@ -53,27 +54,47 @@ namespace DcompanySys
 		
 		void BtnConsultarClick(object sender, EventArgs e)
 		{
-			frmCadastrarPessoa objfPessoa = new frmCadastrarPessoa();
-            objfPessoa.txtNomeOuRazao.Enabled = false;
-            objfPessoa.mtxtCpf.Enabled = false;
-            objfPessoa.mtxtTelefone.Enabled = false;
-            objfPessoa.mtxtTelefone2.Enabled = false;
-            objfPessoa.mtxtCelular.Enabled = false;
-            objfPessoa.txtEndereco.Enabled = false;
-            objfPessoa.txtBairro.Enabled = false;
-            objfPessoa.txtCidade.Enabled = false;
-            objfPessoa.txtNumero.Enabled = false;
-            objfPessoa.cbUF.Enabled = false;
-            objfPessoa.mtxtCep.Enabled = false;
-            objfPessoa.btnAlterar.Visible = false;
-            objfPessoa.btnIncluir.Visible = false;
-            objfPessoa.txtComplemento.Enabled = false;
-            objfPessoa.mtxtCnpj.Enabled = false;
-            objfPessoa.txtIE.Enabled = false;
-            objfPessoa.rbPessoaFisica.Enabled = false;
-            objfPessoa.rbPessoaJuridica.Enabled = false;
-            objfPessoa.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-            objfPessoa.ShowDialog();
+			if (_control==1) {
+   				frmCadastrarPessoa objfPessoa = new frmCadastrarPessoa();
+            	objfPessoa.txtNomeOuRazao.Enabled = false;
+            	objfPessoa.mtxtCpf.Enabled = false;
+            	objfPessoa.mtxtTelefone.Enabled = false;
+            	objfPessoa.mtxtTelefone2.Enabled = false;
+            	objfPessoa.mtxtCelular.Enabled = false;
+            	objfPessoa.txtEndereco.Enabled = false;
+            	objfPessoa.txtBairro.Enabled = false;
+            	objfPessoa.txtCidade.Enabled = false;
+            	objfPessoa.txtNumero.Enabled = false;
+            	objfPessoa.cbUF.Enabled = false;
+            	objfPessoa.mtxtCep.Enabled = false;
+            	objfPessoa.btnAlterar.Visible = false;
+            	objfPessoa.btnIncluir.Visible = false;
+            	objfPessoa.txtComplemento.Enabled = false;
+            	objfPessoa.mtxtCnpj.Enabled = false;
+            	objfPessoa.txtIE.Enabled = false;
+            	objfPessoa.rbPessoaFisica.Enabled = false;
+            	objfPessoa.rbPessoaJuridica.Enabled = false;
+            	objfPessoa.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            	objfPessoa.TipoPessoa = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
+            	objfPessoa.ShowDialog();
+   			}
+   			else if (_control==2) {
+   				frmCadastrarProduto objProduto = new frmCadastrarProduto();
+            	objProduto.txtNome.Enabled = false;
+            	objProduto.txtMarca.Enabled = false;
+            	objProduto.txtQuantidade.Enabled = false;
+            	objProduto.txtMarca.Enabled = false;
+            	objProduto.txtFornecedor.Enabled = false;
+            	objProduto.txtValorCompra.Enabled = false;
+            	objProduto.txtValorVenda.Enabled = false;
+            	objProduto.btnBuscaImagem.Visible = false;
+            	objProduto.btnLimparImagem.Visible = false;
+            	objProduto.btnAlterar.Visible = false;
+            	objProduto.btnIncluir.Visible = false;
+            	objProduto.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            	objProduto.ShowDialog();
+   			}
+			
 		}
 		
 		void FrmPesquisarLoad(object sender, EventArgs e)
@@ -106,7 +127,7 @@ namespace DcompanySys
             		objPessoa.txtCodigo.Enabled = false;
             		objPessoa.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
             		objPessoa.Control =2;
-            		objPessoa.TipoPessoa = dgv.CurrentRow.Cells[15].ToString();
+            		objPessoa.TipoPessoa = dgv.CurrentRow.Cells[15].Value.ToString();
             		objPessoa.ShowDialog();
             		CarregaDataGridPessoa();
 				}
@@ -139,6 +160,7 @@ namespace DcompanySys
 			dgv.Columns[8].HeaderText ="Endereço";
 			dgv.Columns[14].HeaderText = "Inscrição Estadual";
 			dgv.Columns[15].HeaderText = "Tipo de Pessoa";
+			dgv.Columns[16].Visible = false;
 		}
 		void CarregaDataGridProduto()
 		{
@@ -146,17 +168,52 @@ namespace DcompanySys
 			dgv.DataSource = objPesquisa.carregar("TB_Produto").Tables[0];
 			dgv.Columns[0].HeaderText ="Código";
 			dgv.Columns[1].HeaderText ="Nome";
+			dgv.Columns[2].HeaderText ="Quantidade";
+			dgv.Columns[3].HeaderText ="Fornecedor";
+			dgv.Columns[4].HeaderText ="Marca";
+			dgv.Columns[5].HeaderText ="Valor Compra";
+			dgv.Columns[6].HeaderText ="Valor Venda";
+			dgv.Columns[7].Visible = false;
+			dgv.Columns[8].Visible = false;
+			
 		}
 		
 		void BtnExcluirClick(object sender, EventArgs e)
 		{
-			clnPessoa  objPessoa = new clnPessoa();
-			if (MessageBox.Show("Você deseja excluir este registro","Atenção...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes) {
-				objPessoa.Cod =Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
-                objPessoa.ExcluirLogicamente();
-                MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
+			if (_control == 1)
+			{
+				clnPessoa  objPessoa = new clnPessoa();
+				if (MessageBox.Show("Você deseja excluir este registro","Atenção...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes) {
+					objPessoa.Cod =Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
+                	objPessoa.ExcluirLogicamente();
+                	MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				}
+				CarregaDataGridPessoa();
 			}
-			CarregaDataGridPessoa();
+			else if (_control == 2) 
+			{
+				clnProduto  objProduto = new clnProduto();
+				if (MessageBox.Show("Você deseja excluir este registro","Atenção...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes) {
+					objProduto.Cod =Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
+                	objProduto.ExcluirLogicamente();
+                	MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				}
+				CarregaDataGridProduto();
+			}
+		}
+		
+		void BtnPequisarClick(object sender, EventArgs e)
+		{	
+			if (_control == 1)
+			{
+				clnPessoa objPessoa = new clnPessoa();
+				dgv.DataSource = objPessoa.BuscarPessoa(txtDescricao.Text.ToUpper()).Tables[0];
+			}
+			else if (_control == 2) 
+			{
+				clnProduto objProduto = new clnProduto();
+				dgv.DataSource = objProduto.BuscarProduto(txtDescricao.Text.ToUpper()).Tables[0];
+			}
 		}
 	}
 }

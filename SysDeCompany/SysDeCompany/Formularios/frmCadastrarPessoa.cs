@@ -32,10 +32,10 @@ namespace DcompanySys
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		private int _control;
+		private byte _control;
 		private string _tipopessoa;
 		
-		public int Control{get{return _control;}set{_control = value;}}
+		public byte Control{get{return _control;}set{_control = value;}}
 		public string TipoPessoa{get{return _tipopessoa;}set{_tipopessoa = value;}}
 		
 		void RbPessoaJuridicaClick(object sender, EventArgs e)
@@ -153,12 +153,11 @@ namespace DcompanySys
                     } 
 					txtIE.Clear();
 					cbUF.SelectedIndex = -1;
+					this.Close();
 			}else
 			{
 				MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
-			}
-			this.Close();
-			
+			}	
 		}
 		
 		
@@ -172,7 +171,7 @@ namespace DcompanySys
 				lblNomeEmpresa.UseMnemonic = false;
 				lblNomeEmpresa.Text = clnConfig.BuscaNomeEmpresa();
 			}
-			if (_tipopessoa =="PF") {
+			if (_tipopessoa == "PF") {
 				rbPessoaFisica.Checked = true;
 			}
 			else{
@@ -203,7 +202,7 @@ namespace DcompanySys
         			mtxtTelefone.Text = rdr["Telefone"].ToString();
                     mtxtTelefone2.Text = rdr["Telefone2"].ToString();
                     mtxtCelular.Text = rdr["Celular"].ToString();
-                    mtxtCep.Text = rdr["CPE"].ToString();
+                    mtxtCep.Text = rdr["CEP"].ToString();
                     txtEndereco.Text = rdr["Endereco"].ToString();
                     txtCidade.Text = rdr["Cidade"].ToString();
                     txtBairro.Text = rdr["bairro"].ToString();

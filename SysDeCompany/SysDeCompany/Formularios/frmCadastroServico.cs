@@ -30,11 +30,11 @@ namespace DcompanySys
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		private int _control;
-		public int Control{
-			get{return _control;}
-			set{_control = value;}
-		}
+		private byte _control;
+		
+		public byte Control{get{return _control;}set{_control = value;}}
+		
+		
 		void BtnSairClick(object sender, EventArgs e)
 		{
 			this.Close();

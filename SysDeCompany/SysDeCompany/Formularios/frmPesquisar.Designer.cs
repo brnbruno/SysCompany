@@ -81,6 +81,7 @@ namespace DcompanySys
 			this.btnPequisar.Text = "Pesquisar";
 			this.btnPequisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnPequisar.UseVisualStyleBackColor = true;
+			this.btnPequisar.Click += new System.EventHandler(this.BtnPequisarClick);
 			// 
 			// groupBox1
 			// 
