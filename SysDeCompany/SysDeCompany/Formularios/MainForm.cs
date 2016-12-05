@@ -198,6 +198,7 @@ namespace SysDeCompany
 			frmPesquisar objPesquisar = new frmPesquisar();
 			objPesquisar.BackColor = this.BackColor;
 			objPesquisar.ForeColor = this.ForeColor;
+			objPesquisar.Control = 1;
 			objPesquisar.ShowDialog();
 		}
 		
@@ -206,6 +207,7 @@ namespace SysDeCompany
 			frmPesquisar objPesquisar = new frmPesquisar();
 			objPesquisar.BackColor = this.BackColor;
 			objPesquisar.ForeColor = this.ForeColor;
+			objPesquisar.Control = 2;
 			objPesquisar.ShowDialog();
 		}
 		
@@ -214,6 +216,7 @@ namespace SysDeCompany
 			frmPesquisar objPesquisar = new frmPesquisar();
 			objPesquisar.BackColor = this.BackColor;
 			objPesquisar.ForeColor = this.ForeColor;
+			objPesquisar.Control = 3;
 			objPesquisar.ShowDialog();
 		}
 		

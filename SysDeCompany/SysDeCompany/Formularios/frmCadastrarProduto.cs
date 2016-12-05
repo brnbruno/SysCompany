@@ -11,6 +11,8 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SQLite;
 
 using SysDeCompany.Classes;
 
@@ -82,10 +84,42 @@ namespace DcompanySys
 				lblNomeEmpresa.UseMnemonic = false;
 				lblNomeEmpresa.Text = clnConfig.BuscaNomeEmpresa();
 			}
-			if (_controle==1) {
+			if (_controle == 1) {
 				btnAlterar.Visible = false;
 				btnExcluir.Visible = false;
+				btnIncluir.Visible = true;
 			}
+			else if (_controle == 2) 
+			{
+				btnAlterar.Visible = true;
+				btnExcluir.Visible = true;
+				btnIncluir.Visible = false;
+			}
+			if (txtCodigo.Text != "")
+			{
+				clBancoDados clBancoDados = new clBancoDados();
+				SQLiteConnection conn = clBancoDados.conectar();
+				string stm = "SELECT * FROM TB_PRODUTO WHERE CODIGO ='"+txtCodigo.Text+"'";
+				//string stm = "SELECT * FROM TB_PESSOA WHERE CODIGO ='1'";
+        		SQLiteCommand cmd = new SQLiteCommand(stm, conn);
+        		SQLiteDataReader rdr = cmd.ExecuteReader();
+        		while(rdr.Read())
+        		{
+        			txtNome.Text = rdr["Nome"].ToString();
+        			txtMarca.Text = rdr["MARCA"].ToString();
+                    txtFornecedor.Text = rdr["FORNECEDOR"].ToString();
+                    txtQuantidade.Text = rdr["QTD"].ToString();
+                    txtValorCompra.Text = rdr["VALOR_COMPRA"].ToString();
+                    txtValorVenda.Text = rdr["VALOR_VENDA"].ToString();
+                    string nomeArquivo= rdr["IMAGEM"].ToString();
+                    if (nomeArquivo != string.Empty) {
+                    	 pbImagem.BackgroundImage = Image.FromFile(Application.StartupPath+@"\Produto\"+nomeArquivo);
+                    }
+                   
+        		}
+        		
+        		clBancoDados.desconectar(conn);
+        	}
 			
 			
 		}
@@ -108,6 +142,21 @@ namespace DcompanySys
 		
 		void BtnIncluirClick(object sender, EventArgs e)
 		{
+			Validacao(1);
+		}
+		public bool CopyFileTo(string filepath, string topath)
+    	{
+        	try   
+        	{
+        		File.Copy(filepath, topath,true);
+        		return true;
+        	}
+       		catch (IOException E){
+        		MessageBox.Show("Não foi possivel copia a imagem para pasta da aplicação\n" +E.Message);
+       			return false;
+       		}
+    	}
+		void Validacao(int controle){
 			int aux = 0;
 			string msn = string.Empty;
 			clnValida objValida = new clnValida();
@@ -125,21 +174,21 @@ namespace DcompanySys
 					objProduto.QTD   = Convert.ToInt32(txtQuantidade.Text);
 					objProduto.Marca = txtMarca.Text.ToUpper();
 					objProduto.Fornecedor = txtFornecedor.Text.ToUpper();
-					objProduto.Valor_Compra = Convert.ToSingle(txtValorCompra.Text);
-					objProduto.Valor_Venda = Convert.ToSingle(txtValorVenda.Text);
+					objProduto.Valor_Compra = txtValorCompra.Text;
+					objProduto.Valor_Venda = txtValorVenda.Text;
 					if (!nomeDoArquivo.Equals(string.Empty)){
                    		objProduto.Img = nomeDoArquivo;
                    	} 
                     
                     
                   
-                   	if (_controle == 1) 
+                   	if (controle == 1) 
                    	{
                    		objProduto.Gravar();
                    		MessageBox.Show("Salvado com Sucesso","Salvado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    		
                    	} 
-                   	else if(_controle == 2)
+                   	else if(controle == 2)
                    	{
                    		objProduto.Cod = Convert.ToInt16(txtCodigo.Text);
                    		objProduto.Alterar();
@@ -160,18 +209,17 @@ namespace DcompanySys
 			{
 				MessageBox.Show (msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
+			this.Close();
 		}
-		public bool CopyFileTo(string filepath, string topath)
-    	{
-        	try   
-        	{
-        		File.Copy(filepath, topath,true);
-        		return true;
-        	}
-       		catch (IOException E){
-        		MessageBox.Show("Não foi possivel copia a imagem para pasta da aplicação\n" +E.Message);
-       			return false;
-       		}
-    	}
+		
+		void BtnAlterarClick(object sender, EventArgs e)
+		{
+			Validacao(2);
+		}
+		
+		void BtnExcluirClick(object sender, EventArgs e)
+		{
+			Validacao(0);
+		}
 	}
 }

@@ -35,9 +35,20 @@ namespace DcompanySys
 		
 		void BtnNovoClick(object sender, EventArgs e)
 		{
-			frmCadastrarPessoa frmCadastro = new frmCadastrarPessoa();
-			frmCadastro.Control = 1;
-			frmCadastro.ShowDialog();
+			if (_control==1) {
+   				frmCadastrarPessoa frmCadastro = new frmCadastrarPessoa();
+				frmCadastro.Control = 1;
+				frmCadastro.ShowDialog();
+				CarregaDataGridPessoa();
+   			}
+   			else if (_control==2) {
+   				frmCadastrarProduto objProduto = new frmCadastrarProduto();
+            	objProduto.Controle = 1;
+            	objProduto.ShowDialog();
+            	CarregaDataGridProduto();
+   			}
+			
+			
 		}
 		
 		void BtnConsultarClick(object sender, EventArgs e)
@@ -72,7 +83,13 @@ namespace DcompanySys
 			dgv.DefaultCellStyle.BackColor = this.BackColor;
 			dgv.DefaultCellStyle.SelectionForeColor = this.BackColor;
    			dgv.DefaultCellStyle.SelectionBackColor = this.ForeColor;
-			CarregaDataGridPessoa();	
+   			if (_control==1) {
+   				CarregaDataGridPessoa();	
+   			}
+   			else if (_control==2) {
+   				CarregaDataGridProduto();
+   			}
+			
 		}
 		
 		void DgvDoubleClick(object sender, EventArgs e)
@@ -82,13 +99,32 @@ namespace DcompanySys
 		
 		void BtnAlterarClick(object sender, EventArgs e)
 		{
-			frmCadastrarPessoa objPessoa = new frmCadastrarPessoa();
-            objPessoa.txtCodigo.Enabled = false;
-            objPessoa.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-            objPessoa.Control =2;
-            objPessoa.TipoPessoa = dgv.CurrentRow.Cells[15].ToString();
-            objPessoa.ShowDialog();
-            CarregaDataGridPessoa();
+			try {
+				if (_control==1)
+				{
+					frmCadastrarPessoa objPessoa = new frmCadastrarPessoa();
+            		objPessoa.txtCodigo.Enabled = false;
+            		objPessoa.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            		objPessoa.Control =2;
+            		objPessoa.TipoPessoa = dgv.CurrentRow.Cells[15].ToString();
+            		objPessoa.ShowDialog();
+            		CarregaDataGridPessoa();
+				}
+				else if (_control==2)
+				{
+					frmCadastrarProduto objProduto = new frmCadastrarProduto();
+					objProduto.txtCodigo.Enabled = false;
+            		objProduto.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            		objProduto.Controle = 2;
+            		objProduto.ShowDialog();
+            		CarregaDataGridProduto();
+				
+				}
+			} catch (Exception) {
+				
+				MessageBox.Show("Selecione um Cadastro","erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+			}
+			
 		}
 		void CarregaDataGridPessoa()
 		{
@@ -103,6 +139,13 @@ namespace DcompanySys
 			dgv.Columns[8].HeaderText ="Endereço";
 			dgv.Columns[14].HeaderText = "Inscrição Estadual";
 			dgv.Columns[15].HeaderText = "Tipo de Pessoa";
+		}
+		void CarregaDataGridProduto()
+		{
+			clnPesquisa objPesquisa = new clnPesquisa();
+			dgv.DataSource = objPesquisa.carregar("TB_Produto").Tables[0];
+			dgv.Columns[0].HeaderText ="Código";
+			dgv.Columns[1].HeaderText ="Nome";
 		}
 		
 		void BtnExcluirClick(object sender, EventArgs e)

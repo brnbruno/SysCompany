@@ -157,6 +157,7 @@ namespace DcompanySys
 			{
 				MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
+			this.Close();
 			
 		}
 		

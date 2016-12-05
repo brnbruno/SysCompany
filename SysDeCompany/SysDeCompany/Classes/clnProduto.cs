@@ -22,8 +22,8 @@ namespace SysDeCompany.Classes
 		private int _qtd;
 		private string _fornecedor;
 		private string _marca;
-		private float _valor_compra;
-		private float _valor_venda;
+		private string _valor_compra;
+		private string _valor_venda;
 		private string _img;
 		private int _cod;
 		
@@ -32,8 +32,8 @@ namespace SysDeCompany.Classes
 		public string Fornecedor{get{return _fornecedor;}set{_fornecedor = value;}}
 		public string Marca{get{return _marca;}set{_marca= value;}}
 		public string Img{get{return _img;}set{_img = value;}}
-		public float Valor_Compra{get{return _valor_compra;}set{_valor_compra = value;}}	
-		public float Valor_Venda{get{return _valor_venda;}set{_valor_venda = value;}}
+		public string Valor_Compra{get{return _valor_compra;}set{_valor_compra = value;}}	
+		public string Valor_Venda{get{return _valor_venda;}set{_valor_venda = value;}}
 		public int Cod{get{return _cod;}set{_cod = value;}}
 		
 		public void Gravar()

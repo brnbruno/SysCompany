@@ -141,6 +141,7 @@ namespace DcompanySys
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAlterar.UseVisualStyleBackColor = true;
+			this.btnAlterar.Click += new System.EventHandler(this.BtnAlterarClick);
 			// 
 			// btnExcluir
 			// 
@@ -155,6 +156,7 @@ namespace DcompanySys
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluir.UseVisualStyleBackColor = true;
+			this.btnExcluir.Click += new System.EventHandler(this.BtnExcluirClick);
 			// 
 			// btnIncluir
 			// 
@@ -233,6 +235,7 @@ namespace DcompanySys
 			// 
 			this.pbImagem.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.pbImagem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.pbImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.pbImagem.Location = new System.Drawing.Point(725, 17);
 			this.pbImagem.Name = "pbImagem";
 			this.pbImagem.Size = new System.Drawing.Size(184, 169);
@@ -419,7 +422,7 @@ namespace DcompanySys
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.Label lblAviso;
-		private System.Windows.Forms.TextBox txtFornecedor;
+		public System.Windows.Forms.TextBox txtFornecedor;
 		private System.Windows.Forms.OpenFileDialog buscaArquivo;
 		private System.Windows.Forms.PictureBox pbLogoEmpresa;
 		private System.Windows.Forms.Label lblNomeEmpresa;
@@ -433,18 +436,18 @@ namespace DcompanySys
 		private System.Windows.Forms.GroupBox grbInfoProduto;
 		private System.Windows.Forms.Button btnBuscaImagem;
 		private System.Windows.Forms.PictureBox pbImagem;
-		private System.Windows.Forms.TextBox txtValorCompra;
-		private System.Windows.Forms.TextBox txtMarca;
-		private System.Windows.Forms.TextBox txtValorVenda;
-		private System.Windows.Forms.TextBox txtQuantidade;
+		public System.Windows.Forms.TextBox txtValorCompra;
+		public System.Windows.Forms.TextBox txtMarca;
+		public System.Windows.Forms.TextBox txtValorVenda;
+		public System.Windows.Forms.TextBox txtQuantidade;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtNome;
+		public System.Windows.Forms.TextBox txtNome;
 		private System.Windows.Forms.Label lblNomeOuRazao;
-		private System.Windows.Forms.TextBox txtCodigo;
+		public System.Windows.Forms.TextBox txtCodigo;
 		private System.Windows.Forms.Label lblCodigo;
 		private System.Windows.Forms.Button btnLimparImagem;
 	}
