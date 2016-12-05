@@ -49,13 +49,16 @@ namespace SysDeCompany
 			{
 				Atualizar();
 			}
-			
+			if (!Directory.Exists("Produto")){
+				Directory.CreateDirectory("Produto");
+			}
 			
 		}
 		void PbCadastrarPessoaClick(object sender, EventArgs e)
 		{
 			frmCadastrarPessoa frmPessoa = new frmCadastrarPessoa();
 			frmPessoa.Control = 1;
+			frmPessoa.TipoPessoa = "PF";
 			frmPessoa.BackColor = this.BackColor;
 			frmPessoa.ForeColor = this.ForeColor;
 			frmPessoa.ShowDialog();			

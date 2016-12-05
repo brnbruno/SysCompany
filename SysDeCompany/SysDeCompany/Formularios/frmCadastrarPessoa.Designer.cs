@@ -41,8 +41,8 @@ namespace DcompanySys
 			this.lblAviso = new System.Windows.Forms.Label();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.btnSair = new System.Windows.Forms.Button();
-			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
+			this.btnAlterar = new System.Windows.Forms.Button();
 			this.btnIncluir = new System.Windows.Forms.Button();
 			this.grbDocumentoTelefone = new System.Windows.Forms.GroupBox();
 			this.mtxtCelular = new System.Windows.Forms.MaskedTextBox();
@@ -121,8 +121,8 @@ namespace DcompanySys
 			// 
 			this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.flowLayoutPanel1.Controls.Add(this.btnSair);
-			this.flowLayoutPanel1.Controls.Add(this.btnAlterar);
 			this.flowLayoutPanel1.Controls.Add(this.btnExcluir);
+			this.flowLayoutPanel1.Controls.Add(this.btnAlterar);
 			this.flowLayoutPanel1.Controls.Add(this.btnIncluir);
 			this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(562, 507);
@@ -145,26 +145,12 @@ namespace DcompanySys
 			this.btnSair.UseVisualStyleBackColor = true;
 			this.btnSair.Click += new System.EventHandler(this.BtnSairClick);
 			// 
-			// btnAlterar
-			// 
-			this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
-			this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAlterar.Location = new System.Drawing.Point(216, 3);
-			this.btnAlterar.Name = "btnAlterar";
-			this.btnAlterar.Size = new System.Drawing.Size(100, 96);
-			this.btnAlterar.TabIndex = 5;
-			this.btnAlterar.Text = "Alterar";
-			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.btnAlterar.UseVisualStyleBackColor = true;
-			this.btnAlterar.Click += new System.EventHandler(this.BtnAlterarClick);
-			// 
 			// btnExcluir
 			// 
 			this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
 			this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnExcluir.Location = new System.Drawing.Point(110, 3);
+			this.btnExcluir.Location = new System.Drawing.Point(216, 3);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(100, 96);
 			this.btnExcluir.TabIndex = 6;
@@ -172,6 +158,20 @@ namespace DcompanySys
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluir.UseVisualStyleBackColor = true;
 			this.btnExcluir.Click += new System.EventHandler(this.BtnExcluirClick);
+			// 
+			// btnAlterar
+			// 
+			this.btnAlterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.BackgroundImage")));
+			this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAlterar.Location = new System.Drawing.Point(110, 3);
+			this.btnAlterar.Name = "btnAlterar";
+			this.btnAlterar.Size = new System.Drawing.Size(100, 96);
+			this.btnAlterar.TabIndex = 5;
+			this.btnAlterar.Text = "Alterar";
+			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnAlterar.UseVisualStyleBackColor = true;
+			this.btnAlterar.Click += new System.EventHandler(this.BtnAlterarClick);
 			// 
 			// btnIncluir
 			// 
@@ -648,48 +648,48 @@ namespace DcompanySys
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.Label lblAviso;
-		private System.Windows.Forms.ComboBox cbUF;
+		public System.Windows.Forms.ComboBox cbUF;
 		private System.Windows.Forms.Label lblUf;
 		private System.Windows.Forms.Label lblNomeOuRazao;
-		private System.Windows.Forms.TextBox txtNomeOuRazao;
+		public System.Windows.Forms.TextBox txtNomeOuRazao;
 		private System.Windows.Forms.Label lblEndereco;
-		private System.Windows.Forms.TextBox txtEndereco;
+		public System.Windows.Forms.TextBox txtEndereco;
 		private System.Windows.Forms.Label lblNumero;
-		private System.Windows.Forms.TextBox txtNumero;
-		private System.Windows.Forms.TextBox txtCodigo;
+		public System.Windows.Forms.TextBox txtNumero;
+		public System.Windows.Forms.TextBox txtCodigo;
 		private System.Windows.Forms.Label lblCodigo;
 		private System.Windows.Forms.GroupBox grbDadosPessoais;
 		private System.Windows.Forms.PictureBox pbLogoEmpresa;
 		private System.Windows.Forms.Label lblNomeEmpresa;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.RadioButton rbPessoaFisica;
-		private System.Windows.Forms.RadioButton rbPessoaJuridica;
+		public System.Windows.Forms.RadioButton rbPessoaFisica;
+		public System.Windows.Forms.RadioButton rbPessoaJuridica;
 		private System.Windows.Forms.GroupBox grbTipoPessoa;
 		private System.Windows.Forms.GroupBox grbPrincipal;
-		private System.Windows.Forms.TextBox txtComplemento;
+		public System.Windows.Forms.TextBox txtComplemento;
 		private System.Windows.Forms.Label lblComplemento;
-		private System.Windows.Forms.TextBox txtCidade;
+		public System.Windows.Forms.TextBox txtCidade;
 		private System.Windows.Forms.Label lblCidade;
-		private System.Windows.Forms.TextBox txtBairro;
+		public System.Windows.Forms.TextBox txtBairro;
 		private System.Windows.Forms.Label lblBairro;
-		private System.Windows.Forms.MaskedTextBox mtxtCep;
+		public System.Windows.Forms.MaskedTextBox mtxtCep;
 		private System.Windows.Forms.Label lblCpe;
 		private System.Windows.Forms.GroupBox grbDocumentoTelefone;
-		private System.Windows.Forms.MaskedTextBox mtxtCpf;
+		public System.Windows.Forms.MaskedTextBox mtxtCpf;
 		private System.Windows.Forms.Label lblCpfOuCNPJ;
-		private System.Windows.Forms.MaskedTextBox mtxtCelular;
+		public System.Windows.Forms.MaskedTextBox mtxtCelular;
 		private System.Windows.Forms.Label lblCelular;
-		private System.Windows.Forms.MaskedTextBox mtxtTelefone2;
+		public System.Windows.Forms.MaskedTextBox mtxtTelefone2;
 		private System.Windows.Forms.Label lbltelefone2;
-		private System.Windows.Forms.MaskedTextBox mtxtTelefone;
-		private System.Windows.Forms.MaskedTextBox mtxtCnpj;
+		public System.Windows.Forms.MaskedTextBox mtxtTelefone;
+		public System.Windows.Forms.MaskedTextBox mtxtCnpj;
 		private System.Windows.Forms.Label lblTelefone;
-		private System.Windows.Forms.TextBox txtIE;
+		public System.Windows.Forms.TextBox txtIE;
 		private System.Windows.Forms.Label lblIE;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Button btnSair;
-		private System.Windows.Forms.Button btnAlterar;
-		private System.Windows.Forms.Button btnExcluir;
-		private System.Windows.Forms.Button btnIncluir;
+		public System.Windows.Forms.Button btnAlterar;
+		public System.Windows.Forms.Button btnExcluir;
+		public System.Windows.Forms.Button btnIncluir;
 	}
 }

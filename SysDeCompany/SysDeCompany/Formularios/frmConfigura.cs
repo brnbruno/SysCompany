@@ -42,11 +42,9 @@ namespace DcompanySys
 			this.BackColor = Color.FromArgb(Convert.ToInt32(textBox2.Text));
 		}
 		*/
-		
 		string nomeDoArquivo = string.Empty;
-	
-
-   		public bool CopyFileTo(string filepath, string topath)
+		
+		public bool CopyFileTo(string filepath, string topath)
     	{
         	try   
         	{

@@ -34,6 +34,7 @@ namespace DcompanySys
 		}
 		
 		private int _controle;
+		string nomeDoArquivo = string.Empty;
 		
 		public int Controle{get{return _controle;}set{_controle = value;}}
 		
@@ -51,6 +52,10 @@ namespace DcompanySys
 			{
 				pbImagem.BackgroundImageLayout = ImageLayout.Stretch;
 			    pbImagem.BackgroundImage = Image.FromFile(buscaArquivo.FileName);
+			    string Arquivo = buscaArquivo.FileName;
+			 	nomeDoArquivo= Arquivo.Split(new char[] { '\\' })[Arquivo.Split(new char[] { '\\' }).Length - 1];
+
+   				CopyFileTo(buscaArquivo.FileName,Application.StartupPath+@"\Produto\"+nomeDoArquivo);
 			}
 			
 			
@@ -122,7 +127,9 @@ namespace DcompanySys
 					objProduto.Fornecedor = txtFornecedor.Text.ToUpper();
 					objProduto.Valor_Compra = Convert.ToSingle(txtValorCompra.Text);
 					objProduto.Valor_Venda = Convert.ToSingle(txtValorVenda.Text);
-                   // objProduto.Img = ;
+					if (!nomeDoArquivo.Equals(string.Empty)){
+                   		objProduto.Img = nomeDoArquivo;
+                   	} 
                     
                     
                   
@@ -154,5 +161,17 @@ namespace DcompanySys
 				MessageBox.Show (msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
 		}
+		public bool CopyFileTo(string filepath, string topath)
+    	{
+        	try   
+        	{
+        		File.Copy(filepath, topath,true);
+        		return true;
+        	}
+       		catch (IOException E){
+        		MessageBox.Show("Não foi possivel copia a imagem para pasta da aplicação\n" +E.Message);
+       			return false;
+       		}
+    	}
 	}
 }

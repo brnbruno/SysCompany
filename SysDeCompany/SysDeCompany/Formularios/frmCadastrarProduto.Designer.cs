@@ -210,7 +210,7 @@ namespace DcompanySys
 			// btnLimparImagem
 			// 
 			this.btnLimparImagem.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnLimparImagem.Location = new System.Drawing.Point(725, 192);
+			this.btnLimparImagem.Location = new System.Drawing.Point(819, 192);
 			this.btnLimparImagem.Name = "btnLimparImagem";
 			this.btnLimparImagem.Size = new System.Drawing.Size(90, 69);
 			this.btnLimparImagem.TabIndex = 42;
@@ -221,7 +221,7 @@ namespace DcompanySys
 			// btnBuscaImagem
 			// 
 			this.btnBuscaImagem.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnBuscaImagem.Location = new System.Drawing.Point(821, 192);
+			this.btnBuscaImagem.Location = new System.Drawing.Point(723, 192);
 			this.btnBuscaImagem.Name = "btnBuscaImagem";
 			this.btnBuscaImagem.Size = new System.Drawing.Size(90, 69);
 			this.btnBuscaImagem.TabIndex = 41;

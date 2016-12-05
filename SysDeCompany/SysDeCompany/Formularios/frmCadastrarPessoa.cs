@@ -33,8 +33,10 @@ namespace DcompanySys
 			//
 		}
 		private int _control;
+		private string _tipopessoa;
 		
 		public int Control{get{return _control;}set{_control = value;}}
+		public string TipoPessoa{get{return _tipopessoa;}set{_tipopessoa = value;}}
 		
 		void RbPessoaJuridicaClick(object sender, EventArgs e)
 		{
@@ -43,6 +45,7 @@ namespace DcompanySys
 			mtxtCnpj.Visible = true;
 			txtIE.Visible = true;
 			lblIE.Visible = true;
+			mtxtCpf.Text = "";
 			
 		}
 		void RbPessoaFisicaClick(object sender, EventArgs e)
@@ -52,6 +55,8 @@ namespace DcompanySys
 			mtxtCnpj.Visible = false;
 			txtIE.Visible = false;
 			lblIE.Visible = false;
+			mtxtCnpj.Text = "";
+			txtIE.Text = "";
 		}
 		void BtnSairClick(object sender, EventArgs e)
 		{
@@ -84,7 +89,7 @@ namespace DcompanySys
 			if(rbPessoaFisica.Checked)
 			{
 				tipopessoa = "PF";
-				if(!clValidacao.isCpf(cpf))
+				if(!clValidacao.isCpf(cpf)&&_control!=0)
 				{
 					objValida.msn += "CPF Inválido\n";
 					objValida.aux++;
@@ -93,7 +98,7 @@ namespace DcompanySys
 			else
 			{
 				tipopessoa = "PJ";
-				if (!clValidacao.isCnpj (cnpj))
+				if (!clValidacao.isCnpj (cnpj) &&_control!=0)
 				{
 					objValida.msn += "CNPJ Inválido\n";
 					objValida.aux++;					
@@ -141,7 +146,13 @@ namespace DcompanySys
                     foreach (MaskedTextBox mtxt in grbDadosPessoais.Controls.OfType<MaskedTextBox>())
                     {
                      	mtxt.Clear();
-                    }	
+                    }
+					foreach (MaskedTextBox mtxt in grbDocumentoTelefone.Controls.OfType<MaskedTextBox>())
+                    {
+                     	mtxt.Clear();
+                    } 
+					txtIE.Clear();
+					cbUF.SelectedIndex = -1;
 			}else
 			{
 				MessageBox.Show (objValida.msn,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -160,11 +171,22 @@ namespace DcompanySys
 				lblNomeEmpresa.UseMnemonic = false;
 				lblNomeEmpresa.Text = clnConfig.BuscaNomeEmpresa();
 			}
-			rbPessoaFisica.Checked = true;
+			if (_tipopessoa =="PF") {
+				rbPessoaFisica.Checked = true;
+			}
+			else{
+				rbPessoaJuridica.Checked = true;
+			}
 			
 			if (_control==1) {
 				btnAlterar.Visible = false;
 				btnExcluir.Visible = false;
+				btnIncluir.Visible = true;
+			}
+			if (_control==2) {
+				btnAlterar.Visible = true;
+				btnExcluir.Visible = true;
+				btnIncluir.Visible = false;
 			}
 			if (txtCodigo.Text != "")
 			{
@@ -207,12 +229,17 @@ namespace DcompanySys
 
 		void BtnExcluirClick(object sender, EventArgs e)
 		{
-			Validacao(0);
+			if (MessageBox.Show("Você deseja excluir este registro","Atenção...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes) {
+				Validacao(0);
+			}
+			
 		}
 		
 		void BtnAlterarClick(object sender, EventArgs e)
 		{
-			Validacao(2);
+			if (MessageBox.Show("Você deseja Alterar este registro","Atenção...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes) {
+				Validacao(2);
+			}
 		}
 	}
 }

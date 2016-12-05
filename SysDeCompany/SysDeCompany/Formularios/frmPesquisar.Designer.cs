@@ -117,6 +117,7 @@ namespace DcompanySys
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluir.UseVisualStyleBackColor = true;
+			this.btnExcluir.Click += new System.EventHandler(this.BtnExcluirClick);
 			// 
 			// btnAlterar
 			// 
@@ -131,6 +132,7 @@ namespace DcompanySys
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAlterar.UseVisualStyleBackColor = true;
+			this.btnAlterar.Click += new System.EventHandler(this.BtnAlterarClick);
 			// 
 			// btnConsultar
 			// 
@@ -221,6 +223,7 @@ namespace DcompanySys
 			this.dgv.ReadOnly = true;
 			this.dgv.Size = new System.Drawing.Size(906, 285);
 			this.dgv.TabIndex = 19;
+			this.dgv.DoubleClick += new System.EventHandler(this.DgvDoubleClick);
 			// 
 			// frmPesquisar
 			// 
