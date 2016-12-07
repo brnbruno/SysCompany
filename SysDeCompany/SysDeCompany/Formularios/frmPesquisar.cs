@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using SysDeCompany.Classes;
 using SysDeCompany.Formularios;
+using System.Linq;
 
 namespace DcompanySys
 {
@@ -51,7 +52,7 @@ namespace DcompanySys
             	objProduto.Controle = 1;
             	objProduto.ShowDialog();
             	CarregaDataGridProduto();
-   			}
+			}
 			
 			
 		}
@@ -97,7 +98,17 @@ namespace DcompanySys
             	objProduto.btnIncluir.Visible = false;
             	objProduto.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
             	objProduto.ShowDialog();
-   			}
+			}else
+			{
+				frmCadastroServico objServico = new frmCadastroServico();
+				objServico.txtCodigoCliente.Text = dgv.CurrentRow.Cells[1].Value.ToString();
+				objServico.txtCodigo.Text = dgv.CurrentRow.Cells[0].Value.ToString();
+				objServico.btnIncluir.Visible =false;
+				objServico.btnAdd.Visible = false;
+				objServico.btnExcluirPro.Visible = false;
+				objServico.ShowDialog();
+				
+			}
 			
 		}
 		
@@ -113,6 +124,16 @@ namespace DcompanySys
    			}
    			else if (_control==2) {
    				CarregaDataGridProduto();
+   			}else{
+   				btnConsultar.Location = btnNovo.Location;
+   				foreach (Button btn  in groupBox1.Controls.OfType<Button>()) 
+   				{
+   					btn.Visible = false;
+   				}
+   				btnConsultar.Visible = true;
+   				btnSair.Visible = true;
+   				btnPequisar.Visible = true;
+   				CarregaDataGridServico();
    			}
 			
 		}
@@ -122,9 +143,13 @@ namespace DcompanySys
 			if (btnAlterar.Visible==true) 
 			{
 				btnAlterar.PerformClick();
-			}else
+			}else if (btnAddServico.Visible == true)
 			{
 				btnAddServico.PerformClick();
+			}
+			else
+			{
+				btnConsultar.PerformClick();
 			}
 			
 		}
@@ -192,6 +217,18 @@ namespace DcompanySys
 			dgv.Columns[8].Visible = false;
 			
 		}
+		void CarregaDataGridServico()
+		{
+			clnPesquisa objPesquisa = new clnPesquisa();
+			dgv.DataSource = objPesquisa.carregar("TB_Servico").Tables[0];
+			dgv.Columns[0].HeaderText ="Código";
+			dgv.Columns[1].HeaderText ="Código Cliente";
+			dgv.Columns[2].HeaderText ="Valor Total";
+			dgv.Columns[4].HeaderText ="Conclúido";
+			dgv.Columns[5].HeaderText ="Data";
+			dgv.Columns[3].Visible = false;
+
+		}
 		
 		void BtnExcluirClick(object sender, EventArgs e)
 		{
@@ -199,7 +236,7 @@ namespace DcompanySys
 			{
 				clnPessoa  objPessoa = new clnPessoa();
 				if (MessageBox.Show("Você deseja excluir este registro","Atenção...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation)==DialogResult.Yes) {
-					objPessoa.Cod =Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
+					objPessoa.Cod = Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
                 	objPessoa.ExcluirLogicamente();
                 	MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				}
@@ -228,21 +265,26 @@ namespace DcompanySys
 			{
 				clnProduto objProduto = new clnProduto();
 				dgv.DataSource = objProduto.BuscarProduto(txtDescricao.Text.ToUpper()).Tables[0];
+			}else{
+				clnServico objServico = new clnServico();
+				string pe = mtxtdata.Text.Replace("/","").Trim();
+				dgv.DataSource= objServico.BuscarServico(pe).Tables[0];
 			}
 		}
 		
 		Image imgbtnadd = null;
 		void BtnAddServicoMouseHover(object sender, EventArgs e)
 		{
-			btnAddServico.Text = "Adicionar Serviço";
-			imgbtnadd = btnAddServico.BackgroundImage;
-			btnAddServico.BackgroundImage = null;
+			btnAddServico.Text = "";
+			btnAddServico.BackgroundImage = imgbtnadd;
+			
 		}
 		
 		void BtnAddServicoMouseLeave(object sender, EventArgs e)
 		{
-			btnAddServico.Text = "";
-			btnAddServico.BackgroundImage = imgbtnadd;
+			btnAddServico.Text = "Adicionar Serviço";
+			imgbtnadd = btnAddServico.BackgroundImage;
+			btnAddServico.BackgroundImage = null;
 		}
 		
 		void BtnAddServicoClick(object sender, EventArgs e)
@@ -260,9 +302,11 @@ namespace DcompanySys
 					frmQuantidade objQtd = new frmQuantidade();
 					objQtd.Owner = this;
 					objQtd.ShowDialog(this);
-					((frmCadastroServico)this.Owner).CodProduto = Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
-					((frmCadastroServico)this.Owner).Quantidade = _quantidade;
-					this.Close();
+					if (_quantidade >=1) {
+						((frmCadastroServico)this.Owner).CodProduto = Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
+						((frmCadastroServico)this.Owner).Quantidade = _quantidade;
+						this.Close();
+					}
 			}
 			} 
 			catch (Exception) 

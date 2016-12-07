@@ -9,7 +9,9 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+
 using DcompanySys;
+using SysDeCompany.Classes;
 
 namespace SysDeCompany.Formularios
 {
@@ -30,14 +32,11 @@ namespace SysDeCompany.Formularios
 			//
 		}
 		
-		void BtnSairClick(object sender, EventArgs e)
-		{
-			((frmPesquisar)this.Owner).Quantidade =1;
-			this.Close();
-		}
+		
 		
 		void BtnIncluirClick(object sender, EventArgs e)
 		{
+			
 			try 
 			{
 				if(Convert.ToInt32(txtQtd.Text) > 1)
@@ -50,7 +49,12 @@ namespace SysDeCompany.Formularios
 			{
 				MessageBox.Show("Coloque um Valor para quantidade");
 			}
-			
+		}
+		
+		void TxtQtdKeyPress(object sender, KeyPressEventArgs e)
+		{
+			clnValida objvalida = new clnValida();
+			objvalida.soNumero(ref txtQtd,e);
 		}
 	}
 }

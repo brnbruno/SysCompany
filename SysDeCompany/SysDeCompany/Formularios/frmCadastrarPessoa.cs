@@ -241,6 +241,18 @@ namespace DcompanySys
 				Validacao(2);
 			}
 		}
+		
+		void TxtNumeroKeyPress(object sender, KeyPressEventArgs e)
+		{
+			clnValida objvalida = new clnValida();
+			objvalida.soNumero(ref txtNumero,e);
+		}
+		
+		void TxtIEKeyPress(object sender, KeyPressEventArgs e)
+		{
+			clnValida objvalida = new clnValida();
+			objvalida.soNumero(ref txtIE,e);
+		}
 	}
 }
 

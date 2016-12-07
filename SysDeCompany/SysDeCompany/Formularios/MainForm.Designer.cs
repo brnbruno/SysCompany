@@ -62,7 +62,6 @@ namespace SysDeCompany
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
-			this.button3 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pbImageConfig)).BeginInit();
 			this.grbPrincipal.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbConfiguracao)).BeginInit();
@@ -339,22 +338,11 @@ namespace SysDeCompany
 			this.pbLogoEmpresa.TabIndex = 12;
 			this.pbLogoEmpresa.TabStop = false;
 			// 
-			// button3
-			// 
-			this.button3.Location = new System.Drawing.Point(417, 1);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 14;
-			this.button3.Text = "button3";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.Button3Click);
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1284, 910);
-			this.Controls.Add(this.button3);
 			this.Controls.Add(this.lblNomeEmpresa);
 			this.Controls.Add(this.pbLogoEmpresa);
 			this.Controls.Add(this.lblHora);
@@ -384,7 +372,6 @@ namespace SysDeCompany
 			this.ResumeLayout(false);
 		}
 		public System.Windows.Forms.FlowLayoutPanel flpservico;
-		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblCadastro;
 		private System.Windows.Forms.Label lblConsultarti;

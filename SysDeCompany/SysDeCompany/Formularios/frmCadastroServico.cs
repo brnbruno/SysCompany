@@ -178,6 +178,7 @@ namespace DcompanySys
 			frmpesquisar.btnAddServico.Location = frmpesquisar.btnNovo.Location;
 			frmpesquisar.BackColor = this.BackColor;
 			frmpesquisar.ForeColor = this.ForeColor;
+			frmpesquisar.btnPesquiInativo.Visible=false;
 			frmpesquisar.ShowDialog(this);
 			clBancoDados clBancoDados = new clBancoDados();
 			SQLiteConnection conn = clBancoDados.conectar();
@@ -218,28 +219,40 @@ namespace DcompanySys
 		
 		void BtnIncluirClick(object sender, EventArgs e)
 		{
-			if (txtCodigoCliente.Text!=string.Empty&&dgvServico.RowCount >= 1) 
+			if (btnIncluir.Text=="Incluir") 
+			{
+				if (txtCodigoCliente.Text!=string.Empty&&dgvServico.RowCount >= 1) 
+				{
+					clnServico objservico = new clnServico();
+					objservico.Cod_cliente = txtCodigoCliente.Text;
+					objservico.Data_cod = mtxtdate.Text.Replace("/","").ToString();
+					objservico.Valor_total_servico = lblValorResult.Text;
+					objservico.Status = 1;
+					objservico.GravarServico();
+					int row = 0;
+					for (int cont = 1; cont <= dgvServico.RowCount; cont++)
+					{	
+						objservico.Quantidade = Convert.ToInt32(dgvServico.Rows[row].Cells[0].Value);
+						objservico.Nome = dgvServico.Rows[row].Cells[1].Value.ToString();
+						objservico.Valor_produto = dgvServico.Rows[row].Cells[2].Value.ToString();
+						objservico.Valor_total = dgvServico.Rows[row].Cells[3].Value.ToString();                   
+                		row++;
+                		objservico.GravarProduto();
+           			}
+					MessageBox.Show("Dados Gravados com sucesso","Salvando",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("Cliente ou produto não preenchido","erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				}
+			}
+			else
 			{
 				clnServico objservico = new clnServico();
-				objservico.Cod_cliente = txtCodigoCliente.Text;
-				objservico.Data_cod = mtxtdate.Text.Replace("/","").ToString();
-				objservico.Valor_total_servico = lblValorResult.Text;
-				objservico.Status = 1;
-				objservico.GravarServico();
-				int row = 0;
-				for (int cont = 1; cont <= dgvServico.RowCount; cont++)
-				{	
-					objservico.Quantidade = Convert.ToInt32(dgvServico.Rows[row].Cells[0].Value);
-					objservico.Nome = dgvServico.Rows[row].Cells[1].Value.ToString();
-					objservico.Valor_produto = dgvServico.Rows[row].Cells[2].Value.ToString();
-					objservico.Valor_total = dgvServico.Rows[row].Cells[3].Value.ToString();                   
-                	row++;
-                	objservico.GravarProduto();
-           		}
-				this.Close();
-			}else{
-				MessageBox.Show("Cliente ou produto não preenchido","erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				objservico.Alterar(txtCodigo.Text);
 			}
+			
 						
 		}
 		public DataSet BuscarProdutos(string strDescricao)

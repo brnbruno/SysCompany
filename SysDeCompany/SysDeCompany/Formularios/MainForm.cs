@@ -55,7 +55,7 @@ namespace SysDeCompany
 			if (!Directory.Exists("Produto")){
 				Directory.CreateDirectory("Produto");
 			}
-			button3.PerformClick();
+			LerbancoClick();
 			
 		}
 		void PbCadastrarPessoaClick(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace SysDeCompany
 			frmPessoa.BackColor = this.BackColor;
 			frmPessoa.ForeColor = this.ForeColor;
 			frmPessoa.ShowDialog();
-			button3.PerformClick();			
+			LerbancoClick();
 		}
 		void PbCadastrarProdutoClick(object sender, EventArgs e)
 		{
@@ -195,7 +195,7 @@ namespace SysDeCompany
 			lblNomeEmpresa.Text = objConfig.BuscaNomeEmpresa();
 			this.BackColor = Color.FromArgb(objConfig.BuscaCorFundo());
 			this.ForeColor = Color.FromArgb(objConfig.BuscaCorFonte());
-			button3.PerformClick();
+			LerbancoClick();
 		}		
 		
 		
@@ -206,6 +206,7 @@ namespace SysDeCompany
 			objPesquisar.ForeColor = this.ForeColor;
 			objPesquisar.Control = 1;
 			objPesquisar.ShowDialog();
+			LerbancoClick();
 		}
 		
 		void PbConsultarProdutoClick(object sender, EventArgs e)
@@ -223,6 +224,9 @@ namespace SysDeCompany
 			objPesquisar.BackColor = this.BackColor;
 			objPesquisar.ForeColor = this.ForeColor;
 			objPesquisar.Control = 3;
+			objPesquisar.txtDescricao.Visible = false;
+			objPesquisar.mtxtdata.Visible = true;
+			objPesquisar.btnAddServico.Visible =false;
 			objPesquisar.ShowDialog();
 		}
 		
@@ -238,7 +242,7 @@ namespace SysDeCompany
 			frmServico.BackColor = this.BackColor;
 			frmServico.ForeColor = this.ForeColor;
 			frmServico.ShowDialog();
-			button3.PerformClick();
+			LerbancoClick();
 		}
 		public void Btn_Click(Control control)
         {
@@ -248,16 +252,17 @@ namespace SysDeCompany
             	frmServico.txtCodigo.Text = control.Name;
             	frmServico.BackColor = this.BackColor;
 				frmServico.ForeColor = this.ForeColor;
+				frmServico.btnIncluir.Text = "Concluído";
+				frmServico.btnExcluirPro.Visible =false;
+				frmServico.btnAdd.Visible = false;
             	frmServico.ShowDialog();
+            	LerbancoClick();
             };
 		}
+				
 		
-		
-		void Button3Click(object sender, EventArgs e)
+		void LerbancoClick()
 		{
-			//frmConfigura c = new frmConfigura();
-			//c.Owner = this;
-			//c.ShowDialog(this);
 			flpservico.Controls.Clear();
 			string data = DateTime.Now.ToString("ddMMyyyy");
 			clBancoDados clBancoDados = new clBancoDados();
@@ -271,8 +276,8 @@ namespace SysDeCompany
         		pnl = new Panel();
 				Label lblnome = new Label();
 				Button btn = new Button();
-				pnl.BackColor = this.BackColor;
-				pnl.ForeColor = this.ForeColor;
+				pnl.ForeColor = this.BackColor;
+				pnl.BackColor = this.ForeColor;
 				pnl.Size = new System.Drawing.Size(flpservico.Width-10, 98);
 				lblnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 				lblnome.Location = new System.Drawing.Point(7, 16);
@@ -290,7 +295,6 @@ namespace SysDeCompany
         	}
         	clBancoDados.desconectar(conn);	
 		}
-		
 	}
 
 }

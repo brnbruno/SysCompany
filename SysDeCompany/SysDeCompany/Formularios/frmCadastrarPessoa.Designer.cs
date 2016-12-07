@@ -289,6 +289,7 @@ namespace DcompanySys
 			this.txtIE.Size = new System.Drawing.Size(223, 29);
 			this.txtIE.TabIndex = 15;
 			this.txtIE.Visible = false;
+			this.txtIE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIEKeyPress);
 			// 
 			// lblIE
 			// 
@@ -487,6 +488,7 @@ namespace DcompanySys
 			this.txtNumero.Name = "txtNumero";
 			this.txtNumero.Size = new System.Drawing.Size(107, 29);
 			this.txtNumero.TabIndex = 7;
+			this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumeroKeyPress);
 			// 
 			// lblNumero
 			// 

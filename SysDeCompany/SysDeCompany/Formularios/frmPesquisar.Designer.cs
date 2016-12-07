@@ -40,6 +40,7 @@ namespace DcompanySys
 			this.btnSair = new System.Windows.Forms.Button();
 			this.btnPequisar = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.mtxtdata = new System.Windows.Forms.MaskedTextBox();
 			this.txtInvisivel = new System.Windows.Forms.TextBox();
 			this.btnAddServico = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
@@ -90,6 +91,7 @@ namespace DcompanySys
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.mtxtdata);
 			this.groupBox1.Controls.Add(this.txtInvisivel);
 			this.groupBox1.Controls.Add(this.btnAddServico);
 			this.groupBox1.Controls.Add(this.btnExcluir);
@@ -108,6 +110,17 @@ namespace DcompanySys
 			this.groupBox1.Size = new System.Drawing.Size(1030, 530);
 			this.groupBox1.TabIndex = 8;
 			this.groupBox1.TabStop = false;
+			// 
+			// mtxtdata
+			// 
+			this.mtxtdata.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.mtxtdata.Location = new System.Drawing.Point(205, 79);
+			this.mtxtdata.Mask = "00/00/0000";
+			this.mtxtdata.Name = "mtxtdata";
+			this.mtxtdata.Size = new System.Drawing.Size(157, 38);
+			this.mtxtdata.TabIndex = 23;
+			this.mtxtdata.ValidatingType = typeof(System.DateTime);
+			this.mtxtdata.Visible = false;
 			// 
 			// txtInvisivel
 			// 
@@ -224,6 +237,7 @@ namespace DcompanySys
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtDescricao.Location = new System.Drawing.Point(205, 79);
+			this.txtDescricao.MaxLength = 20;
 			this.txtDescricao.Name = "txtDescricao";
 			this.txtDescricao.Size = new System.Drawing.Size(660, 38);
 			this.txtDescricao.TabIndex = 12;
@@ -265,7 +279,7 @@ namespace DcompanySys
 			this.Controls.Add(this.groupBox1);
 			this.Name = "frmPesquisar";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "frmPesquisar";
+			this.Text = "Pesquisar";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FrmPesquisarLoad);
 			this.groupBox1.ResumeLayout(false);
@@ -273,6 +287,7 @@ namespace DcompanySys
 			((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
 			this.ResumeLayout(false);
         }
+		public System.Windows.Forms.MaskedTextBox mtxtdata;
 		public System.Windows.Forms.TextBox txtInvisivel;
 		public System.Windows.Forms.Button btnAddServico;
 		private System.Windows.Forms.GroupBox groupBox1;
@@ -280,7 +295,7 @@ namespace DcompanySys
 
 
         private System.Windows.Forms.Label lbDescricao;
-        private System.Windows.Forms.TextBox txtDescricao;
+		public System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblFiltros;
 		public System.Windows.Forms.DataGridView dgv;
 		public System.Windows.Forms.Button btnPesquiInativo;

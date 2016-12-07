@@ -285,6 +285,7 @@ namespace DcompanySys
 			this.txtQuantidade.Name = "txtQuantidade";
 			this.txtQuantidade.Size = new System.Drawing.Size(74, 26);
 			this.txtQuantidade.TabIndex = 34;
+			this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantidadeKeyPress);
 			// 
 			// label5
 			// 
@@ -410,7 +411,7 @@ namespace DcompanySys
 			this.Controls.Add(this.grbPrincipal);
 			this.Name = "frmCadastrarProduto";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "frmCadastrarProduto";
+			this.Text = "Cadastrar Produto";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FrmCadastrarProdutoLoad);
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();

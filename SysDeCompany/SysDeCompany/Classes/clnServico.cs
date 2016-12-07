@@ -79,21 +79,12 @@ namespace SysDeCompany.Classes
       	 	clBancoDados.desconectar(conn);
 		}
 		
-		/*public void Alterar()
+		public void Alterar(string cod)
 		{
-			string strQuery = "UPDATE TB_PRODUTO SET ";
-			strQuery += ("  NOME = '" +    _nome + "' ");
-			strQuery += (", QTD ='"+_qtd +"'");
-			strQuery += (", FORNECEDOR ='" + _fornecedor +"'");
-			strQuery += (", MARCA ='"+  _marca +"'");
-			strQuery += (",	VALOR_COMPRA ='" + _valor_compra +"'");
-		    strQuery += (", VALOR_VENDA ='"+ _valor_venda +"'");
-			if (_img != string.Empty) {
-				strQuery += (", IMAGEM ='"+ _img+"'");
-			}
-			strQuery += (", ATIVO = '1'");
+			string strQuery = "UPDATE TB_SERVICO SET ";
+			strQuery += (" status = '0'");
 			strQuery += (" WHERE ");
-			strQuery += ("Codigo = '" + _cod + "' ");
+			strQuery += ("Codigo = '" + cod + "' ");
 			
 			clBancoDados clBancoDados = new clBancoDados();
 		 	SQLiteConnection conn = clBancoDados.conectar();
@@ -102,7 +93,21 @@ namespace SysDeCompany.Classes
       	 	command.ExecuteNonQuery();
       	 	clBancoDados.desconectar(conn);
 		}
-		public void ExcluirLogicamente()
+		public DataSet BuscarServico(string strDescricao)
+        {
+			clBancoDados clBancoDados = new clBancoDados();
+			if (string.IsNullOrEmpty(strDescricao)) throw new Exception("Não foi informado a Descrição a ser consultada.");
+			DataSet dtset = new DataSet();  
+        	SQLiteConnection conn = clBancoDados.conectar();  
+        	SQLiteCommand command = conn.CreateCommand();  
+            command.CommandText = "SELECT * FROM TB_SERVICO Where data_cod like '%" + strDescricao+ "%' order by CODIGO";
+          	SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, conn);  
+      		DB.Fill(dtset);  
+        	conn.Close();  
+        	return dtset;  
+		}
+		
+		/*public void ExcluirLogicamente()
         {
             string strQuery;
             strQuery = (" UPDATE TB_PRODUTO ");

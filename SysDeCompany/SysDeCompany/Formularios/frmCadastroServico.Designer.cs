@@ -688,7 +688,7 @@ namespace DcompanySys
 			this.Controls.Add(this.grbPrincipal);
 			this.Name = "frmCadastroServico";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "frmCadastroServico";
+			this.Text = "Cadastrar Serviço";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FrmCadastroServicoLoad);
 			this.grbPrincipal.ResumeLayout(false);
@@ -712,14 +712,14 @@ namespace DcompanySys
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.MaskedTextBox mtxtTelefone2;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button btnExcluirPro;
+		public System.Windows.Forms.Button btnExcluirPro;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 		public System.Windows.Forms.DataGridView dgvServico;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.Button btnAdd;
+		public System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.MaskedTextBox mtxtTelefone;
 		private System.Windows.Forms.MaskedTextBox mtxtCelular;
@@ -745,7 +745,7 @@ namespace DcompanySys
 		private System.Windows.Forms.TextBox txtNomeOuRazao;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.GroupBox grbInfoProduto;
-		private System.Windows.Forms.Button btnIncluir;
+		public System.Windows.Forms.Button btnIncluir;
 		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.Button btnAlterar;
 		private System.Windows.Forms.Button btnSair;

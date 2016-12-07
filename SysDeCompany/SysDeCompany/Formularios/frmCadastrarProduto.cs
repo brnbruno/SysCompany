@@ -112,7 +112,7 @@ namespace DcompanySys
                     txtValorCompra.Text = rdr["VALOR_COMPRA"].ToString();
                     txtValorVenda.Text = rdr["VALOR_VENDA"].ToString();
                     string nomeArquivo= rdr["IMAGEM"].ToString();
-                    if (nomeArquivo != string.Empty) {
+                    if (nomeArquivo != string.Empty||pbImagem.Image == null) {
                     	 pbImagem.BackgroundImage = Image.FromFile(Application.StartupPath+@"\Produto\"+nomeArquivo);
                     }
                    
@@ -220,6 +220,12 @@ namespace DcompanySys
 		void BtnExcluirClick(object sender, EventArgs e)
 		{
 			Validacao(0);
+		}
+		
+		void TxtQuantidadeKeyPress(object sender, KeyPressEventArgs e)
+		{
+			clnValida objvalida = new clnValida();
+			objvalida.soNumero(ref txtQuantidade,e);
 		}
 	}
 }
