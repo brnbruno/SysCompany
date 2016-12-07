@@ -247,21 +247,35 @@ namespace DcompanySys
 		
 		void BtnAddServicoClick(object sender, EventArgs e)
 		{
-			if (_control == 1) 
+			try 
 			{
-				((frmCadastroServico)this.Owner).txtCodigoCliente.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
-			    ((frmCadastroServico)this.Owner).Control = 1;
-			    this.Close();
+				if (_control == 1) 
+				{
+					((frmCadastroServico)this.Owner).txtCodigoCliente.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+			   		((frmCadastroServico)this.Owner).Control = 1;
+			    	this.Close();
+				}
+				else if (_control == 2)
+				{
+					frmQuantidade objQtd = new frmQuantidade();
+					objQtd.Owner = this;
+					objQtd.ShowDialog(this);
+					((frmCadastroServico)this.Owner).CodProduto = Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
+					((frmCadastroServico)this.Owner).Quantidade = _quantidade;
+					this.Close();
 			}
-			else if (_control == 2)
+			} 
+			catch (Exception) 
 			{
-				frmQuantidade objQtd = new frmQuantidade();
-				objQtd.Owner = this;
-				objQtd.ShowDialog(this);
-				((frmCadastroServico)this.Owner).CodProduto = Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
-				((frmCadastroServico)this.Owner).Quantidade = _quantidade;
-				this.Close();
+			
+				frmCadastroServico frm = new frmCadastroServico();
+				frm.txtCodigoCliente.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+				frm.BackColor = this.BackColor;
+				frm.ForeColor = this.ForeColor;
+			   	frm.Control = 1;
+				frm.ShowDialog();
 			}
+			
 		}
 		
 		void BtnPesquiInativoClick(object sender, EventArgs e)

@@ -14,6 +14,7 @@ using System.IO;
 using System.Data;
 using System.Data.SQLite;
 using System.Globalization;
+using System.Linq;
 
 namespace DcompanySys
 {
@@ -65,6 +66,9 @@ namespace DcompanySys
 		
 		void FrmCadastroServicoLoad(object sender, EventArgs e)
 		{
+			Desabilitatudo();
+			btnConsultar.Enabled = true;
+			txtCodigoCliente.Enabled = true;
 			clnConfig clnConfig = new clnConfig();
 			if(Directory.Exists("Config")&&Directory.Exists("Data")) 
 			{
@@ -84,6 +88,34 @@ namespace DcompanySys
 			dgvServico.DefaultCellStyle.BackColor = this.BackColor;
 			dgvServico.DefaultCellStyle.SelectionForeColor = this.BackColor;
    			dgvServico.DefaultCellStyle.SelectionBackColor = this.ForeColor;
+   			if (txtCodigo.Text !=string.Empty) 
+			{
+				clBancoDados clBancoDados = new clBancoDados();
+				SQLiteConnection conn = clBancoDados.conectar();
+				string stm = "SELECT * FROM TB_SERVICO WHERE CODIGO ='"+txtCodigo.Text+"'";
+				//string stm = "SELECT * FROM TB_PESSOA WHERE CODIGO ='1'";
+        		SQLiteCommand cmd = new SQLiteCommand(stm, conn);
+        		SQLiteDataReader rdr = cmd.ExecuteReader();
+        		while(rdr.Read())
+        		{
+        			txtCodigoCliente.Text = rdr["cod_cliente"].ToString();
+        			lblValorResult.Text = rdr["Valor_total"].ToString();
+        			mtxtdate.Text = rdr["data_cod"].ToString();
+        		}
+        		clBancoDados.desconectar(conn);
+        		LerBanco();
+        		dgv2.DataSource = BuscarProdutos(txtCodigo.Text).Tables[0];
+			    dgv2.Columns[1].HeaderText ="Nome";
+				dgv2.Columns[0].HeaderText ="Quantidade";
+				dgv2.Columns[2].HeaderText ="Valor Un";
+				dgv2.Columns[3].HeaderText ="Valor Total";
+				dgv2.BackgroundColor = this.BackColor;
+				dgv2.GridColor = this.BackColor;
+				dgv2.DefaultCellStyle.BackColor = this.BackColor;
+				dgv2.DefaultCellStyle.SelectionForeColor = this.BackColor;
+   				dgv2.DefaultCellStyle.SelectionBackColor = this.ForeColor;
+        		dgv2.Visible = true;
+			}
 			
 		}
 		
@@ -119,7 +151,18 @@ namespace DcompanySys
                     txtComplemento.Text = rdr["Complemento"].ToString();                   
         		}
         		clBancoDados.desconectar(conn);
+        		Desabilitatudo();
 			}
+		}
+		void Desabilitatudo()
+		{
+			foreach (var txt in grbInfoProduto.Controls.OfType<TextBox>()) {
+				txt.Enabled = false;
+			}
+			foreach (var txt in grbInfoProduto.Controls.OfType<MaskedTextBox>()) {
+				txt.Enabled = false;
+			}
+			btnConsultar.Enabled = false;
 		}
 		
 		void BtnAddClick(object sender, EventArgs e)
@@ -175,22 +218,42 @@ namespace DcompanySys
 		
 		void BtnIncluirClick(object sender, EventArgs e)
 		{
-			clnServico objservico = new clnServico();
-			objservico.Cod_cliente = txtCodigoCliente.Text;
-			objservico.Data_cod = Convert.ToInt32(mtxtdate.Text.Replace("/",""));
-			objservico.Valor_total_servico = lblValorResult.Text;
-			objservico.Status = 1;
-			objservico.GravarServico();
-			int row = 0;
-			for (int cont = 1; cont <= dgvServico.RowCount; cont++)
+			if (txtCodigoCliente.Text!=string.Empty&&dgvServico.RowCount >= 1) 
 			{
-				objservico.Quantidade = Convert.ToInt32(dgvServico.Rows[row].Cells[0].Value);
-				objservico.Nome = dgvServico.Rows[row].Cells[1].Value.ToString();
-				objservico.Valor_produto = dgvServico.Rows[row].Cells[2].Value.ToString();
-				objservico.Valor_total = dgvServico.Rows[row].Cells[3].Value.ToString();                   
-                row++;
-                objservico.GravarProduto();
-           }			
+				clnServico objservico = new clnServico();
+				objservico.Cod_cliente = txtCodigoCliente.Text;
+				objservico.Data_cod = mtxtdate.Text.Replace("/","").ToString();
+				objservico.Valor_total_servico = lblValorResult.Text;
+				objservico.Status = 1;
+				objservico.GravarServico();
+				int row = 0;
+				for (int cont = 1; cont <= dgvServico.RowCount; cont++)
+				{	
+					objservico.Quantidade = Convert.ToInt32(dgvServico.Rows[row].Cells[0].Value);
+					objservico.Nome = dgvServico.Rows[row].Cells[1].Value.ToString();
+					objservico.Valor_produto = dgvServico.Rows[row].Cells[2].Value.ToString();
+					objservico.Valor_total = dgvServico.Rows[row].Cells[3].Value.ToString();                   
+                	row++;
+                	objservico.GravarProduto();
+           		}
+				this.Close();
+			}else{
+				MessageBox.Show("Cliente ou produto não preenchido","erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+			}
+						
+		}
+		public DataSet BuscarProdutos(string strDescricao)
+        {
+			clBancoDados clBancoDados = new clBancoDados();
+			if (string.IsNullOrEmpty(strDescricao)) throw new Exception("Não foi informado a Descrição a ser consultada.");
+			DataSet dtset = new DataSet();  
+        	SQLiteConnection conn = clBancoDados.conectar();  
+        	SQLiteCommand command = conn.CreateCommand();  
+            command.CommandText = "SELECT Quantidade, Nome,Valor_produto,valor_total FROM TB_produto_servico Where  cod_servico = '" + strDescricao+ "'";
+          	SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, conn);  
+      		DB.Fill(dtset);  
+        	conn.Close();  
+        	return dtset;  
 		}
 	}
 }

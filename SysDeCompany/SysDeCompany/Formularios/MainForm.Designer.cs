@@ -56,13 +56,13 @@ namespace SysDeCompany
 			this.pbCadastrarProduto = new System.Windows.Forms.PictureBox();
 			this.pbCadastrarSevico = new System.Windows.Forms.PictureBox();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.grbServico = new System.Windows.Forms.GroupBox();
+			this.flpservico = new System.Windows.Forms.FlowLayoutPanel();
 			this.lblHora = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
 			this.button3 = new System.Windows.Forms.Button();
-			this.flpservico = new System.Windows.Forms.FlowLayoutPanel();
 			((System.ComponentModel.ISupportInitialize)(this.pbImageConfig)).BeginInit();
 			this.grbPrincipal.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbConfiguracao)).BeginInit();
@@ -76,7 +76,7 @@ namespace SysDeCompany
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarProduto)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarSevico)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-			this.groupBox1.SuspendLayout();
+			this.grbServico.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -286,17 +286,26 @@ namespace SysDeCompany
 			this.pictureBox4.TabIndex = 4;
 			this.pictureBox4.TabStop = false;
 			// 
-			// groupBox1
+			// grbServico
 			// 
-			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.grbServico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox1.Controls.Add(this.flpservico);
-			this.groupBox1.Location = new System.Drawing.Point(771, 89);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(501, 816);
-			this.groupBox1.TabIndex = 10;
-			this.groupBox1.TabStop = false;
+			this.grbServico.Controls.Add(this.flpservico);
+			this.grbServico.Location = new System.Drawing.Point(771, 89);
+			this.grbServico.Name = "grbServico";
+			this.grbServico.Size = new System.Drawing.Size(501, 816);
+			this.grbServico.TabIndex = 10;
+			this.grbServico.TabStop = false;
+			// 
+			// flpservico
+			// 
+			this.flpservico.AutoScroll = true;
+			this.flpservico.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flpservico.Location = new System.Drawing.Point(3, 16);
+			this.flpservico.Name = "flpservico";
+			this.flpservico.Size = new System.Drawing.Size(495, 797);
+			this.flpservico.TabIndex = 0;
 			// 
 			// lblHora
 			// 
@@ -338,17 +347,7 @@ namespace SysDeCompany
 			this.button3.TabIndex = 14;
 			this.button3.Text = "button3";
 			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Visible = false;
 			this.button3.Click += new System.EventHandler(this.Button3Click);
-			// 
-			// flpservico
-			// 
-			this.flpservico.AutoScroll = true;
-			this.flpservico.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flpservico.Location = new System.Drawing.Point(3, 16);
-			this.flpservico.Name = "flpservico";
-			this.flpservico.Size = new System.Drawing.Size(495, 797);
-			this.flpservico.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -359,8 +358,10 @@ namespace SysDeCompany
 			this.Controls.Add(this.lblNomeEmpresa);
 			this.Controls.Add(this.pbLogoEmpresa);
 			this.Controls.Add(this.lblHora);
-			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.grbServico);
 			this.Controls.Add(this.grbPrincipal);
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "SysDeCompany";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -378,11 +379,11 @@ namespace SysDeCompany
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarProduto)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbCadastrarSevico)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-			this.groupBox1.ResumeLayout(false);
+			this.grbServico.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.FlowLayoutPanel flpservico;
+		public System.Windows.Forms.FlowLayoutPanel flpservico;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblCadastro;
@@ -394,7 +395,7 @@ namespace SysDeCompany
 		private System.Windows.Forms.Label lblNomeEmpresa;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label lblHora;
-		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox grbServico;
 		private System.Windows.Forms.GroupBox grbPrincipal;
 		private System.Windows.Forms.PictureBox pbImageConfig;
 		private System.Windows.Forms.PictureBox pbConsultarServico;

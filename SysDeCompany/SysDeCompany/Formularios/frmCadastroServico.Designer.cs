@@ -40,6 +40,7 @@ namespace DcompanySys
 			this.grbPrincipal = new System.Windows.Forms.GroupBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.dgv2 = new System.Windows.Forms.DataGridView();
 			this.mtxtdate = new System.Windows.Forms.MaskedTextBox();
 			this.lblValorResult = new System.Windows.Forms.Label();
 			this.lblValor = new System.Windows.Forms.Label();
@@ -90,6 +91,7 @@ namespace DcompanySys
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
 			this.grbPrincipal.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
 			this.grbInfoProduto.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
@@ -129,6 +131,7 @@ namespace DcompanySys
 			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left) 
 									| System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.dgv2);
 			this.groupBox1.Controls.Add(this.mtxtdate);
 			this.groupBox1.Controls.Add(this.lblValorResult);
 			this.groupBox1.Controls.Add(this.lblValor);
@@ -142,6 +145,19 @@ namespace DcompanySys
 			this.groupBox1.Size = new System.Drawing.Size(1075, 332);
 			this.groupBox1.TabIndex = 47;
 			this.groupBox1.TabStop = false;
+			// 
+			// dgv2
+			// 
+			this.dgv2.AllowUserToAddRows = false;
+			this.dgv2.AllowUserToDeleteRows = false;
+			this.dgv2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+			this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv2.Location = new System.Drawing.Point(397, 9);
+			this.dgv2.Name = "dgv2";
+			this.dgv2.ReadOnly = true;
+			this.dgv2.Size = new System.Drawing.Size(554, 267);
+			this.dgv2.TabIndex = 75;
+			this.dgv2.Visible = false;
 			// 
 			// mtxtdate
 			// 
@@ -606,6 +622,7 @@ namespace DcompanySys
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAlterar.UseVisualStyleBackColor = true;
+			this.btnAlterar.Visible = false;
 			// 
 			// btnExcluir
 			// 
@@ -619,6 +636,7 @@ namespace DcompanySys
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluir.UseVisualStyleBackColor = true;
+			this.btnExcluir.Visible = false;
 			// 
 			// btnIncluir
 			// 
@@ -676,6 +694,7 @@ namespace DcompanySys
 			this.grbPrincipal.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvServico)).EndInit();
 			this.grbInfoProduto.ResumeLayout(false);
 			this.grbInfoProduto.PerformLayout();
@@ -683,6 +702,7 @@ namespace DcompanySys
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
+		public System.Windows.Forms.DataGridView dgv2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.MaskedTextBox mtxtdate;
 		private System.Windows.Forms.Label label7;
@@ -720,7 +740,7 @@ namespace DcompanySys
 		private System.Windows.Forms.Label label3;
 		public System.Windows.Forms.TextBox txtCodigoCliente;
 		private System.Windows.Forms.Label lblCodigo;
-		private System.Windows.Forms.TextBox txtCodigo;
+		public System.Windows.Forms.TextBox txtCodigo;
 		private System.Windows.Forms.Label lblNomeOuRazao;
 		private System.Windows.Forms.TextBox txtNomeOuRazao;
 		private System.Windows.Forms.Label label2;

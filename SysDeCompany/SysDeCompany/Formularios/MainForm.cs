@@ -13,6 +13,9 @@ using System.IO;
 using System.Windows.Forms;
 using SysDeCompany.Classes;
 using DcompanySys;
+using System.Linq;
+using System.Data;
+using System.Data.SQLite;
 
 namespace SysDeCompany
 {
@@ -52,6 +55,7 @@ namespace SysDeCompany
 			if (!Directory.Exists("Produto")){
 				Directory.CreateDirectory("Produto");
 			}
+			button3.PerformClick();
 			
 		}
 		void PbCadastrarPessoaClick(object sender, EventArgs e)
@@ -61,7 +65,8 @@ namespace SysDeCompany
 			frmPessoa.TipoPessoa = "PF";
 			frmPessoa.BackColor = this.BackColor;
 			frmPessoa.ForeColor = this.ForeColor;
-			frmPessoa.ShowDialog();			
+			frmPessoa.ShowDialog();
+			button3.PerformClick();			
 		}
 		void PbCadastrarProdutoClick(object sender, EventArgs e)
 		{
@@ -190,6 +195,7 @@ namespace SysDeCompany
 			lblNomeEmpresa.Text = objConfig.BuscaNomeEmpresa();
 			this.BackColor = Color.FromArgb(objConfig.BuscaCorFundo());
 			this.ForeColor = Color.FromArgb(objConfig.BuscaCorFonte());
+			button3.PerformClick();
 		}		
 		
 		
@@ -232,15 +238,59 @@ namespace SysDeCompany
 			frmServico.BackColor = this.BackColor;
 			frmServico.ForeColor = this.ForeColor;
 			frmServico.ShowDialog();
+			button3.PerformClick();
 		}
-		
+		public void Btn_Click(Control control)
+        {
+            control.Click += delegate(object sender, EventArgs e)
+            {
+            	frmCadastroServico 	frmServico = new frmCadastroServico();
+            	frmServico.txtCodigo.Text = control.Name;
+            	frmServico.BackColor = this.BackColor;
+				frmServico.ForeColor = this.ForeColor;
+            	frmServico.ShowDialog();
+            };
+		}
 		
 		
 		void Button3Click(object sender, EventArgs e)
 		{
-			frmConfigura c = new frmConfigura();
-			c.Owner = this;
-			c.ShowDialog(this);
+			//frmConfigura c = new frmConfigura();
+			//c.Owner = this;
+			//c.ShowDialog(this);
+			flpservico.Controls.Clear();
+			string data = DateTime.Now.ToString("ddMMyyyy");
+			clBancoDados clBancoDados = new clBancoDados();
+		 	SQLiteConnection conn = clBancoDados.conectar();
+			string nome = string.Empty;
+			string stm = "SELECT * FROM TB_SERVICO Where status = 1 and data_cod like '%" + data.ToString()+"'";
+			SQLiteCommand cmd = new SQLiteCommand(stm, conn);
+        	SQLiteDataReader rdr = cmd.ExecuteReader();
+        	Panel pnl;
+        	while(rdr.Read()){
+        		pnl = new Panel();
+				Label lblnome = new Label();
+				Button btn = new Button();
+				pnl.BackColor = this.BackColor;
+				pnl.ForeColor = this.ForeColor;
+				pnl.Size = new System.Drawing.Size(flpservico.Width-10, 98);
+				lblnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+				lblnome.Location = new System.Drawing.Point(7, 16);
+				lblnome.Size = new System.Drawing.Size(264, 38);
+				lblnome.Text = "Código : "+ rdr["codigo"].ToString();
+				btn.Location = new System.Drawing.Point(flpservico.Width -150 , 64);
+				btn.Name = rdr["codigo"].ToString();
+				btn.Size = new System.Drawing.Size(120, 28);
+				btn.Text = "Click para ver mais...";
+				btn.UseVisualStyleBackColor = true;
+				Btn_Click(btn);
+				pnl.Controls.Add(lblnome);
+				pnl.Controls.Add(btn);
+				flpservico.Controls.Add(pnl);
+        	}
+        	clBancoDados.desconectar(conn);	
 		}
+		
 	}
+
 }

@@ -23,19 +23,18 @@ namespace SysDeCompany.Classes
 		private string _cod_cliente;
 		private string _valor_total_servico;
 		private int _status;
-		private int _data_cod; //cod_servico = _data_cod
+		private string _data_cod; //cod_servico = _data_cod
 		
 		private string _nome;
 		private int _quantidade;
 		private string _valor_produto;
 		private string _valor_total;
-		int codigo = 0;
 	
 		
 		public string Cod_cliente{get{return _cod_cliente;}set{_cod_cliente = value;}}
 		public string Valor_total_servico{get{return _valor_total_servico;}set{_valor_total_servico = value;}}
 		public int Status{get{return _status;}set{_status = value;}}
-		public int Data_cod{get{return _data_cod;}set{_data_cod = value;}}
+		public string Data_cod{get{return _data_cod;}set{_data_cod = value;}}
 		
 		
 		public string Nome{get{return _nome;}set{_nome= value;}}
@@ -45,7 +44,6 @@ namespace SysDeCompany.Classes
 		
 		public void GravarServico()
         {	
-			codigo = _data_cod + BuscaCodigo() + 1;
 			string strQuery = "INSERT INTO TB_SERVICO(";
 			strQuery += ("cod_cliente, Valor_total, data_cod, status, Ativo)");
 			strQuery += (" VALUES(");
@@ -70,7 +68,7 @@ namespace SysDeCompany.Classes
 			strQuery += ("'"+ _nome +"',");
 			strQuery += ("'"+ _quantidade +"',");
 			strQuery += ("'"+ _valor_produto +"',");			
-			strQuery += ("'"+ codigo +"',");
+			strQuery += ("'"+ BuscaCodigo() +"',");
 			strQuery += ("'"+ _valor_total +"'");
 			strQuery += (" )");      	 	
       	 	clBancoDados clBancoDados = new clBancoDados();
