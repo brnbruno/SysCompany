@@ -80,7 +80,7 @@ namespace DcompanySys
 			this.btnPequisar.Location = new System.Drawing.Point(884, 16);
 			this.btnPequisar.Name = "btnPequisar";
 			this.btnPequisar.Size = new System.Drawing.Size(90, 101);
-			this.btnPequisar.TabIndex = 1;
+			this.btnPequisar.TabIndex = 2;
 			this.btnPequisar.Text = "Pesquisar";
 			this.btnPequisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnPequisar.UseVisualStyleBackColor = true;
@@ -118,9 +118,10 @@ namespace DcompanySys
 			this.mtxtdata.Mask = "00/00/0000";
 			this.mtxtdata.Name = "mtxtdata";
 			this.mtxtdata.Size = new System.Drawing.Size(157, 38);
-			this.mtxtdata.TabIndex = 23;
+			this.mtxtdata.TabIndex = 1;
 			this.mtxtdata.ValidatingType = typeof(System.DateTime);
 			this.mtxtdata.Visible = false;
+			this.mtxtdata.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MtxtdataKeyDown);
 			// 
 			// txtInvisivel
 			// 
@@ -240,7 +241,8 @@ namespace DcompanySys
 			this.txtDescricao.MaxLength = 20;
 			this.txtDescricao.Name = "txtDescricao";
 			this.txtDescricao.Size = new System.Drawing.Size(660, 38);
-			this.txtDescricao.TabIndex = 12;
+			this.txtDescricao.TabIndex = 0;
+			this.txtDescricao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtDescricaoKeyDown);
 			// 
 			// lbDescricao
 			// 

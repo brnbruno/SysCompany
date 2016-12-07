@@ -198,7 +198,7 @@ namespace DcompanySys
 			this.btnExcluirPro.Location = new System.Drawing.Point(303, 87);
 			this.btnExcluirPro.Name = "btnExcluirPro";
 			this.btnExcluirPro.Size = new System.Drawing.Size(82, 96);
-			this.btnExcluirPro.TabIndex = 52;
+			this.btnExcluirPro.TabIndex = 1;
 			this.btnExcluirPro.Text = "Excluir";
 			this.btnExcluirPro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluirPro.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@ namespace DcompanySys
 			this.btnAdd.Location = new System.Drawing.Point(215, 87);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(82, 96);
-			this.btnAdd.TabIndex = 50;
+			this.btnAdd.TabIndex = 0;
 			this.btnAdd.Text = "ADD ";
 			this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAdd.UseVisualStyleBackColor = true;
@@ -362,7 +362,7 @@ namespace DcompanySys
 			this.btnConsultar.Location = new System.Drawing.Point(622, 9);
 			this.btnConsultar.Name = "btnConsultar";
 			this.btnConsultar.Size = new System.Drawing.Size(326, 27);
-			this.btnConsultar.TabIndex = 69;
+			this.btnConsultar.TabIndex = 2;
 			this.btnConsultar.Text = "Consultar Código Cliente";
 			this.btnConsultar.UseVisualStyleBackColor = true;
 			this.btnConsultar.Click += new System.EventHandler(this.BtnConsultarClick);
@@ -431,7 +431,8 @@ namespace DcompanySys
 			this.txtCodigoCliente.Location = new System.Drawing.Point(511, 10);
 			this.txtCodigoCliente.Name = "txtCodigoCliente";
 			this.txtCodigoCliente.Size = new System.Drawing.Size(105, 26);
-			this.txtCodigoCliente.TabIndex = 62;
+			this.txtCodigoCliente.TabIndex = 1;
+			this.txtCodigoCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCodigoClienteKeyDown);
 			this.txtCodigoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigoClienteKeyPress);
 			// 
 			// label3
@@ -569,7 +570,8 @@ namespace DcompanySys
 			this.txtCodigo.Location = new System.Drawing.Point(241, 10);
 			this.txtCodigo.Name = "txtCodigo";
 			this.txtCodigo.Size = new System.Drawing.Size(105, 26);
-			this.txtCodigo.TabIndex = 48;
+			this.txtCodigo.TabIndex = 0;
+			this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCodigoKeyDown);
 			// 
 			// lblCodigo
 			// 
@@ -603,7 +605,7 @@ namespace DcompanySys
 			this.btnSair.Location = new System.Drawing.Point(322, 3);
 			this.btnSair.Name = "btnSair";
 			this.btnSair.Size = new System.Drawing.Size(100, 96);
-			this.btnSair.TabIndex = 0;
+			this.btnSair.TabIndex = 1;
 			this.btnSair.Text = "Sair";
 			this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnSair.UseVisualStyleBackColor = true;
@@ -618,7 +620,7 @@ namespace DcompanySys
 			this.btnAlterar.Location = new System.Drawing.Point(216, 3);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(100, 96);
-			this.btnAlterar.TabIndex = 1;
+			this.btnAlterar.TabIndex = 2;
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAlterar.UseVisualStyleBackColor = true;
@@ -632,7 +634,7 @@ namespace DcompanySys
 			this.btnExcluir.Location = new System.Drawing.Point(110, 3);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(100, 96);
-			this.btnExcluir.TabIndex = 2;
+			this.btnExcluir.TabIndex = 3;
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluir.UseVisualStyleBackColor = true;
@@ -646,7 +648,7 @@ namespace DcompanySys
 			this.btnIncluir.Location = new System.Drawing.Point(4, 3);
 			this.btnIncluir.Name = "btnIncluir";
 			this.btnIncluir.Size = new System.Drawing.Size(100, 96);
-			this.btnIncluir.TabIndex = 3;
+			this.btnIncluir.TabIndex = 0;
 			this.btnIncluir.Text = "Incluir";
 			this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnIncluir.UseVisualStyleBackColor = true;

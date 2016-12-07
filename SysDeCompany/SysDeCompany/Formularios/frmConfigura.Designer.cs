@@ -87,7 +87,7 @@ namespace DcompanySys
 			this.btnRestarCor.Location = new System.Drawing.Point(29, 318);
 			this.btnRestarCor.Name = "btnRestarCor";
 			this.btnRestarCor.Size = new System.Drawing.Size(85, 39);
-			this.btnRestarCor.TabIndex = 11;
+			this.btnRestarCor.TabIndex = 3;
 			this.btnRestarCor.Text = "Cor Padrão";
 			this.btnRestarCor.UseVisualStyleBackColor = true;
 			this.btnRestarCor.Click += new System.EventHandler(this.BtnRestarCorClick);
@@ -146,7 +146,7 @@ namespace DcompanySys
 			this.btnCorFonteForm.Location = new System.Drawing.Point(97, 19);
 			this.btnCorFonteForm.Name = "btnCorFonteForm";
 			this.btnCorFonteForm.Size = new System.Drawing.Size(85, 83);
-			this.btnCorFonteForm.TabIndex = 6;
+			this.btnCorFonteForm.TabIndex = 1;
 			this.btnCorFonteForm.Text = "Cor Fonte do Formulário";
 			this.btnCorFonteForm.UseVisualStyleBackColor = true;
 			this.btnCorFonteForm.Click += new System.EventHandler(this.BtnCorFonteFormClick);
@@ -191,7 +191,7 @@ namespace DcompanySys
 			this.btnFechar.Location = new System.Drawing.Point(271, 335);
 			this.btnFechar.Name = "btnFechar";
 			this.btnFechar.Size = new System.Drawing.Size(100, 96);
-			this.btnFechar.TabIndex = 9;
+			this.btnFechar.TabIndex = 5;
 			this.btnFechar.Text = "Fechar";
 			this.btnFechar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnFechar.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@ namespace DcompanySys
 			this.btnSalvar.Location = new System.Drawing.Point(168, 335);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(100, 96);
-			this.btnSalvar.TabIndex = 8;
+			this.btnSalvar.TabIndex = 4;
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnSalvar.UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@ namespace DcompanySys
 			this.btnBuscaImagem.Location = new System.Drawing.Point(157, 64);
 			this.btnBuscaImagem.Name = "btnBuscaImagem";
 			this.btnBuscaImagem.Size = new System.Drawing.Size(75, 75);
-			this.btnBuscaImagem.TabIndex = 4;
+			this.btnBuscaImagem.TabIndex = 0;
 			this.btnBuscaImagem.Text = "Procurar Logo ";
 			this.btnBuscaImagem.UseVisualStyleBackColor = true;
 			this.btnBuscaImagem.Click += new System.EventHandler(this.BtnBuscaImagemClick);
@@ -236,6 +236,7 @@ namespace DcompanySys
 			this.txtNomedaEmpresa.Name = "txtNomedaEmpresa";
 			this.txtNomedaEmpresa.Size = new System.Drawing.Size(306, 30);
 			this.txtNomedaEmpresa.TabIndex = 1;
+			this.txtNomedaEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNomedaEmpresaKeyDown);
 			// 
 			// label1
 			// 

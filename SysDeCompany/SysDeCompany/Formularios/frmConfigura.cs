@@ -130,6 +130,14 @@ namespace DcompanySys
 			lbfontform.BackColor = pbCordoFormulario.BackColor;
 			lbfontform.ForeColor = Color.FromArgb(-16777216);
 		}
+		
+		void TxtNomedaEmpresaKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
 	}
 }      
 

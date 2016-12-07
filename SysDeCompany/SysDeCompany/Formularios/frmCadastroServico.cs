@@ -268,5 +268,21 @@ namespace DcompanySys
         	conn.Close();  
         	return dtset;  
 		}
+		
+		void TxtCodigoKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
+		
+		void TxtCodigoClienteKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
 	}
 }

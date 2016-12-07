@@ -215,6 +215,7 @@ namespace SysDeCompany
 			objPesquisar.BackColor = this.BackColor;
 			objPesquisar.ForeColor = this.ForeColor;
 			objPesquisar.Control = 2;
+			objPesquisar.btnAddServico.Visible = false;
 			objPesquisar.ShowDialog();
 		}
 		

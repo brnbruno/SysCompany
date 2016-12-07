@@ -139,7 +139,7 @@ namespace DcompanySys
 			this.btnSair.Location = new System.Drawing.Point(322, 3);
 			this.btnSair.Name = "btnSair";
 			this.btnSair.Size = new System.Drawing.Size(100, 96);
-			this.btnSair.TabIndex = 4;
+			this.btnSair.TabIndex = 3;
 			this.btnSair.Text = "Sair";
 			this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnSair.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@ namespace DcompanySys
 			this.btnExcluir.Location = new System.Drawing.Point(216, 3);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(100, 96);
-			this.btnExcluir.TabIndex = 6;
+			this.btnExcluir.TabIndex = 2;
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluir.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@ namespace DcompanySys
 			this.btnAlterar.Location = new System.Drawing.Point(110, 3);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(100, 96);
-			this.btnAlterar.TabIndex = 5;
+			this.btnAlterar.TabIndex = 1;
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAlterar.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@ namespace DcompanySys
 			this.btnIncluir.Location = new System.Drawing.Point(4, 3);
 			this.btnIncluir.Name = "btnIncluir";
 			this.btnIncluir.Size = new System.Drawing.Size(100, 96);
-			this.btnIncluir.TabIndex = 7;
+			this.btnIncluir.TabIndex = 0;
 			this.btnIncluir.Text = "Incluir";
 			this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnIncluir.UseVisualStyleBackColor = true;
@@ -216,7 +216,8 @@ namespace DcompanySys
 			this.mtxtCelular.Mask = "(00) 0 0000-0000";
 			this.mtxtCelular.Name = "mtxtCelular";
 			this.mtxtCelular.Size = new System.Drawing.Size(141, 29);
-			this.mtxtCelular.TabIndex = 23;
+			this.mtxtCelular.TabIndex = 5;
+			this.mtxtCelular.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MtxtCelularKeyDown);
 			// 
 			// lblCelular
 			// 
@@ -236,7 +237,8 @@ namespace DcompanySys
 			this.mtxtTelefone2.Mask = "(00) 0000-0000";
 			this.mtxtTelefone2.Name = "mtxtTelefone2";
 			this.mtxtTelefone2.Size = new System.Drawing.Size(141, 29);
-			this.mtxtTelefone2.TabIndex = 21;
+			this.mtxtTelefone2.TabIndex = 4;
+			this.mtxtTelefone2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MtxtTelefone2KeyDown);
 			// 
 			// lbltelefone2
 			// 
@@ -256,7 +258,8 @@ namespace DcompanySys
 			this.mtxtTelefone.Mask = "(00) 0000-0000";
 			this.mtxtTelefone.Name = "mtxtTelefone";
 			this.mtxtTelefone.Size = new System.Drawing.Size(141, 29);
-			this.mtxtTelefone.TabIndex = 19;
+			this.mtxtTelefone.TabIndex = 3;
+			this.mtxtTelefone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MtxtTelefoneKeyDown);
 			// 
 			// mtxtCnpj
 			// 
@@ -266,8 +269,9 @@ namespace DcompanySys
 			this.mtxtCnpj.Mask = "00,000,000/0000-00";
 			this.mtxtCnpj.Name = "mtxtCnpj";
 			this.mtxtCnpj.Size = new System.Drawing.Size(171, 29);
-			this.mtxtCnpj.TabIndex = 18;
+			this.mtxtCnpj.TabIndex = 1;
 			this.mtxtCnpj.Visible = false;
+			this.mtxtCnpj.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MtxtCnpjKeyDown);
 			// 
 			// lblTelefone
 			// 
@@ -287,8 +291,9 @@ namespace DcompanySys
 			this.txtIE.MaxLength = 15;
 			this.txtIE.Name = "txtIE";
 			this.txtIE.Size = new System.Drawing.Size(223, 29);
-			this.txtIE.TabIndex = 15;
+			this.txtIE.TabIndex = 2;
 			this.txtIE.Visible = false;
+			this.txtIE.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtIEKeyDown);
 			this.txtIE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIEKeyPress);
 			// 
 			// lblIE
@@ -310,7 +315,8 @@ namespace DcompanySys
 			this.mtxtCpf.Mask = "000,000,000-00";
 			this.mtxtCpf.Name = "mtxtCpf";
 			this.mtxtCpf.Size = new System.Drawing.Size(141, 29);
-			this.mtxtCpf.TabIndex = 15;
+			this.mtxtCpf.TabIndex = 0;
+			this.mtxtCpf.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MtxtCpfKeyDown);
 			// 
 			// lblCpfOuCNPJ
 			// 
@@ -387,7 +393,8 @@ namespace DcompanySys
 			this.cbUF.Location = new System.Drawing.Point(838, 74);
 			this.cbUF.Name = "cbUF";
 			this.cbUF.Size = new System.Drawing.Size(55, 32);
-			this.cbUF.TabIndex = 17;
+			this.cbUF.TabIndex = 5;
+			this.cbUF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CbUFKeyDown);
 			// 
 			// lblUf
 			// 
@@ -407,7 +414,8 @@ namespace DcompanySys
 			this.txtComplemento.MaxLength = 50;
 			this.txtComplemento.Name = "txtComplemento";
 			this.txtComplemento.Size = new System.Drawing.Size(299, 29);
-			this.txtComplemento.TabIndex = 14;
+			this.txtComplemento.TabIndex = 7;
+			this.txtComplemento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtComplementoKeyDown);
 			// 
 			// lblComplemento
 			// 
@@ -427,7 +435,8 @@ namespace DcompanySys
 			this.txtCidade.MaxLength = 50;
 			this.txtCidade.Name = "txtCidade";
 			this.txtCidade.Size = new System.Drawing.Size(268, 29);
-			this.txtCidade.TabIndex = 12;
+			this.txtCidade.TabIndex = 6;
+			this.txtCidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCidadeKeyDown);
 			// 
 			// lblCidade
 			// 
@@ -447,7 +456,8 @@ namespace DcompanySys
 			this.txtBairro.MaxLength = 50;
 			this.txtBairro.Name = "txtBairro";
 			this.txtBairro.Size = new System.Drawing.Size(433, 29);
-			this.txtBairro.TabIndex = 11;
+			this.txtBairro.TabIndex = 4;
+			this.txtBairro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtBairroKeyDown);
 			// 
 			// lblBairro
 			// 
@@ -467,7 +477,8 @@ namespace DcompanySys
 			this.mtxtCep.Mask = "00000-000";
 			this.mtxtCep.Name = "mtxtCep";
 			this.mtxtCep.Size = new System.Drawing.Size(105, 29);
-			this.mtxtCep.TabIndex = 9;
+			this.mtxtCep.TabIndex = 3;
+			this.mtxtCep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MtxtCepKeyDown);
 			// 
 			// lblCpe
 			// 
@@ -487,7 +498,8 @@ namespace DcompanySys
 			this.txtNumero.MaxLength = 5;
 			this.txtNumero.Name = "txtNumero";
 			this.txtNumero.Size = new System.Drawing.Size(107, 29);
-			this.txtNumero.TabIndex = 7;
+			this.txtNumero.TabIndex = 2;
+			this.txtNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNumeroKeyDown);
 			this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumeroKeyPress);
 			// 
 			// lblNumero
@@ -508,7 +520,8 @@ namespace DcompanySys
 			this.txtEndereco.MaxLength = 100;
 			this.txtEndereco.Name = "txtEndereco";
 			this.txtEndereco.Size = new System.Drawing.Size(569, 29);
-			this.txtEndereco.TabIndex = 5;
+			this.txtEndereco.TabIndex = 1;
+			this.txtEndereco.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtEnderecoKeyDown);
 			// 
 			// lblEndereco
 			// 
@@ -528,7 +541,8 @@ namespace DcompanySys
 			this.txtNomeOuRazao.MaxLength = 50;
 			this.txtNomeOuRazao.Name = "txtNomeOuRazao";
 			this.txtNomeOuRazao.Size = new System.Drawing.Size(534, 29);
-			this.txtNomeOuRazao.TabIndex = 3;
+			this.txtNomeOuRazao.TabIndex = 0;
+			this.txtNomeOuRazao.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNomeOuRazaoKeyDown);
 			// 
 			// lblNomeOuRazao
 			// 
@@ -537,7 +551,7 @@ namespace DcompanySys
 			this.lblNomeOuRazao.Location = new System.Drawing.Point(273, 13);
 			this.lblNomeOuRazao.Name = "lblNomeOuRazao";
 			this.lblNomeOuRazao.Size = new System.Drawing.Size(100, 23);
-			this.lblNomeOuRazao.TabIndex = 2;
+			this.lblNomeOuRazao.TabIndex = 1;
 			this.lblNomeOuRazao.Text = "Nome :";
 			// 
 			// txtCodigo

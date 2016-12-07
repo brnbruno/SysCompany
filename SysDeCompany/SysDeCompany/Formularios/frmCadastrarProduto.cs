@@ -112,7 +112,7 @@ namespace DcompanySys
                     txtValorCompra.Text = rdr["VALOR_COMPRA"].ToString();
                     txtValorVenda.Text = rdr["VALOR_VENDA"].ToString();
                     string nomeArquivo= rdr["IMAGEM"].ToString();
-                    if (nomeArquivo != string.Empty||pbImagem.Image == null) {
+                    if (nomeArquivo != string.Empty) {
                     	 pbImagem.BackgroundImage = Image.FromFile(Application.StartupPath+@"\Produto\"+nomeArquivo);
                     }
                    
@@ -226,6 +226,54 @@ namespace DcompanySys
 		{
 			clnValida objvalida = new clnValida();
 			objvalida.soNumero(ref txtQuantidade,e);
+		}
+		
+		void TxtNomeKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
+		
+		void TxtQuantidadeKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
+		
+		void TxtFornecedorKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
+		
+		void TxtMarcaKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
+		
+		void TxtValorCompraKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
+		}
+		
+		void TxtValorVendaKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+            }
 		}
 	}
 }

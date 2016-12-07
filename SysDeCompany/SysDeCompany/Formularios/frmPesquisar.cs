@@ -44,12 +44,16 @@ namespace DcompanySys
    				frmCadastrarPessoa frmCadastro = new frmCadastrarPessoa();
 				frmCadastro.Control = 1;
 				frmCadastro.TipoPessoa = "PF";
+				frmCadastro.BackColor = this.BackColor;
+				frmCadastro.ForeColor = this.ForeColor;
 				frmCadastro.ShowDialog();
 				CarregaDataGridPessoa();
    			}
    			else if (_control==2) {
    				frmCadastrarProduto objProduto = new frmCadastrarProduto();
             	objProduto.Controle = 1;
+            	objProduto.BackColor = this.BackColor;
+				objProduto.ForeColor = this.ForeColor;
             	objProduto.ShowDialog();
             	CarregaDataGridProduto();
 			}
@@ -79,6 +83,8 @@ namespace DcompanySys
             	objfPessoa.txtIE.Enabled = false;
             	objfPessoa.rbPessoaFisica.Enabled = false;
             	objfPessoa.rbPessoaJuridica.Enabled = false;
+            	objfPessoa.BackColor = this.BackColor;
+				objfPessoa.ForeColor = this.ForeColor;
             	objfPessoa.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
             	objfPessoa.TipoPessoa = Convert.ToString(dgv.CurrentRow.Cells[15].Value);
             	objfPessoa.ShowDialog();
@@ -96,6 +102,8 @@ namespace DcompanySys
             	objProduto.btnLimparImagem.Visible = false;
             	objProduto.btnAlterar.Visible = false;
             	objProduto.btnIncluir.Visible = false;
+            	objProduto.BackColor = this.BackColor;
+				objProduto.ForeColor = this.ForeColor;
             	objProduto.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
             	objProduto.ShowDialog();
 			}else
@@ -106,6 +114,8 @@ namespace DcompanySys
 				objServico.btnIncluir.Visible =false;
 				objServico.btnAdd.Visible = false;
 				objServico.btnExcluirPro.Visible = false;
+				objServico.BackColor = this.BackColor;
+				objServico.ForeColor = this.ForeColor;
 				objServico.ShowDialog();
 				
 			}
@@ -301,6 +311,9 @@ namespace DcompanySys
 				{
 					frmQuantidade objQtd = new frmQuantidade();
 					objQtd.Owner = this;
+					objQtd.pnl.BackColor = this.BackColor;
+					objQtd.pnl.ForeColor = this.ForeColor;
+					objQtd.BackColor = this.ForeColor;
 					objQtd.ShowDialog(this);
 					if (_quantidade >=1) {
 						((frmCadastroServico)this.Owner).CodProduto = Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
@@ -324,8 +337,35 @@ namespace DcompanySys
 		
 		void BtnPesquiInativoClick(object sender, EventArgs e)
 		{
+			if (_control==1)
+			{
+				clnPessoa objpessoa = new clnPessoa();
+				dgv.DataSource = objpessoa.BuscarPessoaIna(txtDescricao.Text).Tables[0];
+			}
+			else if (_control==2) {
+				clnProduto objproduto = new clnProduto();
+				dgv.DataSource = objproduto.BuscarProdutoin(txtDescricao.Text).Tables[0];
+			}
 			
 		}
 		
+		
+		
+		
+		void TxtDescricaoKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+				btnPequisar.PerformClick();
+            }
+		}
+		
+		void MtxtdataKeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+            {
+               btnPequisar.PerformClick();
+            }
+		}
 	}
 }

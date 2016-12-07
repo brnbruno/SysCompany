@@ -123,7 +123,7 @@ namespace DcompanySys
 			this.btnSair.Location = new System.Drawing.Point(322, 3);
 			this.btnSair.Name = "btnSair";
 			this.btnSair.Size = new System.Drawing.Size(100, 96);
-			this.btnSair.TabIndex = 4;
+			this.btnSair.TabIndex = 3;
 			this.btnSair.Text = "Sair";
 			this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnSair.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@ namespace DcompanySys
 			this.btnAlterar.Location = new System.Drawing.Point(216, 3);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(100, 96);
-			this.btnAlterar.TabIndex = 5;
+			this.btnAlterar.TabIndex = 2;
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnAlterar.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@ namespace DcompanySys
 			this.btnExcluir.Location = new System.Drawing.Point(110, 3);
 			this.btnExcluir.Name = "btnExcluir";
 			this.btnExcluir.Size = new System.Drawing.Size(100, 96);
-			this.btnExcluir.TabIndex = 6;
+			this.btnExcluir.TabIndex = 1;
 			this.btnExcluir.Text = "Excluir";
 			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnExcluir.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@ namespace DcompanySys
 			this.btnIncluir.Location = new System.Drawing.Point(4, 3);
 			this.btnIncluir.Name = "btnIncluir";
 			this.btnIncluir.Size = new System.Drawing.Size(100, 96);
-			this.btnIncluir.TabIndex = 7;
+			this.btnIncluir.TabIndex = 0;
 			this.btnIncluir.Text = "Incluir";
 			this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnIncluir.UseVisualStyleBackColor = true;
@@ -207,7 +207,8 @@ namespace DcompanySys
 			this.txtFornecedor.MaxLength = 20;
 			this.txtFornecedor.Name = "txtFornecedor";
 			this.txtFornecedor.Size = new System.Drawing.Size(246, 26);
-			this.txtFornecedor.TabIndex = 43;
+			this.txtFornecedor.TabIndex = 2;
+			this.txtFornecedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtFornecedorKeyDown);
 			// 
 			// btnLimparImagem
 			// 
@@ -215,7 +216,7 @@ namespace DcompanySys
 			this.btnLimparImagem.Location = new System.Drawing.Point(819, 192);
 			this.btnLimparImagem.Name = "btnLimparImagem";
 			this.btnLimparImagem.Size = new System.Drawing.Size(90, 69);
-			this.btnLimparImagem.TabIndex = 42;
+			this.btnLimparImagem.TabIndex = 7;
 			this.btnLimparImagem.Text = "Limpar Imagem";
 			this.btnLimparImagem.UseVisualStyleBackColor = true;
 			this.btnLimparImagem.Click += new System.EventHandler(this.BtnLimparImagemClick);
@@ -226,7 +227,7 @@ namespace DcompanySys
 			this.btnBuscaImagem.Location = new System.Drawing.Point(723, 192);
 			this.btnBuscaImagem.Name = "btnBuscaImagem";
 			this.btnBuscaImagem.Size = new System.Drawing.Size(90, 69);
-			this.btnBuscaImagem.TabIndex = 41;
+			this.btnBuscaImagem.TabIndex = 6;
 			this.btnBuscaImagem.Text = "Busca Imagem";
 			this.btnBuscaImagem.UseVisualStyleBackColor = true;
 			this.btnBuscaImagem.Click += new System.EventHandler(this.BtnBuscaImagemClick);
@@ -250,9 +251,10 @@ namespace DcompanySys
 			this.txtValorCompra.MaxLength = 10;
 			this.txtValorCompra.Name = "txtValorCompra";
 			this.txtValorCompra.Size = new System.Drawing.Size(170, 26);
-			this.txtValorCompra.TabIndex = 38;
+			this.txtValorCompra.TabIndex = 4;
 			this.txtValorCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.txtValorCompra.TextChanged += new System.EventHandler(this.TxtValorCompraTextChanged);
+			this.txtValorCompra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtValorCompraKeyDown);
 			// 
 			// txtMarca
 			// 
@@ -262,7 +264,8 @@ namespace DcompanySys
 			this.txtMarca.MaxLength = 20;
 			this.txtMarca.Name = "txtMarca";
 			this.txtMarca.Size = new System.Drawing.Size(211, 26);
-			this.txtMarca.TabIndex = 36;
+			this.txtMarca.TabIndex = 3;
+			this.txtMarca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtMarcaKeyDown);
 			// 
 			// txtValorVenda
 			// 
@@ -272,9 +275,10 @@ namespace DcompanySys
 			this.txtValorVenda.MaxLength = 10;
 			this.txtValorVenda.Name = "txtValorVenda";
 			this.txtValorVenda.Size = new System.Drawing.Size(170, 26);
-			this.txtValorVenda.TabIndex = 35;
+			this.txtValorVenda.TabIndex = 5;
 			this.txtValorVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			this.txtValorVenda.TextChanged += new System.EventHandler(this.TxtValorVendaTextChanged);
+			this.txtValorVenda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtValorVendaKeyDown);
 			// 
 			// txtQuantidade
 			// 
@@ -284,7 +288,8 @@ namespace DcompanySys
 			this.txtQuantidade.MaxLength = 5;
 			this.txtQuantidade.Name = "txtQuantidade";
 			this.txtQuantidade.Size = new System.Drawing.Size(74, 26);
-			this.txtQuantidade.TabIndex = 34;
+			this.txtQuantidade.TabIndex = 1;
+			this.txtQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtQuantidadeKeyDown);
 			this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQuantidadeKeyPress);
 			// 
 			// label5
@@ -345,7 +350,8 @@ namespace DcompanySys
 			this.txtNome.MaxLength = 50;
 			this.txtNome.Name = "txtNome";
 			this.txtNome.Size = new System.Drawing.Size(469, 26);
-			this.txtNome.TabIndex = 26;
+			this.txtNome.TabIndex = 0;
+			this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtNomeKeyDown);
 			// 
 			// lblNomeOuRazao
 			// 

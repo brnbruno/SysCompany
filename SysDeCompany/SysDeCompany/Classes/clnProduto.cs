@@ -110,6 +110,18 @@ namespace SysDeCompany.Classes
         	conn.Close();  
         	return dtset;  
 		}
+		public DataSet BuscarProdutoin(string strDescricao)
+        {
+			clBancoDados clBancoDados = new clBancoDados();
+			DataSet dtset = new DataSet();  
+        	SQLiteConnection conn = clBancoDados.conectar();  
+        	SQLiteCommand command = conn.CreateCommand();  
+            command.CommandText = "SELECT * FROM TB_PRODUTO Where ativo = 0 and NOME like '%" + strDescricao+ "%' order by CODIGO";
+          	SQLiteDataAdapter DB = new SQLiteDataAdapter(command.CommandText, conn);  
+      		DB.Fill(dtset);  
+        	conn.Close();  
+        	return dtset;  
+		}
 	
 	}
 }
