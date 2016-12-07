@@ -40,6 +40,7 @@ namespace DcompanySys
 			this.btnSair = new System.Windows.Forms.Button();
 			this.btnPequisar = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtInvisivel = new System.Windows.Forms.TextBox();
 			this.btnAddServico = new System.Windows.Forms.Button();
 			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnAlterar = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@ namespace DcompanySys
 			this.txtDescricao = new System.Windows.Forms.TextBox();
 			this.lbDescricao = new System.Windows.Forms.Label();
 			this.dgv = new System.Windows.Forms.DataGridView();
-			this.txtInvisivel = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
 			this.SuspendLayout();
@@ -108,6 +108,17 @@ namespace DcompanySys
 			this.groupBox1.Size = new System.Drawing.Size(1030, 530);
 			this.groupBox1.TabIndex = 8;
 			this.groupBox1.TabStop = false;
+			// 
+			// txtInvisivel
+			// 
+			this.txtInvisivel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
+			this.txtInvisivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtInvisivel.Location = new System.Drawing.Point(455, 477);
+			this.txtInvisivel.Name = "txtInvisivel";
+			this.txtInvisivel.Size = new System.Drawing.Size(22, 38);
+			this.txtInvisivel.TabIndex = 22;
+			this.txtInvisivel.Visible = false;
 			// 
 			// btnAddServico
 			// 
@@ -244,17 +255,6 @@ namespace DcompanySys
 			this.dgv.Size = new System.Drawing.Size(906, 285);
 			this.dgv.TabIndex = 19;
 			this.dgv.DoubleClick += new System.EventHandler(this.DgvDoubleClick);
-			// 
-			// txtInvisivel
-			// 
-			this.txtInvisivel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
-			this.txtInvisivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtInvisivel.Location = new System.Drawing.Point(455, 477);
-			this.txtInvisivel.Name = "txtInvisivel";
-			this.txtInvisivel.Size = new System.Drawing.Size(22, 38);
-			this.txtInvisivel.TabIndex = 22;
-			this.txtInvisivel.Visible = false;
 			// 
 			// frmPesquisar
 			// 

@@ -89,13 +89,13 @@ namespace SysDeCompany.Formularios
 			this.btnIncluir.UseVisualStyleBackColor = true;
 			this.btnIncluir.Click += new System.EventHandler(this.BtnIncluirClick);
 			// 
-			// txtCodigo
+			// txtQtd
 			// 
 			this.txtQtd.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtQtd.Enabled = false;
 			this.txtQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtQtd.Location = new System.Drawing.Point(159, 17);
-			this.txtQtd.Name = "txtCodigo";
+			this.txtQtd.MaxLength = 4;
+			this.txtQtd.Name = "txtQtd";
 			this.txtQtd.Size = new System.Drawing.Size(114, 29);
 			this.txtQtd.TabIndex = 3;
 			// 
@@ -111,8 +111,10 @@ namespace SysDeCompany.Formularios
 			// 
 			// frmQuantidade
 			// 
+			this.AcceptButton = this.btnIncluir;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.btnSair;
 			this.ClientSize = new System.Drawing.Size(320, 164);
 			this.Controls.Add(this.grbPrincipal);
 			this.Name = "frmQuantidade";

@@ -13,6 +13,7 @@ using SysDeCompany.Classes;
 using System.IO;
 using System.Data;
 using System.Data.SQLite;
+using System.Globalization;
 
 namespace DcompanySys
 {
@@ -33,9 +34,12 @@ namespace DcompanySys
 			//
 		}
 		private byte _control;
+		private int _cod_produto;
+		private int _quantidade;
 		
 		public byte Control{get{return _control;}set{_control = value;}}
-		
+		public int CodProduto{get{return _cod_produto;}set{_cod_produto = value;}}
+		public int Quantidade{get{return +_quantidade;}set{_quantidade = value;}}
 		
 		
 		void BtnSairClick(object sender, EventArgs e)
@@ -47,6 +51,8 @@ namespace DcompanySys
 		{
 			frmPesquisar frmPesquisar = new frmPesquisar();
 			frmPesquisar.Owner = this;
+			frmPesquisar.BackColor = this.BackColor;
+			frmPesquisar.ForeColor = this.ForeColor;
 			frmPesquisar.btnNovo.Visible=false;
 			frmPesquisar.btnAlterar.Visible =false;
 			frmPesquisar.btnExcluir.Visible = false;
@@ -73,6 +79,11 @@ namespace DcompanySys
 			}
 			LerBanco();
 			mtxtdate.Text = DateTime.Now.ToString();
+			dgvServico.BackgroundColor = this.BackColor;
+			dgvServico.GridColor = this.BackColor;
+			dgvServico.DefaultCellStyle.BackColor = this.BackColor;
+			dgvServico.DefaultCellStyle.SelectionForeColor = this.BackColor;
+   			dgvServico.DefaultCellStyle.SelectionBackColor = this.ForeColor;
 			
 		}
 		
@@ -113,18 +124,48 @@ namespace DcompanySys
 		
 		void BtnAddClick(object sender, EventArgs e)
 		{
+			float ValoraPagar = 0;
 			frmPesquisar frmpesquisar = new frmPesquisar();
 			frmpesquisar.Owner = this;
 			frmpesquisar.Control = 2;
+			frmpesquisar.btnNovo.Visible=false;
+			frmpesquisar.btnAlterar.Visible =false;
+			frmpesquisar.btnExcluir.Visible = false;
+			frmpesquisar.btnConsultar.Visible=false;
+			frmpesquisar.btnAddServico.Location = frmpesquisar.btnNovo.Location;
+			frmpesquisar.BackColor = this.BackColor;
+			frmpesquisar.ForeColor = this.ForeColor;
 			frmpesquisar.ShowDialog(this);
+			clBancoDados clBancoDados = new clBancoDados();
+			SQLiteConnection conn = clBancoDados.conectar();
+			string stm = "SELECT * FROM TB_PRODUTO WHERE CODIGO ='"+_cod_produto+"'";
+			//string stm = "SELECT * FROM TB_PESSOA WHERE CODIGO ='1'";
+        	SQLiteCommand cmd = new SQLiteCommand(stm, conn);
+        	SQLiteDataReader rdr = cmd.ExecuteReader();
+        	while(rdr.Read())
+        	{
+        		float valorTotal = Convert.ToSingle(rdr["VALOR_VENDA"]);
+        		dgvServico.Rows.Add(_quantidade,rdr["NOME"].ToString(),valorTotal.ToString("#,0.00", new CultureInfo("pt-BR")), (_quantidade*valorTotal).ToString("#,0.00", new CultureInfo("pt-BR")));
+        	}
+        	foreach (DataGridViewRow item in dgvServico.Rows)
+            {
+                ValoraPagar += Convert.ToSingle(item.Cells[3].Value);
+            }
+        	lblValorResult.Text = ValoraPagar.ToString("#,0.00", new CultureInfo("pt-BR"));
 		}
 		
 		void BtnExcluirProClick(object sender, EventArgs e)
 		{
+			float ValoraPagar = 0;
 			try 
 			{
 				int index = dgvServico.CurrentRow.Index;
 				dgvServico.Rows.RemoveAt(index);
+				foreach (DataGridViewRow item in dgvServico.Rows)
+            	{
+               		ValoraPagar += Convert.ToSingle(item.Cells[3].Value);
+            	}
+        		lblValorResult.Text = ValoraPagar.ToString("#,0.00", new CultureInfo("pt-BR"));
 			} 
 			catch (Exception ex)
 			{

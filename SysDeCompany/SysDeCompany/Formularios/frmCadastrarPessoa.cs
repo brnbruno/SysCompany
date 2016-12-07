@@ -131,11 +131,11 @@ namespace DcompanySys
                    	} 
                    	else if(controle == 2)
                    	{
-                   		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
+                   		objPessoa.Cod =Convert.ToInt32(txtCodigo.Text);
                    		objPessoa.Alterar();
                    		MessageBox.Show("Alterado com Sucesso","Alterado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	} else{
-                   		objPessoa.Cod =Convert.ToInt16(txtCodigo.Text);
+                   		objPessoa.Cod =Convert.ToInt32(txtCodigo.Text);
                    		objPessoa.ExcluirLogicamente();
                    		MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	}

@@ -84,9 +84,10 @@ namespace DcompanySys
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.grbPrincipal.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
@@ -192,9 +193,10 @@ namespace DcompanySys
 			this.dgvServico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvServico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.Column5,
 									this.Column4,
-									this.Column3});
+									this.Column5,
+									this.Column3,
+									this.Column1});
 			this.dgvServico.Location = new System.Drawing.Point(397, 9);
 			this.dgvServico.Name = "dgvServico";
 			this.dgvServico.Size = new System.Drawing.Size(554, 267);
@@ -631,20 +633,25 @@ namespace DcompanySys
 			this.pbLogoEmpresa.TabIndex = 3;
 			this.pbLogoEmpresa.TabStop = false;
 			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "Descrição";
-			this.Column5.Name = "Column5";
-			// 
 			// Column4
 			// 
 			this.Column4.HeaderText = "Quantidade";
 			this.Column4.Name = "Column4";
 			// 
+			// Column5
+			// 
+			this.Column5.HeaderText = "Descrição";
+			this.Column5.Name = "Column5";
+			// 
 			// Column3
 			// 
-			this.Column3.HeaderText = "Valor";
+			this.Column3.HeaderText = "Valor Uni";
 			this.Column3.Name = "Column3";
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "Valor Total";
+			this.Column1.Name = "Column1";
 			// 
 			// frmCadastroServico
 			// 
@@ -668,6 +675,7 @@ namespace DcompanySys
 			((System.ComponentModel.ISupportInitialize)(this.pbLogoEmpresa)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
 		private System.Windows.Forms.MaskedTextBox mtxtdate;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TextBox txtUF;

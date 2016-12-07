@@ -32,15 +32,25 @@ namespace SysDeCompany.Formularios
 		
 		void BtnSairClick(object sender, EventArgs e)
 		{
+			((frmPesquisar)this.Owner).Quantidade =1;
 			this.Close();
 		}
 		
 		void BtnIncluirClick(object sender, EventArgs e)
 		{
-			if(Convert.ToInt16(txtQtd.Text) < 1)
+			try 
 			{
-				((frmPesquisar)this.Owner).Quantidade = Convert.ToInt16(txtQtd.Text);
+				if(Convert.ToInt32(txtQtd.Text) > 1)
+				{
+					((frmPesquisar)this.Owner).Quantidade = Convert.ToInt32(txtQtd.Text);
+					this.Close();
+				}
+			} 
+			catch (Exception) 
+			{
+				MessageBox.Show("Coloque um Valor para quantidade");
 			}
+			
 		}
 	}
 }

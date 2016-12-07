@@ -119,7 +119,14 @@ namespace DcompanySys
 		
 		void DgvDoubleClick(object sender, EventArgs e)
 		{
-			btnAlterar.PerformClick();
+			if (btnAlterar.Visible==true) 
+			{
+				btnAlterar.PerformClick();
+			}else
+			{
+				btnAddServico.PerformClick();
+			}
+			
 		}
 		
 		void BtnAlterarClick(object sender, EventArgs e)
@@ -129,6 +136,8 @@ namespace DcompanySys
 				{
 					frmCadastrarPessoa objPessoa = new frmCadastrarPessoa();
             		objPessoa.txtCodigo.Enabled = false;
+            		objPessoa.BackColor = this.BackColor;
+            		objPessoa.ForeColor = this.ForeColor;
             		objPessoa.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
             		objPessoa.Control =2;
             		objPessoa.TipoPessoa = dgv.CurrentRow.Cells[15].Value.ToString();
@@ -140,6 +149,8 @@ namespace DcompanySys
 					frmCadastrarProduto objProduto = new frmCadastrarProduto();
 					objProduto.txtCodigo.Enabled = false;
             		objProduto.txtCodigo.Text = Convert.ToString(dgv.CurrentRow.Cells[0].Value);
+            		objProduto.BackColor = this.BackColor;
+            		objProduto.ForeColor = this.ForeColor;
             		objProduto.Controle = 2;
             		objProduto.ShowDialog();
             		CarregaDataGridProduto();
@@ -247,8 +258,9 @@ namespace DcompanySys
 				frmQuantidade objQtd = new frmQuantidade();
 				objQtd.Owner = this;
 				objQtd.ShowDialog(this);
-				int index = dgv.CurrentRow.Index;
-				((frmCadastroServico)this.Owner).dgvServico.Rows.Add(dgv.CurrentRow.Cells[index].Value,_quantidade,"1");
+				((frmCadastroServico)this.Owner).CodProduto = Convert.ToInt16(dgv.CurrentRow.Cells[0].Value);
+				((frmCadastroServico)this.Owner).Quantidade = _quantidade;
+				this.Close();
 			}
 		}
 		
@@ -256,5 +268,6 @@ namespace DcompanySys
 		{
 			
 		}
+		
 	}
 }

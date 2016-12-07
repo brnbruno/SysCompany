@@ -190,13 +190,13 @@ namespace DcompanySys
                    	} 
                    	else if(controle == 2)
                    	{
-                   		objProduto.Cod = Convert.ToInt16(txtCodigo.Text);
+                   		objProduto.Cod = Convert.ToInt32(txtCodigo.Text);
                    		objProduto.Alterar();
                    		MessageBox.Show("Alterado com Sucesso","Alterado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	} 
                    	else
                    	{
-                   		objProduto.Cod = Convert.ToInt16(txtCodigo.Text);
+                   		objProduto.Cod = Convert.ToInt32(txtCodigo.Text);
                    		objProduto.ExcluirLogicamente();
                    		MessageBox.Show("Excluido com Sucesso","Excluido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                    	}
