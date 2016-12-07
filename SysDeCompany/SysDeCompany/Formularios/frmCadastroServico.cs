@@ -172,5 +172,25 @@ namespace DcompanySys
 				MessageBox.Show("Selecione uma linha " + ex.ToString());
 			}   
 		}
+		
+		void BtnIncluirClick(object sender, EventArgs e)
+		{
+			clnServico objservico = new clnServico();
+			objservico.Cod_cliente = txtCodigoCliente.Text;
+			objservico.Data_cod = Convert.ToInt32(mtxtdate.Text.Replace("/",""));
+			objservico.Valor_total_servico = lblValorResult.Text;
+			objservico.Status = 1;
+			objservico.GravarServico();
+			int row = 0;
+			for (int cont = 1; cont <= dgvServico.RowCount; cont++)
+			{
+				objservico.Quantidade = Convert.ToInt32(dgvServico.Rows[row].Cells[0].Value);
+				objservico.Nome = dgvServico.Rows[row].Cells[1].Value.ToString();
+				objservico.Valor_produto = dgvServico.Rows[row].Cells[2].Value.ToString();
+				objservico.Valor_total = dgvServico.Rows[row].Cells[3].Value.ToString();                   
+                row++;
+                objservico.GravarProduto();
+           }			
+		}
 	}
 }

@@ -45,6 +45,10 @@ namespace DcompanySys
 			this.lblValor = new System.Windows.Forms.Label();
 			this.btnExcluirPro = new System.Windows.Forms.Button();
 			this.dgvServico = new System.Windows.Forms.DataGridView();
+			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
@@ -84,10 +88,6 @@ namespace DcompanySys
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblNomeEmpresa = new System.Windows.Forms.Label();
 			this.pbLogoEmpresa = new System.Windows.Forms.PictureBox();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.grbPrincipal.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvServico)).BeginInit();
@@ -190,6 +190,8 @@ namespace DcompanySys
 			// 
 			// dgvServico
 			// 
+			this.dgvServico.AllowUserToAddRows = false;
+			this.dgvServico.AllowUserToDeleteRows = false;
 			this.dgvServico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.dgvServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvServico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -199,8 +201,33 @@ namespace DcompanySys
 									this.Column1});
 			this.dgvServico.Location = new System.Drawing.Point(397, 9);
 			this.dgvServico.Name = "dgvServico";
+			this.dgvServico.ReadOnly = true;
 			this.dgvServico.Size = new System.Drawing.Size(554, 267);
 			this.dgvServico.TabIndex = 51;
+			// 
+			// Column4
+			// 
+			this.Column4.HeaderText = "Quantidade";
+			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
+			// 
+			// Column5
+			// 
+			this.Column5.HeaderText = "Descrição";
+			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this.Column3.HeaderText = "Valor Uni";
+			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
+			// 
+			// Column1
+			// 
+			this.Column1.HeaderText = "Valor Total";
+			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
 			// 
 			// btnAdd
 			// 
@@ -605,6 +632,7 @@ namespace DcompanySys
 			this.btnIncluir.Text = "Incluir";
 			this.btnIncluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnIncluir.UseVisualStyleBackColor = true;
+			this.btnIncluir.Click += new System.EventHandler(this.BtnIncluirClick);
 			// 
 			// label1
 			// 
@@ -632,26 +660,6 @@ namespace DcompanySys
 			this.pbLogoEmpresa.Size = new System.Drawing.Size(133, 120);
 			this.pbLogoEmpresa.TabIndex = 3;
 			this.pbLogoEmpresa.TabStop = false;
-			// 
-			// Column4
-			// 
-			this.Column4.HeaderText = "Quantidade";
-			this.Column4.Name = "Column4";
-			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "Descrição";
-			this.Column5.Name = "Column5";
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "Valor Uni";
-			this.Column3.Name = "Column3";
-			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "Valor Total";
-			this.Column1.Name = "Column1";
 			// 
 			// frmCadastroServico
 			// 
