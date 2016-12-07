@@ -35,11 +35,10 @@ namespace SysDeCompany.Formularios
 		
 		
 		void BtnIncluirClick(object sender, EventArgs e)
-		{
-			
+		{	
 			try 
 			{
-				if(Convert.ToInt32(txtQtd.Text) > 1)
+				if(Convert.ToInt32(txtQtd.Text) >= 1)
 				{
 					((frmPesquisar)this.Owner).Quantidade = Convert.ToInt32(txtQtd.Text);
 					this.Close();
